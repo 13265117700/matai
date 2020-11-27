@@ -1,0 +1,48 @@
+<view class="container">
+    <view class="page-header">
+        <image class="header-image" src="/images/login/logo@3x.png" />
+        <view class="header-title">登录马太货运</view>
+        <view class="header-describe">货源 船源 车源</view>
+    </view>
+    <view class="page-main">
+        <view class="from">
+            <view class="from-phone" hidden="{{!passwordMode}}">
+                <view class="form-item">
+                    <view class="label">+86</view>
+                    <input type="text" placeholder="请输入手机号码" placeholder-class="input-pl" />
+                </view>
+            </view>
+            <view class="from-password" hidden="{{passwordMode}}">
+                <view class="form-item">
+                    <view class="label">+86</view>
+                    <input type="text" placeholder="请输入手机号码" placeholder-class="input-pl" />
+                </view>
+                <view class="form-item">
+                    <input type="text" placeholder="请输入密码" placeholder-class="input-pl" />
+                </view>
+                <navigator url="/">忘记密码</navigator>
+            </view>
+            <view class="from-button">
+                <view class="phone-button" hidden="{{!passwordMode}}">
+                    <button type="primary" style="background-color:#CD1F38" bindtap="bindPhoneLogin">获取验证码</button>
+                    <button type="warn" plain="true" bindtap="bindSwitch">用账号密码登录</button>
+                </view>
+                <view class="password-button" hidden="{{passwordMode}}">
+                    <button type="primary" style="background-color:#CD1F38" bindtap="bindPasswordLogin">登录</button>
+                    <button type="warn" plain="true" bindtap="bindSwitch">短信验证登录</button>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="page-footer">
+        <view class="footer-guide">推荐使用微信登录</view>
+        <view class="forrter-button">
+            <button type="primary" bindtap="handWeChat">微信一键登录</button>
+        </view>
+        <view class="footer-explain">
+            登录注册即表示同意
+            <navigator url="/">用户协议</navigator>、
+            <navigator url="/">隐私协议</navigator>
+        </view>
+    </view>
+</view>

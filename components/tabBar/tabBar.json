@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "vtu-tabbar": "/miniprogram_npm/vtuweapp/tabbar/tabbar/vtu-tabbar",
+        "vtu-tabbar-item": "/miniprogram_npm/vtuweapp/tabbar/item/vtu-tabbar-item"
+    }
+}

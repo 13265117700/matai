@@ -1,0 +1,10 @@
+<template class="tabBar-container" name="tabBar">
+    <vtu-tabbar current="{{current}}" bind:change="change">
+        <vtu-tabbar-item wx:for="{{list}}" wx:key="index" label="{{item.text}}" src="{{item.icon}}" active-src="{{item.activeIcon}}"></vtu-tabbar-item>
+        <!-- <vtu-tabbar-item label="首页" src="/images/index/index1-3.png" active-src="/images/index/index2-3.png"></vtu-tabbar-item>
+        <vtu-tabbar-item label="我的关注" src="/images/myFollow/myFollow1-3.png" active-src="/images/myFollow/myFollow2-3.png"></vtu-tabbar-item>
+        <vtu-tabbar-item label="发布" src="/images/deliver/deliver3.png" large></vtu-tabbar-item>
+        <vtu-tabbar-item label="订单" src="/images/order/order1-3.png" active-src="/images/order/order2-3.png"></vtu-tabbar-item>
+        <vtu-tabbar-item label="我的" src="/images/my/my1-3.png" active-src="/images/my/my2-3.png"></vtu-tabbar-item> -->
+    </vtu-tabbar>
+</template>

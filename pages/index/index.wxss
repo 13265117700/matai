@@ -1,0 +1,205 @@
+/**index.wxss**/
+
+.card-section{
+  background-color: #ffffff;
+}
+.card-section .card-list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 12px 0 14.5px 0;
+}
+.card-section .card-list .card-item{
+  width: 45%;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+}
+.card-section .card-list .card-item image{
+  width: 100%;
+  max-height: 94px;
+}
+.card-section .card-list .card-item .card-item-tag{
+  width: 79px;
+  height: 29px;
+  text-align: right;
+  font-size: 15.91px;
+  color: #DA1F16;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  position: absolute;
+  top: 10%;
+  left: 5%;
+}
+.card-section .card-list .card-item .card-item-tag::after{
+  content: '';
+  width: 3px;
+  height: 29px;
+  background-color: #DA1F16;
+  position: absolute;
+  left: 10%;
+  top: -30%;
+}
+
+/* service-section */
+.service-section{
+  margin-top: 10.5px;
+  margin-bottom: 11px;
+  background-color: #ffffff;
+}
+
+
+/* order-section */
+.order-section{
+  padding: 0 10px;
+  background-color: #ffffff;
+}
+.order-crumbs{
+  display: flex;
+  justify-content: space-between;
+  line-height: 70px;
+  padding: 0 10px 0 10px;
+  border-bottom: 1px solid #E6E6E6;
+  margin-bottom: 15px;
+}
+.order-crumbs .order-title{
+  font-size: 16px;
+  font-family: PingFang-SC-Heavy;
+  font-weight: bold;
+  color: #191919;
+}
+.order-crumbs .order-tag{
+  font-size: 14px;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: #878787;
+}
+.order-crumbs .order-tag image{
+  width: 6.5px;
+  height: 10.5px;
+  margin-left: 10px;
+}
+.order-list{
+  padding-bottom: 21.5px;
+}
+.order-item{
+  border: 1px solid #E8E8E8FF;
+  border-radius: 10px;
+  box-shadow: #E8E8E8FF 1px 1px 2px 1px;
+  padding: 20px 10px 15px 15px;
+  margin: 0 10px 15px;
+}
+.order-item-top{
+  display: flex;
+  padding-bottom: 9px;
+  border-bottom: 1px dashed #E8E8E8FF;
+  margin-bottom: 15px;
+}
+.order-item-img{
+  margin-right: 10px;
+}
+.order-item-img image{
+  width: 50px;
+  height: 50px;
+}
+.order-item-info{
+  flex: 1;
+}
+.order-item-info .item-summary{
+  display: flex;
+  justify-content: space-between;
+  color: #191919;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #E5E5E5;
+  margin-bottom: 9.5px;
+}
+.order-item-info .item-summary_name{
+  font-size: 16px;
+  font-family: PingFang-SC-Bold;
+  font-weight: bold;
+}
+.order-item-info .item-summary_amount{
+  text-align: right;
+  font-size: 14px;
+  font-family: PingFang-SC-Medium;
+  font-weight: Medium;
+}
+.order-item-info .item-msg_process{
+  font-size: 12px;
+  color: #191919;
+  font-family: PingFang-SC-Medium;
+  font-weight: Medium;
+  margin-bottom: 12px;
+}
+.order-item-info .item-msg_process .img{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: inline;
+  padding-left: 5px;
+}
+.order-item-info .item-msg_process image{
+  width: 55px;
+  height: 7.5px;
+}
+.order-item-info .item-msg_process .begin{
+  display: inline;
+  padding-left: 20px;
+  position: relative;
+}
+.order-item-info .item-msg_process .end{
+  display: inline;
+  padding-left: 20px;
+  position: relative;
+  margin-left: 5px;
+}
+.order-item-info .item-msg_process .begin::after{
+  content: '始';
+  width: 16px;
+  height: 16px;
+  text-align: center;
+  font-size: 12px;
+  color: #FFFFFF;
+  background-color: #E3211F;
+  border-radius: 2px;
+  position: absolute;
+  left: 0;
+}
+.order-item-info .item-msg_process .end::after{
+  content: '终';
+  width: 16px;
+  height: 16px;
+  text-align: center;
+  font-size: 12px;
+  color: #FFFFFF;
+  background-color: #369D40FF;
+  border-radius: 2px;
+  position: absolute;
+  left: 0;
+}
+.order-item-info .item-msg_time{
+  font-family: PingFang-SC-Medium;
+  font-weight: Medium;
+  color: #878787FF;
+  font-size: 12px;
+}
+
+.order-item-lower_info image{
+  width: 15px;
+  height: 14px;
+  margin-right: 10px;
+}
+.order-item-lower_seat image{
+  width: 11px;
+  height: 16px;
+}
+.order-item-lower_info{
+  display: inline;
+  margin-right: 20px;
+}
+.order-item-lower_seat{
+  display: inline;
+}
+.order-item-lower{
+  text-align: center;
+}

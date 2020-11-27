@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "vtu-swiper": "/miniprogram_npm/vtuweapp/swiper/vtu-swiper",
+    "vtu-layout-row": "/miniprogram_npm/vtuweapp/layout/row/vtu-layout-row",
+    "vtu-layout-col": "/miniprogram_npm/vtuweapp/layout/col/vtu-layout-col",
+    "vtu-grids": "/miniprogram_npm/vtuweapp/grid/grids/vtu-grids",
+    "vtu-grid": "/miniprogram_npm/vtuweapp/grid/grid/vtu-grid"
+  }
+}

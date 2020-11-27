@@ -1,0 +1,47 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/order/order",
+    "pages/my/my",
+    "pages/deliver/deliver",
+    "pages/myFollow/myFollow",
+    "pages/login/login"
+  ],
+  "window":{
+    "navigationStyle": "custom",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f1f1f1",
+    "navigationBarTitleText": "马太小程序",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "images/index/index1-3.png",
+      "selectedIconPath": "images/index/index2-3.png"
+    },{
+      "pagePath": "pages/myFollow/myFollow",
+      "text": "我的关注",
+      "iconPath": "images/myFollow/myFollow1-3.png",
+      "selectedIconPath": "images/myFollow/myFollow2-3.png"
+    },{
+      "pagePath": "pages/deliver/deliver",
+      "text": "发布",
+      "iconPath": "images/deliver/deliver3.png",
+      "selectedIconPath": "images/deliver/deliver3.png"
+    },{
+      "pagePath": "pages/order/order",
+      "text": "订单",
+      "iconPath": "images/order/order1-3.png",
+      "selectedIconPath": "images/order/order2-3.png"
+    },{
+      "pagePath": "pages/my/my",
+      "text": "我的",
+      "iconPath": "images/my/my1-3.png",
+      "selectedIconPath": "images/my/my2-3.png"
+    }]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
