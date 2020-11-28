@@ -183,7 +183,6 @@
   color: #878787FF;
   font-size: 12px;
 }
-
 .order-item-lower_info image{
   width: 15px;
   height: 14px;

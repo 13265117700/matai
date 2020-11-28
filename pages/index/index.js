@@ -39,11 +39,15 @@ Page({
     },{
         url: '/images/index/daolu@3x.png',
         text: '车辆信息'
-    }]
+    }],
+    loading: false
   },
   bindChange: function(e) {
     this.setData({
       current: e.detail.current
     })
+  },
+  bindLoad: function() {
+    this.loading = true
   }
 })

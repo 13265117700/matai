@@ -3,21 +3,50 @@ const app = getApp()
 Page({
     data:{
         passwordMode: true,
+        phone:null,
+        password:null,
+        code:null,
+        // show: false,
+        // passwordFrom: {
+        //     phone: "",
+        //     password: ""
+        // },
+        // smsFrom: {
+        //     phone: "",
+        //     code: ""
+        // },
+        buttonName: "获取验证码",
     },
     bindSwitch:function(){
         let passwordMode = this.data.passwordMode = !this.data.passwordMode
-        console.log(passwordMode)
         this.setData({
             passwordMode
         })
     },
-    bindPhoneLogin:function(){
-        console.log("手机短信登录")
+    phoneInput:function(event){
+        let phone = event.detail.value;
+        this.setData({
+            phone
+        })
     },
-    bindPasswordLogin:function(){
+    passwordInput:function(event){
+        let password = event.detail.value;
+        this.setData({
+            password
+        })
+    },
+    submitForm:function(){
         console.log("手机密码登录")
+        console.log(this.data.phone,this.data.password)
+    },
+    handleSendCode:function(){
+        console.log("获取短信")
+        console.log(this.data.phone)
     },
     handWeChat:function(){
         console.log("微信登录")
     }
+    // showPopup() {
+    //     this.setData({ show: true });
+    // }
 })

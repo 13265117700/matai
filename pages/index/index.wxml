@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<view class="page-home">
+<view class="home-container">
     <view class="banner-section">
         <vtu-swiper 
             list="{{imageList}}" 
@@ -20,15 +20,6 @@
                 <image src="{{item.url}}"></image>
                 <view class="card-item-tag">{{item.text}}</view>
             </view>
-            <!-- <view class="card-item">
-                <image src="/images/index/huoyuan@3x.png"></image>
-            </view>
-            <view class="card-item">
-                <image src="/images/index/cy@3x.png"></image>
-            </view>
-            <view class="card-item">
-                <image src="/images/index/daolu@3x.png"></image>
-            </view> -->
         </view>
     </view>
     <view class="service-section">
@@ -104,5 +95,63 @@
                 </view>
             </view>
         </view>
+        <!-- <scroll-view class="order-list" scroll-y="true" lower-threshold="50"  bindscrolltolower="bindscroll">
+            <view class="order-item">
+                <view class="order-item-top">
+                    <view class="order-item-img">
+                        <image src="/images/index/order_img3.png"></image>
+                    </view>
+                    <view class="order-item-info">
+                        <view class="order-item-info item-summary">
+                            <view class="order-item-info item-summary_name">粤清远货3888</view>
+                            <view class="order-item-info item-summary_amount">煤炭  2000吨</view>
+                        </view>
+                        <view class="order-item-info item-msg">
+                            <view class="order-item-info item-msg_process">
+                                <view class="order-item-info item-msg_process begin">广州黄埔装货港</view>
+                                <view class="order-item-info item-msg_process img"><image src="/images/index/order-item_direction3.png"></image></view>
+                                <view class="order-item-info item-msg_process end">珠海大湾区目的港</view>
+                            </view>
+                            <view class="order-item-info item-msg_time">2020-03-26</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="order-item-lower">
+                    <view class="order-item-lower_info"><image src="/images/index/order-lower_info3.png"></image>船已到装货港</view>
+                    <view class="order-item-lower_seat">
+                        <image src="/images/index/order-lower_seat3.png"></image>
+                    </view>
+                </view>
+            </view>
+            <view class="order-item">
+                <view class="order-item-top">
+                    <view class="order-item-img">
+                        <image src="/images/index/order_img3.png"></image>
+                    </view>
+                    <view class="order-item-info">
+                        <view class="order-item-info item-summary">
+                            <view class="order-item-info item-summary_name">粤清远货3888</view>
+                            <view class="order-item-info item-summary_amount">煤炭  2000吨</view>
+                        </view>
+                        <view class="order-item-info item-msg">
+                            <view class="order-item-info item-msg_process">
+                                <view class="order-item-info item-msg_process begin">广州黄埔装货港</view>
+                                <view class="order-item-info item-msg_process img"><image src="/images/index/order-item_direction3.png"></image></view>
+                                <view class="order-item-info item-msg_process end">珠海大湾区目的港</view>
+                            </view>
+                            <view class="order-item-info item-msg_time">2020-03-26</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="order-item-lower">
+                    <view class="order-item-lower_info"><image src="/images/index/order-lower_info3.png"></image>船已到装货港</view>
+                    <view class="order-item-lower_seat">
+                        <image src="/images/index/order-lower_seat3.png"></image>
+                    </view>
+                </view>
+            </view>
+        </scroll-view> -->
     </view>
+    <i-divider content="加载已经完成,没有其他数据"></i-divider>
+    <!-- <i-load-more tip="暂无数据" loading="{{ false }}" /> -->
 </view>
