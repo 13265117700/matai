@@ -5,9 +5,6 @@
     "vtu-layout-col": "/miniprogram_npm/vtuweapp/layout/col/vtu-layout-col",
     "vtu-grids": "/miniprogram_npm/vtuweapp/grid/grids/vtu-grids",
     "vtu-grid": "/miniprogram_npm/vtuweapp/grid/grid/vtu-grid",
-    "vtu-loading": "/miniprogram_npm/vtuweapp/loading/vtu-loading",
-    "vtu-load-more": "/miniprogram_npm/vtuweapp/loadMore/vtu-load-more",
-    "i-load-more": "/miniprogram_npm/dist/load-more/index",
-    "i-divider": "/miniprogram_npm/dist/divider/index"
+    "i-load-more": "/miniprogram_npm/iview-weapp/load-more/index"
   }
 }

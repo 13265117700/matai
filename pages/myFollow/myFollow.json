@@ -1,5 +1,10 @@
 {
     "navigationBarTitleText": "我的关注",
     "usingComponents": {
+        "vehicle-list": "/components/vehicle/vehicle",
+        "ship-list": "/components/ship/ship",
+        "resources-list": "/components/resources/resources",
+        "van-tab": "/miniprogram_npm/vant-weapp/tab/index",
+        "van-tabs": "/miniprogram_npm/vant-weapp/tabs/index"
     }
 }
