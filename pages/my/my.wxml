@@ -1,3 +1,28 @@
 <view class="container">
- 我的
+    <view class="page-header">
+        <user-info></user-info>
+    </view>
+    <view class="page-main">
+        <view class="page-item">
+            <user-iden></user-iden>
+        </view>
+        <view class="page-item">
+            <user-fiend></user-fiend>
+        </view>
+        <view class="page-item">
+            <user-ship></user-ship>
+        </view>
+        <view class="page-item">
+            <user-resour></user-resour>
+        </view>
+        <view class="page-item">
+            <user-vehi></user-vehi>
+        </view>
+        <view class="page-item">
+            <user-addr></user-addr>
+        </view>
+        <view class="page-item">
+            <user-credit></user-credit>
+        </view>
+    </view>
 </view>

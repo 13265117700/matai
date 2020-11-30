@@ -1,18 +1,21 @@
 {
   "pages":[
+    "components/tabBar/tabBar",
+    "pages/deliver/deliver",
     "pages/myFollow/myFollow",
     "pages/index/index",
     "pages/login/login",
     "pages/order/order",
-    "pages/my/my",
-    "pages/deliver/deliver"
+    "pages/my/my"
   ],
   "window":{
+    "navigationStyle":"custom",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
+    "custom": true,
     "list": [{
       "pagePath": "pages/index/index",
       "text": "首页",
@@ -26,8 +29,8 @@
     },{
       "pagePath": "pages/deliver/deliver",
       "text": "发布",
-      "iconPath": "images/deliver/deliver3.png",
-      "selectedIconPath": "images/deliver/deliver3.png"
+      "iconPath": "images/deliver/deliver.png",
+      "selectedIconPath": "images/deliver/deliver.png"
     },{
       "pagePath": "pages/order/order",
       "text": "订单",

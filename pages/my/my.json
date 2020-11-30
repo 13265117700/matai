@@ -1,5 +1,12 @@
 {
-    "navigationBarTitleText": "我的",
     "usingComponents": {
+        "user-info": "/components/my/userInfo/userInfo",
+        "user-addr": "/components/my/userAddr/userAddr",
+        "user-credit": "/components/my/userCredit/userCredit",
+        "user-fiend": "/components/my/userFiend/userFiend",
+        "user-iden": "/components/my/userIden/userIden",
+        "user-resour": "/components/my/userResour/userResour",
+        "user-ship": "/components/my/userShip/userShip",
+        "user-vehi": "/components/my/userVehi/userVehi"
     }
 }

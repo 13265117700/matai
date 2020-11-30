@@ -1,0 +1,32 @@
+<!--components/my/userInfo/userInfo.wxml-->
+<view class="container">
+    <view class="user-info">
+        <view class="user-avatar">
+            <image src="/images/my/logo@3x.png"></image>
+        </view>
+        <!-- <view class="user-name">12321</view> -->
+        <view class="user-login">
+            <view class="user-login_text">请登录 /注册您的账号</view>
+            <view class="user-login_button">
+                <!-- <vtu-btn plain="true" round="true">普通按钮</vtu-btn> -->
+                <button plain="true">点击登录</button>
+            </view>
+        </view>
+    </view>
+    <view class="user-see">
+        <view class="user-see_tag">
+            <vtu-grids col="4" img-width="36px">
+                <vtu-grid label="余额" img-src="/images/my/ye@3x.png"></vtu-grid>
+                <vtu-grid label="我的分销" img-src="/images/my/dis@3x.png"></vtu-grid>
+                <vtu-grid label="银行卡" img-src="/images/my/yhk@3x.png"></vtu-grid>
+                <vtu-grid label="资金流水" img-src="/images/my/zjls@3x.png"></vtu-grid>
+            </vtu-grids>
+        </view>
+    </view>
+    <view class="user-setUp">
+        <image src="/images/my/sz@3x.png"></image>
+    </view>
+    <view class="user-ai">
+        <image src="/images/my/wt@3x.png"></image>
+    </view>
+</view>

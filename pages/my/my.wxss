@@ -1,0 +1,7 @@
+.page-main{
+    margin: 10px 0 46.5px;
+}
+.page-item{
+    margin-bottom: 9px;
+    background: #ffffff;
+}
