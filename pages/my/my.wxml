@@ -3,6 +3,19 @@
         <user-info></user-info>
     </view>
     <view class="page-main">
+        <view class="page-item" wx:for="{{ceilList}}" wx:for-item="ceilList" wx:key="index">
+            <view class="cell-item" wx:for="{{ceilList.ceilItem}}" wx:for-item="ceilItem" wx:key="index">
+                <view class="cell-icon">
+                    <image src="{{ceilItem.icon}}"></image>
+                </view>
+                <view class="cell-text">{{ceilItem.text}}</view>
+                <view class="cell-arrow">
+                    <image src="/images/my/ck@3x.png"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!-- <view class="page-main">
         <view class="page-item">
             <user-iden></user-iden>
         </view>
@@ -24,5 +37,5 @@
         <view class="page-item">
             <user-credit></user-credit>
         </view>
-    </view>
+    </view> -->
 </view>

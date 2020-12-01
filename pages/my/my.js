@@ -4,62 +4,85 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    ceilList:[
+      {
+        ceilItem:[{
+          icon:'/images/my/hzrz@3x.png',
+          text:'身份认证'
+        }]
+      },{
+        ceilItem:[{
+          icon:'/images/my/xxzx@3x.png',
+          text:'我的好友'
+        }]
+      },{
+        ceilItem:[{
+          icon:'/images/my/zjls@3x.png',
+          text:'传动偏好设置'
+        },{
+          icon:'/images/my/yhk@3x.png',
+          text:'船舶管理'
+        },{
+          icon:'/images/my/ye@3x.png',
+          text:'船东待确认订单信息'
+        },{
+          icon:'/images/my/xycx@3x.png',
+          text:'船东订单'
+        },{
+          icon:'/images/my/xxzx@3x.png',
+          text:'船东保证金'
+        },{
+          icon:'/images/my/wz@3x.png',
+          text:'我发布的船源'
+        },]
+      },{
+        ceilItem:[{
+          icon:'/images/my/fx@3x.png',
+          text:'船东偏好设置'
+        },{
+          icon:'/images/my/hzdd@3x.png',
+          text:'货主待确认订单信息'
+        },{
+          icon:'/images/my/hzdd@3x.png',
+          text:'货主订单'
+        },{
+          icon:'/images/my/hzbzj@3x.png',
+          text:'货主保证金'
+        },{
+          icon:'/images/my/fbcy@3x.png',
+          text:'我发布的货源'
+        }]
+      },{
+        ceilItem:[{
+          icon:'/images/my/clgl@3x.png',
+          text:'车辆管理'
+        },{
+          icon:'/images/my/wldd@3x.png',
+          text:'物流待确认订单信息'
+        },{
+          icon:'/images/my/wldd@3x.png',
+          text:'物流订单'
+        },{
+          icon:'/images/my/cdbzj@3x.png',
+          text:'物流保证金'
+        },{
+          icon:'/images/my/fbcy@3x.png',
+          text:'我发布的车源'
+        }]
+      },{
+        ceilItem:[{
+          icon:'/images/my/wz@3x.png',
+          text:'我的地址'
+        }]
+      },{
+        ceilItem:[{
+          icon:'/images/my/xycx@3x.png',
+          text:'信用查询'
+        }]
+      }
+    ]
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-    
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-    
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-    
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-    
+  handButton:function(){
+    console.log(this.data.ceilList)
   }
 })
