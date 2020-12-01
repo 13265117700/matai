@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "vtu-input": "/miniprogram_npm/vtuweapp/input/item/vtu-input",
+    "vtu-input-group": "/miniprogram_npm/vtuweapp/input/group/vtu-input-group",
+    "vtu-btn": "/miniprogram_npm/vtuweapp/button/vtu-btn",
+    "vtu-navbar": "/miniprogram_npm/vtuweapp/navbar/vtu-navbar"
+  }
+}

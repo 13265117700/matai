@@ -1,3 +1,89 @@
+.user-info{
+    background: linear-gradient(to right, #ec3c3cFF, #fe7358FF);
+    display: flex;
+    height: 198px;
+    position: relative;
+}
+.user-avatar{
+    width: 59px;
+    height: 59px;
+    background: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 20px;
+    top: 92px;
+}
+.user-avatar image{
+    width: 43px;
+    height: 43.5px;
+}
+.user-login{
+    font-size: 12px;
+    font-size: PingFang-SC-Medium;
+    font-weight: Medium;
+    color: #FFFFFFFF;
+    opacity: 0.8;
+    position: absolute;
+    top: 97.5px;
+    left: 91.5px;
+}
+.user-login_button{
+    width: 72.5px;
+    margin-top: 10.5px;
+}
+.user-login_button button{
+    background-color:rgba(7, 7, 7, 0.2);
+    color: #FFFFFFFF;
+    border: none;
+    border-radius: 12.5px;
+    width: 72.5px;
+    height: 24.5px;
+    line-height: 24.5px;
+    font-size: 12px;
+    display: flex;
+    z-index: 1;
+}
+.user-see{
+    height: 99px;
+    background: #ffffff;
+    position: relative;
+}
+.user-see .user-see_tag{
+    width: 345px;
+    height: 99px;
+    border-radius: 10px;
+    margin: 0 auto;
+    box-shadow: #ebe8e8 1px 1px 2px 1px;
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ffffff;
+}
+.user-setUp{
+    position: absolute;
+    top: 69px;
+    right: 63.5px;
+    cursor: pointer;
+}
+.user-setUp image{
+    width: 21px;
+    height: 19px;
+}
+.user-ai{
+    position: absolute;
+    top: 69px;
+    right: 20.5px;
+    cursor: pointer;
+}
+.user-ai image{
+    width: 21px;
+    height: 21px;
+}
+
 .page-main{
     margin: 10px 0 46.5px;
 }
@@ -13,6 +99,7 @@
     line-height: 60px;
     position: relative;
     padding-left: 15px;
+    cursor: pointer;
 }
 .cell-text{
     flex: 1;
@@ -40,4 +127,21 @@
 .cell-arrow image{
     width: 6px;
     height: 10px;
+}
+
+.identit-item{
+    background: #F2F2F2;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #333333;
+    width: 185px;
+    height: 40px;
+    line-height: 40px;
+    margin: 15px auto;
+    text-align: center;
+}
+.identit-item.active{
+    background-color:rgba(255, 211, 211, 0.897);
+    opacity: 0.5;
+    border: 1px solid #ee0808;
 }

@@ -1,6 +1,0 @@
-@import "/components/my/cell.wxss";
-
-.cell-text{
-    border: none;
-}
-

@@ -1,88 +1,178 @@
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
+    visible: false,
+    seeList:[{
+      text:'余额',
+      image:'/images/my/ye@3x.png',
+      id:'12'
+    },{
+      text:'我的分销',
+      image:'/images/my/dis@3x.png',
+      id:'23'
+    },{
+      text:'银行卡',
+      image:'/images/my/yhk@3x.png',
+      id:'34'
+    },{
+      text:'资金流水',
+      image:'/images/my/zjls@3x.png',
+      id:'45'
+    }],
     ceilList:[
       {
         ceilItem:[{
           icon:'/images/my/hzrz@3x.png',
-          text:'身份认证'
+          text:'身份认证',
+          id:'112'
         }]
       },{
         ceilItem:[{
           icon:'/images/my/xxzx@3x.png',
-          text:'我的好友'
+          text:'我的好友',
+          id:'113'
         }]
       },{
         ceilItem:[{
           icon:'/images/my/zjls@3x.png',
-          text:'传动偏好设置'
+          text:'传动偏好设置',
+          id:'114'
         },{
           icon:'/images/my/yhk@3x.png',
-          text:'船舶管理'
+          text:'船舶管理',
+          id:'115'
         },{
           icon:'/images/my/ye@3x.png',
-          text:'船东待确认订单信息'
+          text:'船东待确认订单信息',
+          id:'123'
         },{
           icon:'/images/my/xycx@3x.png',
-          text:'船东订单'
+          text:'船东订单',
+          id:'234'
         },{
           icon:'/images/my/xxzx@3x.png',
-          text:'船东保证金'
+          text:'船东保证金',
+          id:'546'
         },{
           icon:'/images/my/wz@3x.png',
-          text:'我发布的船源'
+          text:'我发布的船源',
+          id:'567'
         },]
       },{
         ceilItem:[{
           icon:'/images/my/fx@3x.png',
-          text:'船东偏好设置'
+          text:'货主偏好设置',
+          id:'776'
         },{
           icon:'/images/my/hzdd@3x.png',
-          text:'货主待确认订单信息'
+          text:'货主待确认订单信息',
+          id:'998'
         },{
           icon:'/images/my/hzdd@3x.png',
-          text:'货主订单'
+          text:'货主订单',
+          id:'101'
         },{
           icon:'/images/my/hzbzj@3x.png',
-          text:'货主保证金'
+          text:'货主保证金',
+          id:'809'
         },{
           icon:'/images/my/fbcy@3x.png',
-          text:'我发布的货源'
+          text:'我发布的货源',
+          id:'855'
         }]
       },{
         ceilItem:[{
           icon:'/images/my/clgl@3x.png',
-          text:'车辆管理'
+          text:'车辆管理',
+          id:'192'
         },{
           icon:'/images/my/wldd@3x.png',
-          text:'物流待确认订单信息'
+          text:'物流待确认订单信息',
+          id:'110'
         },{
           icon:'/images/my/wldd@3x.png',
-          text:'物流订单'
+          text:'物流订单',
+          id:'120'
         },{
           icon:'/images/my/cdbzj@3x.png',
-          text:'物流保证金'
+          text:'物流保证金',
+          id:'100'
         },{
           icon:'/images/my/fbcy@3x.png',
-          text:'我发布的车源'
+          text:'我发布的车源',
+          id:'609'
         }]
       },{
         ceilItem:[{
           icon:'/images/my/wz@3x.png',
-          text:'我的地址'
+          text:'我的地址',
+          id:'820'
         }]
       },{
         ceilItem:[{
           icon:'/images/my/xycx@3x.png',
-          text:'信用查询'
+          text:'信用查询',
+          id:'119'
         }]
       }
-    ]
+    ],
+    identitList:[{
+      name:'船东认证',
+      status:false,
+      id:'1'
+    },{
+      name:'货主认证',
+      status:true,
+      id:'2'
+    },{
+      name:'车主认证',
+      status:false,
+      id:'3'
+    }],
+    identitId:null
   },
-  handButton:function(){
-    console.log(this.data.ceilList)
-  }
+  bindLogin:function(){
+    console.log('this.login')
+  },
+  userSetUp:function(){
+    console.log('用户设置')
+  },
+  userAi:function(){
+    console.log('人工智能服务')
+  },
+  seeItem:function(event){
+    console.log('this.seeItem',event)
+  },
+  ceilItem:function(event){
+    let dataset = event.currentTarget.dataset;
+    let id = dataset.id;
+    switch(id){
+      case '112':
+        this.setData({
+          visible: true
+        });
+        break
+    }
+  },
+  handleClose:function(){
+    this.setData({
+      visible:false
+    })
+  },
+  handIdentit:function(e){
+    let dataset = e.currentTarget.dataset;
+    let id = dataset.id;
+    let index = dataset.index;
+    let identitList = this.data.identitList;
+    identitList.forEach(d => d.status = false);
+    identitList[index].status = !identitList[index].status;
+    
+    this.setData({
+      identitList,
+      identitId:id
+    })
+    console.log(this.data.identitList)
+  },
+  handleAdd:function(){
+    console.log('认证确定',this.data.identitId)
+  },
 })

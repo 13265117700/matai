@@ -1,8 +1,0 @@
-{
-    "component": true,
-    "usingComponents": {
-        "vtu-btn": "/miniprogram_npm/vtuweapp/button/vtu-btn",
-        "vtu-grids": "/miniprogram_npm/vtuweapp/grid/grids/vtu-grids",
-        "vtu-grid": "/miniprogram_npm/vtuweapp/grid/grid/vtu-grid"
-    }
-}

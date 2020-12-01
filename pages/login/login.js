@@ -42,6 +42,10 @@ Page({
     handleSendCode:function(){
         console.log("获取短信")
         console.log(this.data.phone)
+        let phone = this.data.phone;
+        wx.navigateTo({
+          url: '/pages/login/codeLogin/codeLogin?value=' + phone,
+        })
     },
     handWeChat:function(){
         console.log("微信登录")
