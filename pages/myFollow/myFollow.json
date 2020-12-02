@@ -1,11 +1,8 @@
 {
     "navigationBarTitleText": "我的关注",
     "usingComponents": {
-        "vtu-navbar": "/miniprogram_npm/vtuweapp/navbar/vtu-navbar",
         "vehicle-list": "/components/myFollow/vehicle/vehicle",
         "ship-list": "/components/myFollow/ship/ship",
-        "resources-list": "/components/myFollow/resources/resources",
-        "van-tab": "/miniprogram_npm/vant-weapp/tab/index",
-        "van-tabs": "/miniprogram_npm/vant-weapp/tabs/index"
+        "resources-list": "/components/myFollow/resources/resources"
     }
 }

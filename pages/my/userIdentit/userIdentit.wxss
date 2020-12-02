@@ -1,0 +1,56 @@
+/* pages/my/userIdentit/userIdentit.wxss */
+.identit-form{
+  margin: 10px;
+}
+.Vtuzx_Input_Group_Center{
+  border-radius: 10px;
+}
+.identit-form_item .image-container{
+  display: flex;
+}
+
+
+
+
+
+
+
+.row{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 40rpx;
+}
+.delete{
+  flex: 1;
+  text-align: center;
+}
+.show{
+  visibility: visible;
+}
+.hidden{
+  visibility: hidden;
+}
+.icon{
+  width: 35rpx;
+  height: 35rpx;
+}
+.zhong{
+  flex: 5;
+  position: relative;
+}
+.im1{
+  position: absolute;
+  width: 96%;
+  margin-left: 2%;
+}
+.im2{
+  width: 84%;
+  height: 266rpx;
+  margin-left: 8%;
+  margin-top: 4%;
+}
+.add{
+  flex: 1;
+  text-align: center;
+}

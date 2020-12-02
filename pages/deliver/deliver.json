@@ -1,6 +1,5 @@
 {
     "usingComponents": {
-        "vtu-navbar": "/miniprogram_npm/vtuweapp/navbar/vtu-navbar",
-        "van-dialog": "/miniprogram_npm/vant-weapp/dialog/index"
+
     }
 }

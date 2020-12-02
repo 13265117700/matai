@@ -9,8 +9,7 @@
     <view class="page-title">短信验证码登录</view>
     <view class="page-describe">
       登录注册即表示同意
-      <navigator url="/">用户协议</navigator>、
-      <navigator url="/">隐私协议</navigator>
+      <navigator url="/">用户协议、隐私协议</navigator>
     </view>
   </view>
   <view class="page-main">
@@ -26,7 +25,7 @@
           slot="after" 
           my-class="phoneNumberBtn" 
           size="small"
-          bind:click="handCode">发送验证码</vtu-btn>
+          bind:click="handCode">{{buttonName}}</vtu-btn>
       </vtu-input>
     </view>
     <view class="code-buttom">

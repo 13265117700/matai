@@ -1,9 +1,5 @@
 {
     "navigationBarTitleText": "登录",
     "usingComponents": {
-        "vtu-btn": "/miniprogram_npm/vtuweapp/button/vtu-btn",
-        "vtu-input": "/miniprogram_npm/vtuweapp/input/item/vtu-input",
-        "vtu-input-group": "/miniprogram_npm/vtuweapp/input/group/vtu-input-group",
-        "vtu-divider": "/miniprogram_npm/vtuweapp/divider/vtu-divider"
     }
 }

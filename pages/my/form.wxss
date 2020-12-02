@@ -1,0 +1,29 @@
+.page-tips{
+  font-size: 13px;
+  padding: 10px 15px 0;
+  color: #191919;
+  font-family: PingFang-SC-Medium;
+  font-weight: Medium;
+}
+.form-list{
+  margin-top: 10px;
+}
+.form-item{
+  padding: 9px 0;
+  border-bottom: 1px solid #E5E5E5;
+  margin: 0 10px;
+}
+.form-button{
+  width: 225px;
+  margin: 46px auto 0;
+}
+.Vtuzx_Input_Group_Center{
+  border-radius: 10px;
+}
+.form-tips{
+  padding: 0 28px 0 15px;
+  color: #999999;
+  font-size: 13px;
+  font-family: PingFang-SC-Medium;
+  font-weight: Medium;
+}

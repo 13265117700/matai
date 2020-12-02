@@ -1,0 +1,45 @@
+<view class="page-container">
+  <vtu-navbar 
+    title="申请货主认证" 
+    homeStyle="cachet" 
+    bgColor="#F0222FFF" 
+    fontColor="#ffffff" 
+    icon="iconfont icon-shangchuan"></vtu-navbar>
+  <view class="identit-form enterprise">
+    <view class="identit-form_item" wx:if="{{ahtcId === 'b1b2b3'}}">
+      <vtu-input-group>
+        <vtu-input 
+          title="统一社会信用代码" 
+          border 
+          placeholder="请输入社会信用码" 
+          type="input" 
+          text-align="left"></vtu-input>
+        </vtu-input-group>
+    </view>
+    <view class="identit-form_item" wx:if="{{ahtcId === 'b1b2b3'}}">
+      <vtu-input-group>
+        <vtu-input 
+          title="企业名称" 
+          border 
+          placeholder="请输入企业全称" 
+          type="input" 
+          text-align="left"></vtu-input>
+        </vtu-input-group>
+    </view>
+    <view class="identit-form_item">
+      <vtu-input-group>
+        <vtu-input 
+          wx:for="{{personalForm}}"
+          wx:key="index"
+          data-index="{{index}}"
+          title="{{item.title}}" 
+          must 
+          border 
+          placeholder="{{item.placeholder}}" 
+          type="input" 
+          text-align="left" 
+          input-type="{{item.inputType}}"></vtu-input>
+      </vtu-input-group>
+    </view>
+  </view>
+</view>

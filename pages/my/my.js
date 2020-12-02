@@ -1,6 +1,17 @@
+const { $Toast } = require('../../miniprogram_npm/iview-weapp/base/index');
 Page({
   data: {
+    // 身份认证开关
     visible: false,
+    // 认证方式开关
+    ahtcShow:false,
+    // 身份ID
+    identitId:null,
+    // 认证方式ID
+    ahtcId:null,
+    // 身份认证方式标题
+    ahtcTitle:null,
+    // 用户查看列表
     seeList:[{
       text:'余额',
       image:'/images/my/ye@3x.png',
@@ -18,6 +29,7 @@ Page({
       image:'/images/my/zjls@3x.png',
       id:'45'
     }],
+
     ceilList:[
       {
         ceilItem:[{
@@ -115,33 +127,51 @@ Page({
         }]
       }
     ],
+    // 身份列表
     identitList:[{
       name:'船东认证',
       status:false,
       id:'1'
     },{
       name:'货主认证',
-      status:true,
+      status:false,
       id:'2'
     },{
       name:'车主认证',
       status:false,
       id:'3'
     }],
-    identitId:null
+    // 认证方式列表
+    ahtcList:[{
+      name:'个人认证',
+      active:false,
+      id:'a1a2a3'
+    },{
+      name:'企业认证',
+      active:false,
+      id:'b1b2b3'
+    }],
   },
+  // 登录
   bindLogin:function(){
     console.log('this.login')
   },
+  // 用户设置
   userSetUp:function(){
     console.log('用户设置')
+    wx.navigateTo({
+      url: '/pages/my/userSetUp/userSetUp',
+    })
   },
+  // 人工智能服务
   userAi:function(){
     console.log('人工智能服务')
   },
+  // 用户查看信息item
   seeItem:function(event){
     console.log('this.seeItem',event)
   },
+  // 打开身份认证
   ceilItem:function(event){
     let dataset = event.currentTarget.dataset;
     let id = dataset.id;
@@ -153,11 +183,13 @@ Page({
         break
     }
   },
+  // 关闭身份认证
   handleClose:function(){
     this.setData({
       visible:false
     })
   },
+  // 选择认证身份
   handIdentit:function(e){
     let dataset = e.currentTarget.dataset;
     let id = dataset.id;
@@ -172,7 +204,82 @@ Page({
     })
     console.log(this.data.identitList)
   },
-  handleAdd:function(){
-    console.log('认证确定',this.data.identitId)
+  // 确认认证身份
+  handIdentitOkay:function(){
+    let id = this.data.identitId;
+    console.log(id)
+    if(id === null){
+      $Toast({
+        content: '未选择身份',
+        type: 'warning'
+      });
+      return
+    }
+    switch(id){
+      case '1':
+        this.setData({
+          ahtcTitle:'请选择船东认证方式',
+          visible: false,
+          ahtcShow:true,
+        })
+        break;
+      case '2':
+        this.setData({
+          ahtcTitle:'请选择货主认证方式',
+          visible: false,
+          ahtcShow:true,
+        })
+        break;
+      case '3':
+        this.setData({
+          ahtcTitle:'请选择车主认证方式',
+          visible: false,
+          ahtcShow:true,
+        })
+        break;
+    }
   },
+  // 认证方式选择
+  handAhct(e){
+    let dataset = e.currentTarget.dataset;
+    let id = dataset.id;
+    let index = dataset.index;
+    let ahtcList = this.data.ahtcList;
+    ahtcList.forEach(d => d.active = false);
+    ahtcList[index].active = !ahtcList[index].active;
+    
+    this.setData({
+      ahtcList,
+      ahtcId:id
+    })
+    console.log(this.data.ahtcList)
+  },
+  // 确认认证方式
+  handAhctOkay(){
+    let identitId = this.data.identitId;
+    let ahtcId = this.data.ahtcId;
+    console.log(ahtcId)
+    if(ahtcId === null){
+      $Toast({
+        content: '未选择认证方式',
+        type: 'warning'
+      });
+      return
+    }else{
+      wx.navigateTo({
+        url: '/pages/my/userIdentit/userIdentit?identitId='+identitId+'&ahtcId='+ahtcId,
+      })
+    }
+    // switch(ahtcId){
+    //   case 'a1a2a3':
+    //     wx.navigateTo({
+    //       url: '/pages/my/userIdentit/userIdentit?identitId='+identitId+'&ahtcId='+ahtcId,
+    //     })
+    //     break
+    //   case 'b1b2b3':
+    //     wx.navigateTo({
+    //       url: 'url',
+    //     })
+    // }
+  }
 })

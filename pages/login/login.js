@@ -3,19 +3,8 @@ const app = getApp()
 Page({
     data:{
         passwordMode: true,
-        phone:null,
-        password:null,
-        code:null,
-        // show: false,
-        // passwordFrom: {
-        //     phone: "",
-        //     password: ""
-        // },
-        // smsFrom: {
-        //     phone: "",
-        //     code: ""
-        // },
-        buttonName: "获取验证码",
+        phone:'',
+        password:''
     },
     bindSwitch:function(){
         let passwordMode = this.data.passwordMode = !this.data.passwordMode

@@ -1,23 +1,15 @@
-// pages/login/codeLogin/codeLogin.js
+// pages/my/userPhone/userPhone.js
 Page({
   data: {
-    smsFrom:{
-      phone:'',
-      code:''
-    },  
+    phone:'',
+    code:'',
     buttonName: "获取验证码",
     disabled: false
   },
-  onLoad: function (options) {
-    let phone = options.value;
+  handphone(event){
+    let phone = event.detail.value;
     this.setData({
       phone
-    })
-  },
-  inputValue:function(event){
-    let code = event.detail.value;
-    this.setData({
-      code
     })
   },
   handCode:function(){
@@ -51,9 +43,15 @@ Page({
     }
     console.log('短信重发')
   },
-  handLogin:function(){
+  codeInput(event){
+    let code = event.detail.value;
+    this.setData({
+      code
+    })
+  },
+  handAdd(){
     let phone = this.data.phone;
     let code = this.data.code;
-    console.log('登录',phone,code)
+    console.log(phone,code)
   }
 })

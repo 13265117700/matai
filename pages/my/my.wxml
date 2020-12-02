@@ -64,7 +64,7 @@
         show-cancel-button
         confirm-button-open-type="getUserInfo"
         bind:close="handleClose"
-        bind:confirm="handleAdd"
+        bind:confirm="handIdentitOkay"
         >
         <view class="identit-list">
             <view class="identit-item {{item.status === true ? 'active' : ''}}"
@@ -77,16 +77,25 @@
             </view>
         </view>
     </van-dialog>
-    <!-- <i-modal title="标题" visible="{{ visible }}" bind:ok="handleAdd" bind:cancel="handleClose">
+    <van-dialog
+        use-slot
+        title="{{ahtcTitle}}"
+        show="{{ ahtcShow }}"
+        show-cancel-button
+        confirm-button-open-type="getUserInfo"
+        bind:close="handleClose"
+        bind:confirm="handAhctOkay"
+        >
         <view class="identit-list">
-            <view class="identit-item {{item.status === true ? 'active' : ''}}"
-                wx:for="{{identitList}}" 
+            <view class="identit-item {{item.active === true ? 'active' : ''}}"
+                wx:for="{{ahtcList}}" 
                 wx:key="index"
                 data-id="{{item.id}}"
                 data-index="{{index}}"
-                bindtap="handIdentit">
+                bindtap="handAhct">
                 {{item.name}}
             </view>
         </view>
-    </i-modal> -->
+    </van-dialog>
+    <i-toast id="toast" />
 </view>

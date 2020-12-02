@@ -12,14 +12,17 @@
                         title="+86"
                         border
                         placeholder="请输入手机号码"
-                        clearable
                         type="input"
                         text-align="left"
                         input-type="number"
                         bind:input="phoneInput"></vtu-input>
                 </vtu-input-group>
                 <view class="from-button">
-                    <vtu-btn type="danger" round="true" bind:click="handleSendCode">获取验证码</vtu-btn>
+                    <vtu-btn
+                        type="danger"
+                        round="true"
+                        disabled="{{phone === '' ? true : false}}"
+                        bind:click="handleSendCode">获取验证码</vtu-btn>
                     <vtu-btn type="danger" plain="true" round="true" bind:click="bindSwitch">用账号密码登录</vtu-btn>
                 </view>
             </view>
@@ -29,7 +32,6 @@
                 <vtu-input-group>
                     <vtu-input
                         placeholder="请输入手机号码"
-                        clearable
                         border
                         type="input"
                         text-align="left"
@@ -38,7 +40,6 @@
                     <vtu-input
                         placeholder="请输入密码"
                         border
-                        clearable
                         type="input"
                         text-align="left"
                         input-type="password"
@@ -46,7 +47,11 @@
                 </vtu-input-group>
                 <navigator class="form-item-text" url="/">忘记密码</navigator>
                 <view class="from-button">
-                    <vtu-btn type="danger" round="true" bind:click="submitForm">登录</vtu-btn>
+                    <vtu-btn 
+                        type="danger" 
+                        round="true" 
+                        disabled="{{phone === '' || password === '' ? true : false}}"
+                        bind:click="submitForm">登录</vtu-btn>
                     <vtu-btn type="danger" plain="true" round="true" bind:click="bindSwitch">短信验证登录</vtu-btn>
                 </view>
             </view>
@@ -60,8 +65,7 @@
         </view>
         <view class="weChat-login-explain">
             登录注册即表示同意
-            <navigator url="/">用户协议</navigator>、
-            <navigator url="/">隐私协议</navigator>
+            <navigator url="/pages/login/agree/agree">用户协议、隐私协议</navigator>
         </view>
     </view>
 </view>
