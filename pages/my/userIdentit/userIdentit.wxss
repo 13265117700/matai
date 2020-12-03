@@ -16,6 +16,25 @@
   flex-direction: column;
   justify-content: flex-end;
 }
+
+.identit-form-item .item-input{
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  padding: 0 13px;
+  position: relative;
+}
+.identit-form-item .item-input-tag{
+  position: absolute;
+  color: #E60012ff;
+  left: 3px;
+  top: 50%;
+  font-size: 22px;
+  transform: translateY(-38%);
+}
+.identit-form-item .item-input-title{
+  margin-left: 5px;
+}
 .Vtuzx_Input_Group_Center{
   border-radius: 10px;
 }
@@ -109,8 +128,8 @@ navigator{
 .identit-form-item .item-submit-button{
   height: 50px;
   line-height: 50px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   background: #E3211FFF;
   color: #FFFFFFFF;
   text-align: center;
@@ -118,4 +137,34 @@ navigator{
   font-family: PingFang-SC-Medium;
   font-weight: Medium;
   cursor: pointer;
+}
+
+.identit-form-item .item-dsl{
+  padding-bottom: 20.5px;
+}
+.identit-form-item .item-dsi-img{
+  width: 347px;
+  height: 129px;
+  margin: 0 auto;
+  position: relative;
+  border: 1px dashed #D2D2D2FF;
+  border-radius: 7px;
+}
+.identit-form-item .item-dsi-img image{
+  width: 35px;
+  height: 30px;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.identit-form-item .item-dsi-img text{
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  font-size: 13px;
+  color: #666666FF;
+  font-family: PingFang-SC-Medium;
+  font-weight: Medium;
+  transform: translateX(-50%);
 }

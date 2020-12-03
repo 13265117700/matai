@@ -1,79 +1,81 @@
 {
-  "pages": [
-    "pages/my/my",
-    "pages/my/userSetUp/userSetUp",
-    "components/tabBar/tabBar",
-    "pages/login/login",
-    "pages/login/codeLogin/codeLogin",
-    "pages/deliver/deliver",
-    "pages/myFollow/myFollow",
-    "pages/index/index",
-    "pages/order/order",
-    "pages/login/agree/agree",
-    "pages/my/userName/userName",
-    "pages/my/userPhone/userPhone",
-    "pages/my/userPassword/userPassword",
-    "pages/my/userIdentit/userIdentit"
-  ],
-  "window": {
-    "navigationStyle": "custom",
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#ffffff",
-    "navigationBarTextStyle": "black"
-  },
-  "tabBar": {
-    "custom": true,
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "text": "首页",
-        "iconPath": "images/index/index1-3.png",
-        "selectedIconPath": "images/index/index2-3.png"
-      },
-      {
-        "pagePath": "pages/myFollow/myFollow",
-        "text": "我的关注",
-        "iconPath": "images/myFollow/myFollow1-3.png",
-        "selectedIconPath": "images/myFollow/myFollow2-3.png"
-      },
-      {
-        "pagePath": "pages/deliver/deliver",
-        "text": "发布",
-        "iconPath": "images/deliver/deliver.png",
-        "selectedIconPath": "images/deliver/deliver.png"
-      },
-      {
-        "pagePath": "pages/order/order",
-        "text": "订单",
-        "iconPath": "images/order/order1-3.png",
-        "selectedIconPath": "images/order/order2-3.png"
-      },
-      {
-        "pagePath": "pages/my/my",
-        "text": "我的",
-        "iconPath": "images/my/my1-3.png",
-        "selectedIconPath": "images/my/my2-3.png"
-      }
-    ]
-  },
-  "usingComponents": {
-    "vtu-navbar": "/miniprogram_npm/vtuweapp/navbar/vtu-navbar",
-    "vtu-avatar": "/miniprogram_npm/vtuweapp/avatar/vtu-avatar",
-    "van-popup": "/miniprogram_npm/vant-weapp/popup/index",
-    "vtu-btn": "/miniprogram_npm/vtuweapp/button/vtu-btn",
-    "vtu-grids": "/miniprogram_npm/vtuweapp/grid/grids/vtu-grids",
-    "vtu-grid": "/miniprogram_npm/vtuweapp/grid/grid/vtu-grid",
-    "i-modal": "/miniprogram_npm/iview-weapp/modal/index",
-    "van-dialog": "/miniprogram_npm/vant-weapp/dialog/index",
-    "vtu-input": "/miniprogram_npm/vtuweapp/input/item/vtu-input",
-    "vtu-input-group": "/miniprogram_npm/vtuweapp/input/group/vtu-input-group",
-    "vtu-divider": "/miniprogram_npm/vtuweapp/divider/vtu-divider",
-    "vtu-swiper": "/miniprogram_npm/vtuweapp/swiper/vtu-swiper",
-    "vtu-layout-row": "/miniprogram_npm/vtuweapp/layout/row/vtu-layout-row",
-    "vtu-layout-col": "/miniprogram_npm/vtuweapp/layout/col/vtu-layout-col",
-    "i-load-more": "/miniprogram_npm/iview-weapp/load-more/index",
-    "van-tab": "/miniprogram_npm/vant-weapp/tab/index",
-    "van-tabs": "/miniprogram_npm/vant-weapp/tabs/index"
-  },
-  "sitemapLocation": "sitemap.json"
+    "pages": [
+        "pages/my/userIdentit/audit/audit",
+        "pages/my/my",
+        "pages/my/userSetUp/userSetUp",
+        "components/tabBar/tabBar",
+        "pages/login/login",
+        "pages/login/codeLogin/codeLogin",
+        "pages/deliver/deliver",
+        "pages/myFollow/myFollow",
+        "pages/index/index",
+        "pages/order/order",
+        "pages/login/agree/agree",
+        "pages/my/userName/userName",
+        "pages/my/userPhone/userPhone",
+        "pages/my/userPassword/userPassword",
+        "pages/my/userIdentit/userIdentit"
+    ],
+    "window": {
+        "navigationStyle": "custom",
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "custom": true,
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "images/index/index1-3.png",
+                "selectedIconPath": "images/index/index2-3.png"
+            },
+            {
+                "pagePath": "pages/myFollow/myFollow",
+                "text": "我的关注",
+                "iconPath": "images/myFollow/myFollow1-3.png",
+                "selectedIconPath": "images/myFollow/myFollow2-3.png"
+            },
+            {
+                "pagePath": "pages/deliver/deliver",
+                "text": "发布",
+                "iconPath": "images/deliver/deliver.png",
+                "selectedIconPath": "images/deliver/deliver.png"
+            },
+            {
+                "pagePath": "pages/order/order",
+                "text": "订单",
+                "iconPath": "images/order/order1-3.png",
+                "selectedIconPath": "images/order/order2-3.png"
+            },
+            {
+                "pagePath": "pages/my/my",
+                "text": "我的",
+                "iconPath": "images/my/my1-3.png",
+                "selectedIconPath": "images/my/my2-3.png"
+            }
+        ]
+    },
+    "usingComponents": {
+        "vtu-navbar": "/miniprogram_npm/vtuweapp/navbar/vtu-navbar",
+        "vtu-avatar": "/miniprogram_npm/vtuweapp/avatar/vtu-avatar",
+        "van-popup": "/miniprogram_npm/vant-weapp/popup/index",
+        "vtu-btn": "/miniprogram_npm/vtuweapp/button/vtu-btn",
+        "vtu-grids": "/miniprogram_npm/vtuweapp/grid/grids/vtu-grids",
+        "vtu-grid": "/miniprogram_npm/vtuweapp/grid/grid/vtu-grid",
+        "i-modal": "/miniprogram_npm/iview-weapp/modal/index",
+        "van-dialog": "/miniprogram_npm/vant-weapp/dialog/index",
+        "vtu-input": "/miniprogram_npm/vtuweapp/input/item/vtu-input",
+        "vtu-input-group": "/miniprogram_npm/vtuweapp/input/group/vtu-input-group",
+        "vtu-divider": "/miniprogram_npm/vtuweapp/divider/vtu-divider",
+        "vtu-swiper": "/miniprogram_npm/vtuweapp/swiper/vtu-swiper",
+        "vtu-layout-row": "/miniprogram_npm/vtuweapp/layout/row/vtu-layout-row",
+        "vtu-layout-col": "/miniprogram_npm/vtuweapp/layout/col/vtu-layout-col",
+        "i-load-more": "/miniprogram_npm/iview-weapp/load-more/index",
+        "van-tab": "/miniprogram_npm/vant-weapp/tab/index",
+        "van-tabs": "/miniprogram_npm/vant-weapp/tabs/index",
+        "i-toast": "/miniprogram_npm/iview-weapp/toast/index"
+    },
+    "sitemapLocation": "sitemap.json"
 }

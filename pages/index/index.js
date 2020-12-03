@@ -75,6 +75,31 @@ Page({
       lowerInfo: '车已到装货站点',
       lowerSeat: '/images/index/order-lower_seat3.png'
     }],
+    serviceList:[{
+      title:'马太保险',
+      image:'/images/index/bx@3x.png'
+    },{
+      title:'港口码头',
+      image:'/images/index/gk@3x.png'
+    },{
+      title:'港口里程',
+      image:'/images/index/mt@3x.png'
+    },{
+      title:'法律咨询',
+      image:'/images/index/ls@3x.png'
+    },{
+      title:'企业查询',
+      image:'/images/index/cx@3x.png'
+    },{
+      title:'台风路径',
+      image:'/images/index/tflj.png'
+    },{
+      title:'台风路径',
+      image:'/images/index/tq@3x.png'
+    },{
+      title:'更多',
+      image:'/images/index/gd@3x.png'
+    }],
     loading: false
   },
   bindChange: function(e) {

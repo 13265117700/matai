@@ -31,15 +31,19 @@
         </view>
     </view>
     <view class="service-section">
-        <vtu-grids col="4">
-            <vtu-grid label="图片" icon="iconfont icon-tupian1" icon-color="red" bind:click="click" data-label="aa" ></vtu-grid>
-            <vtu-grid label="清除" icon="iconfont icon-qingkong" icon-color="orange" bind:click="click" data-label="bb" ></vtu-grid>
-            <vtu-grid label="收藏" icon="iconfont icon-xihuanfill" icon-color="skyblue" bind:click="click" data-label="cc" ></vtu-grid>
-            <vtu-grid label="上传" icon="iconfont icon-shangchuan" icon-color="blue" bind:click="click" data-label="dd" ></vtu-grid>
-            <vtu-grid label="图片" icon="iconfont icon-tupian1" icon-color="#7e35bd" bind:click="click" data-label="ee" ></vtu-grid>
-            <vtu-grid label="清除" icon="iconfont icon-sousuo" icon-color="#9075fc" bind:click="click" data-label="gg" ></vtu-grid>
-            <vtu-grid label="收藏" icon="iconfont icon-biaoxingfill" icon-color="#1abf28" bind:click="click" data-label="er" ></vtu-grid>
-            <vtu-grid label="上传" icon="iconfont icon-yuanxingxuanzhongfill" icon-color="#fc973d" bind:click="click" data-label="sd" ></vtu-grid>
+        <vtu-grids col="4" img-width="37px">
+            <vtu-grid 
+                wx:for="{{serviceList}}"
+                wx:key="index"
+                label="{{item.title}}" 
+                img-src="{{item.image}}"></vtu-grid>
+            <!-- <vtu-grid label="图片" img-src="https://activity.vtuzx.com/doc/vtuUI/weapp/avatar/2.png"></vtu-grid>
+            <vtu-grid label="图片" img-src="https://activity.vtuzx.com/doc/vtuUI/weapp/avatar/3.png"></vtu-grid>
+            <vtu-grid label="图片" img-src="https://activity.vtuzx.com/doc/vtuUI/weapp/avatar/4.png"></vtu-grid>
+            <vtu-grid label="图片" img-src="https://activity.vtuzx.com/doc/vtuUI/weapp/avatar/1.png"></vtu-grid>
+            <vtu-grid label="图片" img-src="https://activity.vtuzx.com/doc/vtuUI/weapp/avatar/2.png"></vtu-grid>
+            <vtu-grid label="图片" img-src="https://activity.vtuzx.com/doc/vtuUI/weapp/avatar/3.png"></vtu-grid>
+            <vtu-grid label="图片" img-src="https://activity.vtuzx.com/doc/vtuUI/weapp/avatar/4.png"></vtu-grid> -->
         </vtu-grids>
     </view>
     <view class="order-section">

@@ -1,5 +1,4 @@
 {
     "usingComponents": {
-        "i-toast": "/miniprogram_npm/iview-weapp/toast/index"
     }
 }

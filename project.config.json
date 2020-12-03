@@ -4,7 +4,7 @@
         "ignore": []
     },
     "setting": {
-        "urlCheck": true,
+        "urlCheck": false,
         "es6": true,
         "enhance": false,
         "postcss": true,
@@ -29,6 +29,7 @@
             "outputPath": ""
         },
         "enableEngineNative": false,
+        "bundle": false,
         "useIsolateContext": true,
         "useCompilerModule": false,
         "userConfirmedUseCompilerModuleSwitch": false,
@@ -40,8 +41,7 @@
                 "miniprogramNpmDistDir": "./miniprogram/"
             }
         ],
-        "minifyWXSS": true,
-        "bundle": false
+        "minifyWXSS": true
     },
     "compileType": "miniprogram",
     "libVersion": "2.14.0",

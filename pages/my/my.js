@@ -171,7 +171,7 @@ Page({
   seeItem:function(event){
     console.log('this.seeItem',event)
   },
-  // 打开身份认证
+  // 进入不同celiItem页面
   ceilItem:function(event){
     let dataset = event.currentTarget.dataset;
     let id = dataset.id;

@@ -1,4 +1,5 @@
 const app = getApp()
+import UserLogin from '../../models/login/login'
 
 Page({
     data:{
@@ -36,10 +37,21 @@ Page({
           url: '/pages/login/codeLogin/codeLogin?value=' + phone,
         })
     },
-    handWeChat:function(){
-        console.log("微信登录")
+    weChatLogin:function(){
+        wx.getSetting({
+          success(res){
+              if(res.authSetting['scope.userInfo']){
+                  wx.login({
+                    success(res){
+                        console.log(res)
+                        UserLogin.weChatLogin({code:res.code}).then(data => {
+                            console.log(data)
+                        })
+                    }
+                  })
+              }
+          }
+        })
+        
     }
-    // showPopup() {
-    //     this.setData({ show: true });
-    // }
 })
