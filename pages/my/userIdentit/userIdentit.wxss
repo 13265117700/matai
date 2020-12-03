@@ -1,6 +1,15 @@
 /* pages/my/userIdentit/userIdentit.wxss */
+.page-container{
+  height: 100vh;
+}
 .identit-form{
-  margin: 10px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.identit-form_item:last-child{
+  flex: 1;
 }
 .Vtuzx_Input_Group_Center{
   border-radius: 10px;
@@ -8,49 +17,100 @@
 .identit-form_item .image-container{
   display: flex;
 }
-
-
-
-
-
-
-
-.row{
+.identit-form_item .title{
   display: flex;
-  flex-direction: row;
   align-items: center;
-  margin-top: 40rpx;
+  height: 52.5px;
+  padding: 0 14.5px;
 }
-.delete{
-  flex: 1;
+.identit-form_item .title-tag{
+  color: #E3211FFF;
+  font-size: 14px;
+  font-family: PingFang-SC-Medium;
+  font-weight: Medium;
+  width: 30px;
   text-align: center;
+  border-left: 4px solid #E3211FFF;
 }
-.show{
-  visibility: visible;
+.identit-form_item .photo{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 14.5px 20px;
 }
-.hidden{
-  visibility: hidden;
+.identit-form_item .photo-item_image image{
+  width: 166.5px;
+  height: 93.5px;
 }
-.icon{
-  width: 35rpx;
-  height: 35rpx;
-}
-.zhong{
-  flex: 5;
-  position: relative;
-}
-.im1{
-  position: absolute;
-  width: 96%;
-  margin-left: 2%;
-}
-.im2{
-  width: 84%;
-  height: 266rpx;
-  margin-left: 8%;
-  margin-top: 4%;
-}
-.add{
-  flex: 1;
+.identit-form_item .photo-item_text{
+  height: 35px;
+  line-height: 35px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background: #E60012FF;
+  font-size: 14px;
   text-align: center;
+  color: #FFFFFFFF;
+  font-family: PingFang-SC-Heavy;
+  font-weight: Heavy;
+}
+.identit-form_item .license{
+  padding: 0 14.5px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.identit-form_item .license-image{
+  width: 345.5px;
+  height: 194.5px;
+}
+.identit-form_item .license-image image{
+  width: 345.5px;
+  height: 194.5px;
+}
+.identit-form_item .license-text{
+  height: 35px;
+  line-height: 35px;
+  width: 345.5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background: #E60012FF;
+  font-size: 14px;
+  text-align: center;
+  color: #FFFFFFFF;
+  font-family: PingFang-SC-Heavy;
+  font-weight: Heavy;
+}
+.identit-form_item .msg{
+  padding: 31px 14.5px 27.5px;
+  font-size: 13px;
+  font-family: PingFang-SC-Medium;
+  font-weight: Medium;
+  color: #191919FF;
+}
+.identit-form_item .submit-radio{
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  font-family: PingFang-SC-Medium;
+  font-weight: Medium;
+}
+.identit-form_item .submit-radio_text{
+  color: #191919FF;
+}
+navigator{
+  color: #1F60E3FF;
+}
+.identit-form_item .submit-button{
+  height: 50px;
+  line-height: 50px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background: #E3211FFF;
+  color: #FFFFFFFF;
+  text-align: center;
+  font-size: 18px;
+  font-family: PingFang-SC-Medium;
+  font-weight: Medium;
+  cursor: pointer;
 }

@@ -1,6 +1,6 @@
 <view class="page-container">
   <vtu-navbar 
-    title="申请货主认证" 
+    title="{{navbarTitle}}" 
     homeStyle="cachet" 
     bgColor="#F0222FFF" 
     fontColor="#ffffff" 
@@ -40,6 +40,57 @@
           text-align="left" 
           input-type="{{item.inputType}}"></vtu-input>
       </vtu-input-group>
+    </view>
+    <view class="identit-form_item">
+      <vtu-input-group>
+        <view class="identit-form_item title">
+           <view class="identit-form_item title-tag">*</view>
+           <view class="identit-form_item title-text" wx:if="{{ahtcId === 'b1b2b3'}}">上传法人身份证照片</view>
+           <view class="identit-form_item title-text" wx:if="{{ahtcId === 'a1a2a3'}}">上传身份证照片</view>
+        </view>
+        <view class="identit-form_item photo">
+          <view class="identit-form_item photo-item">
+            <view class="identit-form_item photo-item_image">
+              <image mode="aspectFit" src="/images/my/sfzzm@3x.png"></image>
+            </view>
+            <view class="identit-form_item photo-item_text">上传正面</view>
+          </view>
+          <view class="identit-form_item photo-item">
+            <view class="identit-form_item photo-item_image">
+              <image mode="aspectFit" src="/images/my/sfzfm@3x.png"></image>
+            </view>
+            <view class="identit-form_item photo-item_text">上传反面</view>
+          </view>
+        </view>
+      </vtu-input-group>
+    </view>
+    <view class="identit-form_item" wx:if="{{ahtcId === 'b1b2b3'}}">
+      <vtu-input-group>
+        <view class="identit-form_item title">
+           <view class="identit-form_item title-tag">*</view>
+           <view class="identit-form_item title-text">上传营业执照</view>
+        </view>
+        <view class="identit-form_item license">
+          <view class="identit-form_item license-image">
+            <image mode="aspectFit" src="/images/my/yyzzyb@3x.png"></image>
+          </view>
+          <view class="identit-form_item license-text">上传营业执照</view>
+        </view>
+      </vtu-input-group>
+    </view>
+    <view class="identit-form_item">
+      <view class="identit-form_item msg">注:身份证信息、营业执照信息我们不会进行对外公开，平台将保护您上传的个人资料</view>
+      <view class="identit-form_item submit">
+        <view class="identit-form_item submit-radio">
+          <i-radio value="{{radioTitle}}" disabled="{{disabled}}" checked="{{checked}}" bindchange="handleAnimalChange">
+          </i-radio>
+          <view class="identit-form_item submit-radio_text">将同意</view>
+          <navigator url="">《马太货运网用户协议》</navigator>
+        </view>
+        <view class="identit-form_item submit-button">
+          <text>提交货主认证</text>
+        </view>
+      </view>
     </view>
   </view>
 </view>

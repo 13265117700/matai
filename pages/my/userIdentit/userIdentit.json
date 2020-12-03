@@ -1,5 +1,7 @@
 {
   "usingComponents": {
-    "vtu-imgPicker": "/miniprogram_npm/vtuweapp/imgPicker/vtu-imgPicker"
+    "vtu-imgPicker": "/miniprogram_npm/vtuweapp/imgPicker/vtu-imgPicker",
+    "i-radio-group": "/miniprogram_npm/iview-weapp/radio-group/index",
+    "i-radio": "/miniprogram_npm/iview-weapp/radio/index"
   }
 }
