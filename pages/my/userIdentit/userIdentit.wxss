@@ -1,29 +1,34 @@
 /* pages/my/userIdentit/userIdentit.wxss */
 .page-container{
+  display: flex;
+  flex-direction: column;
   height: 100vh;
 }
 .identit-form{
   margin-top: 10px;
+  flex: 1;
   display: flex;
   flex-direction: column;
-  height: 100%;
 }
-.identit-form_item:last-child{
+.identit-form-item:last-child{
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 .Vtuzx_Input_Group_Center{
   border-radius: 10px;
 }
-.identit-form_item .image-container{
+.identit-form-item .image-container{
   display: flex;
 }
-.identit-form_item .title{
+.identit-form-item .item-title{
   display: flex;
   align-items: center;
   height: 52.5px;
   padding: 0 14.5px;
 }
-.identit-form_item .title-tag{
+.identit-form-item .item-title-tag{
   color: #E3211FFF;
   font-size: 14px;
   font-family: PingFang-SC-Medium;
@@ -32,17 +37,17 @@
   text-align: center;
   border-left: 4px solid #E3211FFF;
 }
-.identit-form_item .photo{
+.identit-form-item .item-iden{
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 14.5px 20px;
 }
-.identit-form_item .photo-item_image image{
+.identit-form-item .item-iden-photo_img image{
   width: 166.5px;
   height: 93.5px;
 }
-.identit-form_item .photo-item_text{
+.identit-form-item .item-iden-photo_text{
   height: 35px;
   line-height: 35px;
   border-bottom-left-radius: 5px;
@@ -54,21 +59,21 @@
   font-family: PingFang-SC-Heavy;
   font-weight: Heavy;
 }
-.identit-form_item .license{
+.identit-form-item .item-license{
   padding: 0 14.5px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.identit-form_item .license-image{
+.identit-form-item .item-license-img{
   width: 345.5px;
   height: 194.5px;
 }
-.identit-form_item .license-image image{
+.identit-form-item .item-license-img image{
   width: 345.5px;
   height: 194.5px;
 }
-.identit-form_item .license-text{
+.identit-form-item .item-license-text{
   height: 35px;
   line-height: 35px;
   width: 345.5px;
@@ -81,27 +86,27 @@
   font-family: PingFang-SC-Heavy;
   font-weight: Heavy;
 }
-.identit-form_item .msg{
+.identit-form-item .item-msg{
   padding: 31px 14.5px 27.5px;
   font-size: 13px;
   font-family: PingFang-SC-Medium;
   font-weight: Medium;
   color: #191919FF;
 }
-.identit-form_item .submit-radio{
+.identit-form-item .item-submit-radio{
   display: flex;
   align-items: center;
   font-size: 13px;
   font-family: PingFang-SC-Medium;
   font-weight: Medium;
 }
-.identit-form_item .submit-radio_text{
+.identit-form-item .item-submit-radio_text{
   color: #191919FF;
 }
 navigator{
   color: #1F60E3FF;
 }
-.identit-form_item .submit-button{
+.identit-form-item .item-submit-button{
   height: 50px;
   line-height: 50px;
   border-top-left-radius: 20px;
