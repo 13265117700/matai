@@ -24,7 +24,7 @@
                     <view class="audit-item-text">{{auditList.name}}</view>
                 </view>
                 <view class="audit-item">
-                    <view class="audit-item-title">联系方式:</view>
+                    <view class="audit-item-title">联系方式：</view>
                     <view class="audit-item-text">{{auditList.phone}}</view>
                 </view>
                 <view class="audit-item">
@@ -41,18 +41,21 @@
                 </view>
                 <view class="audit-item">
                     <view class="audit-item-title">身份证照片：</view>
-                    <view class="audit-item-text">{{auditList.IDphoto}}</view>
+                    <van-tag plain type="primary" size="large">已上传</van-tag>
+                    <!-- <view class="audit-item-text">{{auditList.IDphoto}}</view> -->
                 </view>
                 <view class="audit-item">
-                    <view class="audit-item-title">营业执照:</view>
-                    <view class="audit-item-text">{{auditList.BsLs}}</view>
+                    <view class="audit-item-title">营业执照：</view>
+                    <van-tag plain type="primary" size="large">已上传</van-tag>
+                    <!-- <view class="audit-item-text">{{auditList.BsLs}}</view> -->
                 </view>
                 <view class="audit-item">
                     <view class="audit-item-title">道路运输许可证：</view>
-                    <view class="audit-item-text">{{auditList.RTP}}</view>
+                    <van-tag plain type="primary" size="large">已上传</van-tag>
+                    <!-- <view class="audit-item-text">{{auditList.RTP}}</view> -->
                 </view>
                 <view class="audit-item">
-                    <view class="audit-item-title">不通过原因:</view>
+                    <view class="audit-item-title">不通过原因：</view>
                     <view class="audit-item-text">{{auditList.describe}}</view>
                 </view>
             </view>

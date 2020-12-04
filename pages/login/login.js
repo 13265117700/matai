@@ -1,4 +1,3 @@
-const app = getApp()
 import UserLogin from '../../models/login/login'
 
 Page({
@@ -37,21 +36,38 @@ Page({
           url: '/pages/login/codeLogin/codeLogin?value=' + phone,
         })
     },
-    weChatLogin:function(){
-        wx.getSetting({
-          success(res){
-              if(res.authSetting['scope.userInfo']){
+    weChatLogin:function(e){
+        if(e.detail.userInfo){
+            wx.getSetting({
+              withSubscriptions: true,
+              success(res){
+                if(res.authSetting['scope.userInfo']){
                   wx.login({
                     success(res){
-                        console.log(res)
-                        UserLogin.weChatLogin({code:res.code}).then(data => {
-                            console.log(data)
-                        })
+                      let parentId = 0
+                      let data ={
+                        code: res.code,
+                        rawData: e.detail.rawData,
+                        signature: e.detail.signature,
+                        encryptedData: e.detail.encryptedData,
+                        iv: e.detail.iv,
+                        parentId: parentId,
+                      }
+                      UserLogin.weChatLogin(data).then(data => {
+                        console.log(data.data)
+                        if(data.data.code === 200){
+                          let Authorization = data.data.data;
+                          wx.setStorageSync('Authorization', Authorization)
+                          wx.redirectTo({
+                            url: '/components/tabBar/tabBar',
+                          })
+                        }
+                      })
                     }
                   })
+                }
               }
+            })
           }
-        })
-        
     }
 })

@@ -1,13 +1,27 @@
+const randomString = (len) => {
+    // 随机字符串
+    len = len || 8;
+    var $chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefhijklmnoprstuvwxyz1234567890'; /****默认去掉了容易混淆的字符oOLl,9gq,Vv,Uu,I1****/
+    var maxPos = $chars.length;
+    var pwd = '';
+    for (let i = 0; i < len; i++) {
+      pwd += $chars.charAt(Math.floor(Math.random() * maxPos));
+    }
+    return pwd;
+  }
+
 const request = (method, url, data, header) => {
-    let token = wx.getStorageSync('token')
-    let id = wx.getStorageSync('id')
-    let params = { token, id }
+    let params = { 
+      'Authorization': 'Basic Y3M6Y3Nvbw==',
+      'deviceId': randomString(),
+      'content-type': 'application/x-www-form-urlencoded'
+     }
     return new Promise((resolve, reject)=>{
       wx.request({
         method,
         url: url,
         header: params,
-        data: data,
+        data: { ...data },
         success: (res) => {
           resolve(res)
         },

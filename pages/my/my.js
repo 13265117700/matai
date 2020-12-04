@@ -152,9 +152,12 @@ Page({
       id:'b1b2b3'
     }],
   },
+  
   // 登录
   bindLogin:function(){
-    console.log('this.login')
+    wx.navigateTo({
+      url: '/pages/login/login',
+    })
   },
   // 用户设置
   userSetUp:function(){
@@ -176,10 +179,14 @@ Page({
     let dataset = event.currentTarget.dataset;
     let id = dataset.id;
     switch(id){
+      // 身份认证
       case '112':
         this.setData({
           visible: true
         });
+        break
+      case '115':
+        console.log('船管理')
         break
     }
   },
@@ -202,12 +209,10 @@ Page({
       identitList,
       identitId:id
     })
-    console.log(this.data.identitList)
   },
   // 确认认证身份
   handIdentitOkay:function(){
     let id = this.data.identitId;
-    console.log(id)
     if(id === null){
       $Toast({
         content: '未选择身份',
@@ -252,13 +257,11 @@ Page({
       ahtcList,
       ahtcId:id
     })
-    console.log(this.data.ahtcList)
   },
   // 确认认证方式
   handAhctOkay(){
     let identitId = this.data.identitId;
     let ahtcId = this.data.ahtcId;
-    console.log(ahtcId)
     if(ahtcId === null){
       $Toast({
         content: '未选择认证方式',
@@ -270,16 +273,5 @@ Page({
         url: '/pages/my/userIdentit/userIdentit?identitId='+identitId+'&ahtcId='+ahtcId,
       })
     }
-    // switch(ahtcId){
-    //   case 'a1a2a3':
-    //     wx.navigateTo({
-    //       url: '/pages/my/userIdentit/userIdentit?identitId='+identitId+'&ahtcId='+ahtcId,
-    //     })
-    //     break
-    //   case 'b1b2b3':
-    //     wx.navigateTo({
-    //       url: 'url',
-    //     })
-    // }
   }
 })

@@ -1,19 +1,19 @@
 {
     "pages": [
+        "components/tabBar/tabBar",
+        "pages/login/login",
         "pages/my/userIdentit/audit/audit",
         "pages/my/my",
         "pages/my/userSetUp/userSetUp",
-        "components/tabBar/tabBar",
-        "pages/login/login",
         "pages/login/codeLogin/codeLogin",
         "pages/deliver/deliver",
         "pages/myFollow/myFollow",
         "pages/index/index",
         "pages/order/order",
         "pages/login/agree/agree",
-        "pages/my/userName/userName",
-        "pages/my/userPhone/userPhone",
-        "pages/my/userPassword/userPassword",
+        "pages/my/userSetUp/userName/userName",
+        "pages/my/userSetUp/userPhone/userPhone",
+        "pages/my/userSetUp/userPassword/userPassword",
         "pages/my/userIdentit/userIdentit"
     ],
     "window": {

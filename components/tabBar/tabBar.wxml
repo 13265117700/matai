@@ -1,7 +1,12 @@
 <!--pages/tabBar/tabBar.wxml-->
 <view class="page-tabBar">
-    <vtu-navbar title="TabBar" bind:load="navBarLoad"></vtu-navbar>
-    <vtu-tabbar active-icon-color="orange" current="{{current}}" bind:change="change" custom-class="tabbar-content" mode="page" navbar-height="{{navBarHeight}}">
+    <vtu-tabbar 
+        active-icon-color="orange" 
+        current="{{current}}" 
+        bind:change="change" 
+        custom-class="tabbar-content" 
+        mode="page" 
+        navbar-height="{{navBarHeight}}">
         <vtu-tabbar-item
             label="首页"
             src="/images/index/index1-3.png"

@@ -1,4 +1,5 @@
 <view class="login-container">
+    <vtu-navbar title="登录" homeStyle="cachet" bgColor="#FFFFFF" icon="iconfont icon-shangchuan"></vtu-navbar>
     <view class="company-info-container">
         <image class="company-info-logo" src="/images/login/logo@3x.png" />
         <view class="company-info-name">登录马太货运</view>
@@ -61,7 +62,7 @@
         <vtu-divider font-color="#999999">推荐使用微信登录</vtu-divider>
         <!-- <view class="footer-guide">推荐使用微信登录</view> -->
         <view class="weChat-login-button">
-            <vtu-btn type="success" round="true" open-type="getUserInfo" bind:click="weChatLogin" >微信一键登录</vtu-btn>
+            <vtu-btn type="success" round="true" open-type="getUserInfo" bind:getuserinfo="weChatLogin" >微信一键登录</vtu-btn>
         </view>
         <view class="weChat-login-explain">
             登录注册即表示同意

@@ -16,7 +16,8 @@
             border 
             placeholder="请输入社会信用码" 
             type="input" 
-            text-align="left"></vtu-input>
+            text-align="left"
+            bind:input="handCtsInput"></vtu-input>
         </view>
       </vtu-input-group>
     </view>
@@ -29,22 +30,39 @@
           border 
           placeholder="请输入企业全称" 
           type="input" 
-          text-align="left"></vtu-input>
+          text-align="left"
+          bind:input="handCpInput"></vtu-input>
         </vtu-input-group>
     </view>
     <view class="identit-form-item">
       <vtu-input-group>
-        <vtu-input 
-          wx:for="{{personalForm}}"
-          wx:key="index"
-          data-index="{{index}}"
-          title="{{item.title}}" 
-          must 
-          border 
-          placeholder="{{item.placeholder}}" 
-          type="input" 
-          text-align="left" 
-          input-type="{{item.inputType}}"></vtu-input>
+          <vtu-input 
+            title="姓名：" 
+            must 
+            border 
+            placeholder="请输入姓名" 
+            type="input" 
+            text-align="left" 
+            input-type="text"
+            bind:input="handNameInput"></vtu-input>
+          <vtu-input 
+            title="联系方式：" 
+            must 
+            border 
+            placeholder="请输入手机号" 
+            type="input" 
+            text-align="left" 
+            input-type="number"
+            bind:input="handPhoneInput"></vtu-input>
+          <vtu-input 
+            title="身份证号：" 
+            must 
+            border 
+            placeholder="请输入证件号" 
+            type="input" 
+            text-align="left" 
+            input-type="idcard"
+            bind:input="handIdenInput"></vtu-input>
       </vtu-input-group>
     </view>
     <view class="identit-form-item">
