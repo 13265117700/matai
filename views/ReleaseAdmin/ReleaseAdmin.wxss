@@ -14,7 +14,7 @@ van-tabs{
 }
 .release-list{
   margin-top: 10px;
-  padding: 0 20px;
+  /* padding: 0 20px; */
 }
 .release-item{
   background: #ffffff;
@@ -105,7 +105,7 @@ van-tabs{
   max-width: 100px;
 }
 .release-cell_item .start .start-icon{
-  width: 20px;
+  width: 24px;
   height: 16px;
   line-height: 16px;
   text-align: center;
@@ -129,7 +129,7 @@ van-tabs{
   max-width: 100px;
 }
 .release-cell_item .end .end-icon{
-  width: 20px;
+  width: 24px;
   height: 16px;
   line-height: 16px;
   text-align: center;

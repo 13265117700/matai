@@ -24,7 +24,10 @@
             <view
                 class="card-item"
                 wx:for="{{cardList}}"
-                wx:key="index">
+                wx:key="index"
+                data-data="{{ item.tips }}"
+                data-id="{{ item.id }}"
+                bindtap="gotoResourcesList">
                 <image src="{{item.url}}"></image>
                 <view class="card-item-tag">{{item.text}}</view>
             </view>

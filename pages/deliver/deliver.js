@@ -1,3 +1,5 @@
+import User from './../../models/user/user'
+
 Page({
 
   /**
@@ -32,6 +34,7 @@ Page({
       })
     }
   },
+
   showDialog(event){
     let dataset = event.currentTarget.dataset;
     let id = dataset.id;
