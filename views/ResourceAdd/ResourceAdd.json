@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "add-ship-info":"/components/add-info/ship-info/ship-info",
+    "add-car-info":"/components/add-info/car-info/car-info",
+    "release-cargo-info":"/components/release-info/cargo-info/cargo-info",
+    "release-ship-info":"/components/release-info/ship-info/ship-info",
+    "release-car-info":"/components/release-info/car-info/car-info"
+  }
+}

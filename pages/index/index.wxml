@@ -24,7 +24,10 @@
             <view
                 class="card-item"
                 wx:for="{{cardList}}"
-                wx:key="index">
+                wx:key="index"
+                data-data="{{ item.tips }}"
+                data-id="{{ item.id }}"
+                bindtap="gotoResourcesList">
                 <image src="{{item.url}}"></image>
                 <view class="card-item-tag">{{item.text}}</view>
             </view>
@@ -37,13 +40,6 @@
                 wx:key="index"
                 label="{{item.title}}" 
                 img-src="{{item.image}}"></vtu-grid>
-            <!-- <vtu-grid label="图片" img-src="https://activity.vtuzx.com/doc/vtuUI/weapp/avatar/2.png"></vtu-grid>
-            <vtu-grid label="图片" img-src="https://activity.vtuzx.com/doc/vtuUI/weapp/avatar/3.png"></vtu-grid>
-            <vtu-grid label="图片" img-src="https://activity.vtuzx.com/doc/vtuUI/weapp/avatar/4.png"></vtu-grid>
-            <vtu-grid label="图片" img-src="https://activity.vtuzx.com/doc/vtuUI/weapp/avatar/1.png"></vtu-grid>
-            <vtu-grid label="图片" img-src="https://activity.vtuzx.com/doc/vtuUI/weapp/avatar/2.png"></vtu-grid>
-            <vtu-grid label="图片" img-src="https://activity.vtuzx.com/doc/vtuUI/weapp/avatar/3.png"></vtu-grid>
-            <vtu-grid label="图片" img-src="https://activity.vtuzx.com/doc/vtuUI/weapp/avatar/4.png"></vtu-grid> -->
         </vtu-grids>
     </view>
     <view class="order-section">
@@ -82,7 +78,9 @@
                     </view>
                 </view>
             </view>
-            <i-load-more tip="没有更多了" loading="{{ loading }}" />
+            <view class="order-item">
+                <i-load-more tip="没有更多了" loading="{{ loading }}" />
+            </view>
         </view>
     </view>
     <view class="guild-section">

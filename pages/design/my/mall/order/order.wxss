@@ -1,5 +1,0 @@
-@import '../../designOrder/designOrder.wxss';
-
-.status2 {
-  color: #00d1d3;
-}

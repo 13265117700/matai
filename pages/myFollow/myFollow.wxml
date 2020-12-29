@@ -1,8 +1,103 @@
 <view class="container">
-    <vtu-navbar title="我的关注" homeStyle="cachet" bgColor="#F0222FFF" fontColor="#ffffff" icon="iconfont icon-shangchuan"></vtu-navbar>
-    <van-tabs active="a" bind:change="onChange">
-        <van-tab title="关注车辆" name="a"><vehicle-list></vehicle-list></van-tab>
-        <van-tab title="关注船源" name="b"><ship-list></ship-list></van-tab>
-        <van-tab title="关注货源" name="c"><resources-list></resources-list></van-tab>
-    </van-tabs>
+    <view class="page-navbar">
+        <vtu-navbar title="我的关注" homeStyle="cachet" bgColor="#F0222FFF" fontColor="#ffffff" icon="iconfont icon-shangchuan"></vtu-navbar>
+    </view>
+    <view class="page-main">
+        <van-tabs active="{{activeIndex}}" bind:click="onClickTabs">
+            <van-tab wx:for="{{ tabsList }}" wx:key="index" wx:for-item="tabsItem" title="{{ tabsItem.title }}" name="{{ tabsItem.id }}">
+                <view class="tabs-list">
+                    <view class="tabs-item" wx:if="{{ id === 1011003 }}">
+                        <view class="tabs-top">
+                            <view class="tabs-icon">
+                                <image src="/images/myFollow/chuan@3x.png"></image>
+                            </view>
+                            <view class="tabs-title">
+                                <text>煤炭</text><text>318963.00吨</text>
+                            </view>
+                            <view class="tabs-active">
+                                <vtu-btn plain="true" size="small" round="true">取消关注</vtu-btn>
+                            </view>
+                        </view>
+                        <view class="tabs-bottom">
+                            <view class="cargo-container">
+                                <view class="cargo-item">
+                                    <view class="cargo-icon start">始</view>
+                                    <view class="cargo-subTitle">广州黄埔装货港</view>
+                                </view>
+                                <view class="cargo-item">
+                                    <view class="cargo-img">
+                                        <image src="/images/myFollow/item-info_img2.png"></image>
+                                    </view>
+                                </view>
+                                <view class="cargo-item">
+                                    <view class="cargo-icon end">终</view>
+                                    <view class="cargo-subTitle">珠海大湾区目的港</view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="tabs-item" wx:if="{{ id === 1011002 }}">
+                        <view class="tabs-top">
+                            <view class="tabs-icon">
+                                <image src="/images/myFollow/chuan@3x.png"></image>
+                            </view>
+                            <view class="tabs-title">
+                                <text>煤炭</text>
+                            </view>
+                            <view class="tabs-active">
+                                <vtu-btn plain="true" size="small" round="true">取消关注</vtu-btn>
+                            </view>
+                        </view>
+                        <view class="tabs-bottom">
+                            <view class="car-container">
+                                <view class="car-item">
+                                    <view class="car-subtitle">空车地</view>
+                                    <view class="car-text">成都武侯区</view>
+                                </view>
+                                <view class="car-item">
+                                    <view class="car-subtitle">空车地</view>
+                                    <view class="car-text">成都武侯区</view>
+                                </view>
+                                <view class="car-item">
+                                    <view class="car-subtitle">空车地</view>
+                                    <view class="car-text">成都武侯区</view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="tabs-item" wx:if="{{ id === 1011001 }}">
+                        <view class="tabs-top">
+                            <view class="tabs-icon">
+                                <image src="/images/myFollow/chuan@3x.png"></image>
+                            </view>
+                            <view class="tabs-title">
+                                <text>煤炭</text>
+                            </view>
+                            <view class="tabs-active">
+                                <vtu-btn plain="true" size="small" round="true">取消关注</vtu-btn>
+                            </view>
+                        </view>
+                        <view class="tabs-bottom">
+                            <view class="ship-container">
+                                <view class="ship-item">
+                                    <view class="ship-subtitle">空车地</view>
+                                    <view class="ship-describe">云南昆明市五华区</view>
+                                    <view class="ship-text">成都武侯区</view>
+                                </view>
+                                <view class="ship-item">
+                                    <view class="ship-subtitle">空车地</view>
+                                    <view class="ship-describe">A级</view>
+                                    <view class="ship-text">成都武侯区</view>
+                                </view>
+                                <view class="ship-item">
+                                    <view class="ship-subtitle">空车地</view>
+                                    <view class="ship-text">成都武侯区</view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </van-tab>
+        </van-tabs>
+    </view>
 </view>

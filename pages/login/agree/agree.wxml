@@ -1,7 +1,0 @@
-<view class="page-container">
-  <vtu-navbar title="马太找船用户注册协议" homeStyle="cachet" bgColor="#FFF" fontColor="#000" icon="iconfont icon-shangchuan"></vtu-navbar>
-  <view class="agree-container">
-    <view class="agree-title">马太找船用户注册协议</view>
-    <text class="agree-text">用户协议内容用户协议内容用户协议内容用户协议内容用户协议内容用户协议内容用户协议内容用户协议内容用户协议内容用户协议内容用户协</text>
-  </view>
-</view>

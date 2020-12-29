@@ -28,25 +28,19 @@
             "disablePlugins": [],
             "outputPath": ""
         },
-        "enableEngineNative": false,
         "bundle": false,
         "useIsolateContext": true,
         "useCompilerModule": false,
         "userConfirmedUseCompilerModuleSwitch": false,
         "userConfirmedBundleSwitch": false,
-        "packNpmManually": true,
-        "packNpmRelationList": [
-            {
-                "packageJsonPath": "./package.json",
-                "miniprogramNpmDistDir": "./miniprogram/"
-            }
-        ],
+        "packNpmManually": false,
+        "packNpmRelationList": [],
         "minifyWXSS": true
     },
     "compileType": "miniprogram",
-    "libVersion": "2.14.0",
+    "libVersion": "2.14.1",
     "appid": "wx60bc29cac67fc360",
-    "projectname": "combat-Applets",
+    "projectname": "matthew",
     "debugOptions": {
         "hidedInDevtools": []
     },

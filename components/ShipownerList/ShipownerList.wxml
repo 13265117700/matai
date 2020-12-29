@@ -1,0 +1,41 @@
+<view class="page-mian">
+  <view class="user-search">
+    <van-search
+      value="{{ value }}"
+      shape="round"
+      background="#E5E5E5"
+      placeholder="请输入搜索关键词"/>
+  </view>
+  <view class="user-list">
+    <view class="user-item">
+      <view class="user-cell">
+        <view class="user-cell_avatar">
+          <image src="/images/my/adopt.png"></image>
+        </view>
+        <view class="user-cell_info">
+          <view class="user-name">
+            <text>aaaa1111</text>
+          </view>
+          <view class="user-amount">
+            <text>成交次数:1800</text>
+          </view>
+        </view>
+        <view class="user-cell_button">
+          <vtu-btn 
+            type="danger" 
+            round="true" 
+            plain="true"
+            size="small">确定船东</vtu-btn>
+        </view>
+      </view>
+      <view class="user-cell">
+        <view class="user-cell_title">
+          <text>xxxxxxx船名称</text>
+        </view>
+        <view class="user-cell_realName">
+          <text>张海勇</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

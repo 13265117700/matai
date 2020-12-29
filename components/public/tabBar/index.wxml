@@ -1,9 +1,0 @@
-<!-- 底部导航栏 -->
-<view class="fix-bottom-bar">
-  <view  wx:for="{{bottomBars}}" class="item {{item.active ? 'active' : ''}}" wx:key="id" data-path="{{item.path}}" bindtap="bottomBarTap">
-    <view class="icon">
-      <image class="icon-content {{item.name ? '' : 'add' }}" src="{{ item.active ? item.icon1 : item.icon2 }}" mode="widthFix"></image>
-    </view>
-    <view class="t">{{ item.name }}</view>
-  </view>
-</view>

@@ -1,0 +1,69 @@
+<view class="page-container">
+    <view class="page-navbar">
+        <vtu-navbar 
+            title="{{navbarTitle}}" 
+            homeStyle="cachet" 
+            bgColor="#F0222FFF" 
+            fontColor="#ffffff" 
+            icon="iconfont icon-shangchuan"></vtu-navbar>
+    </view>
+    <view class="audit-container">
+        <view class="audit-header">
+            <view class="audit-img">
+                <image src="{{imageUrl}}"></image>
+            </view>
+            <view class="audit-describe {{trialList.status === 0 ? 'active' : ''}}">
+                <text>{{describe}}</text>
+            </view>
+            <view class="audit-status {{trialList.status === 2 ? '' : 'active'}}">
+                <text>{{statusText}}</text>
+            </view>
+        </view>
+        <view class="audit-main">
+            <view class="audit-list">
+                <view class="audit-item">
+                    <view class="audit-item-title">姓名：</view>
+                    <view class="audit-item-text">{{trialList.contacts}}</view>
+                </view>
+                <view class="audit-item">
+                    <view class="audit-item-title">联系方式：</view>
+                    <view class="audit-item-text">{{trialList.phone}}</view>
+                </view>
+                <view class="audit-item">
+                    <view class="audit-item-title">身份证号：</view>
+                    <view class="audit-item-text">{{trialList.idNumber}}</view>
+                </view>
+                <view class="audit-item" wx:if="{{trialList.identity === 1}}">
+                    <view class="audit-item-title">社会统一信用代码：</view>
+                    <view class="audit-item-text">{{trialList.creditCode}}</view>
+                </view>
+                <view class="audit-item" wx:if="{{trialList.identity === 1}}">
+                    <view class="audit-item-title">企业名称：</view>
+                    <view class="audit-item-text">{{trialList.nameEnterprise}}</view>
+                </view>
+                <view class="audit-item">
+                    <view class="audit-item-title">身份证照片：</view>
+                    <van-tag plain type="primary" size="large">已上传</van-tag>
+                    <!-- <view class="audit-item-text">{{trialList.IDphoto}}</view> -->
+                </view>
+                <view class="audit-item" wx:if="{{trialList.status === 1}}">
+                    <view class="audit-item-title">营业执照：</view>
+                    <van-tag plain type="primary" size="large">已上传</van-tag>
+                    <!-- <view class="audit-item-text">{{trialList.BsLs}}</view> -->
+                </view>
+                <view class="audit-item" wx:if="{{trialList.transportPermit}}">
+                    <view class="audit-item-title">道路运输许可证：</view>
+                    <van-tag plain type="primary" size="large">已上传</van-tag>
+                    <!-- <view class="audit-item-text">{{trialList.RTP}}</view> -->
+                </view>
+                <view class="audit-item" wx:if="{{trialList.status === 3}}">
+                    <view class="audit-item-title">不通过原因：</view>
+                    <view class="audit-item-text">不通过原因不通过原因不通过原因不通过原因</view>
+                </view>
+            </view>
+            <view class="audit-button" wx:if="{{trialList.status === 3}}">
+                <text>重新申请认证</text>
+            </view>
+        </view>
+    </view>
+</view>

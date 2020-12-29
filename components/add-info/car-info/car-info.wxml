@@ -1,0 +1,361 @@
+<!--components/my/user-admin/car-info/car-info.wxml-->
+<view class="add-carInfo-container">
+    <!-- 信息分组1 -->
+    <view class="info-group">
+        <vtu-input-group>
+            <view class="info-group_item" wx:for="{{infoOneList}}" wx:key="index" wx:for-item="oneList">
+                <view class="item-subTitle">
+                    <view class="item-subTitle_tag"><text>*</text></view>
+                    <view class="item-subTitle_text"><text>{{oneList.title}}</text></view>
+                </view>
+                <view class="item-input">
+                    <vtu-input 
+                        placeholder="{{oneList.placeholder}}" 
+                        type="input" 
+                        text-align="left"
+                        data-index="{{index}}"
+                        bind:input="infoGroupOneInput"></vtu-input>
+                </view>
+            </view>
+            <!-- <view class="info-group_item">
+                <view class="item-subTitle">
+                    <view class="item-subTitle_tag"><text>*</text></view>
+                    <view class="item-subTitle_text"><text>车牌照号：</text></view>
+                </view>
+                <view class="item-input">
+                    <vtu-input 
+                        placeholder="请输入车辆牌照号" 
+                        type="input" 
+                        text-align="left"
+                        bind:input="infoGroupOneInput"></vtu-input>
+                </view>
+            </view>
+            <view class="info-group_item">
+                <view class="item-subTitle">
+                    <view class="item-subTitle_tag"><text>*</text></view>
+                    <view class="item-subTitle_text"><text>车牌照号：</text></view>
+                </view>
+                <view class="item-input">
+                    <vtu-input 
+                        placeholder="请输入车辆牌照号" 
+                        type="input" 
+                        text-align="left"
+                        bind:input="infoGroupOneInput"></vtu-input>
+                </view>
+            </view> -->
+        </vtu-input-group>
+    </view>
+    <!-- 信息分组2 -->
+    <view class="info-group">
+        <vtu-input-group>
+            <view class="info-group_item" wx:for="{{infoTwoList}}" wx:key="index" wx:for-item="twoList">
+                <view class="item-subTitle">
+                    <view class="item-subTitle_tag"><text>*</text></view>
+                    <view class="item-subTitle_text"><text>{{twoList.title}}</text></view>
+                </view>
+                <view class="item-input">
+                    <vtu-input 
+                        placeholder="{{twoList.placeholder}}" 
+                        type="input" 
+                        text-align="left"
+                        data-index="{{index}}"
+                        bind:input="infoGroupTwoInput"></vtu-input>
+                </view>
+            </view>
+            <!-- <view class="info-group_item">
+                <view class="item-subTitle">
+                    <view class="item-subTitle_tag"><text>*</text></view>
+                    <view class="item-subTitle_text"><text>车牌照号：</text></view>
+                </view>
+                <view class="item-input">
+                    <vtu-input 
+                        placeholder="请输入车辆牌照号" 
+                        type="input" 
+                        text-align="left"
+                        bind:input="infoGroupOneInput"></vtu-input>
+                </view>
+            </view>
+            <view class="info-group_item">
+                <view class="item-subTitle">
+                    <view class="item-subTitle_tag"><text>*</text></view>
+                    <view class="item-subTitle_text"><text>车牌照号：</text></view>
+                </view>
+                <view class="item-input">
+                    <vtu-input 
+                        placeholder="请输入车辆牌照号" 
+                        type="input" 
+                        text-align="left"
+                        bind:input="infoGroupOneInput"></vtu-input>
+                </view>
+            </view>
+            <view class="info-group_item">
+                <view class="item-subTitle">
+                    <view class="item-subTitle_tag"><text>*</text></view>
+                    <view class="item-subTitle_text"><text>车牌照号：</text></view>
+                </view>
+                <view class="item-input">
+                    <vtu-input 
+                        placeholder="请输入车辆牌照号" 
+                        type="input" 
+                        text-align="left"
+                        bind:input="infoGroupOneInput"></vtu-input>
+                </view>
+            </view>
+            <view class="info-group_item">
+                <view class="item-subTitle">
+                    <view class="item-subTitle_tag"><text>*</text></view>
+                    <view class="item-subTitle_text"><text>车牌照号：</text></view>
+                </view>
+                <view class="item-input">
+                    <vtu-input 
+                        placeholder="请输入车辆牌照号" 
+                        type="input" 
+                        text-align="left"
+                        bind:input="infoGroupOneInput"></vtu-input>
+                </view>
+            </view>
+            <view class="info-group_item">
+                <view class="item-subTitle">
+                    <view class="item-subTitle_tag"><text>*</text></view>
+                    <view class="item-subTitle_text"><text>车牌照号：</text></view>
+                </view>
+                <view class="item-input">
+                    <vtu-input 
+                        placeholder="请输入车辆牌照号" 
+                        type="input" 
+                        text-align="left"
+                        bind:input="infoGroupOneInput"></vtu-input>
+                </view>
+            </view>
+            <view class="info-group_item">
+                <view class="item-subTitle">
+                    <view class="item-subTitle_tag"><text>*</text></view>
+                    <view class="item-subTitle_text"><text>车牌照号：</text></view>
+                </view>
+                <view class="item-input">
+                    <vtu-input 
+                        placeholder="请输入车辆牌照号" 
+                        type="input" 
+                        text-align="left"
+                        bind:input="infoGroupOneInput"></vtu-input>
+                </view>
+            </view> -->
+        </vtu-input-group>
+    </view>
+    <!-- 信息分组3 -->
+    <view class="info-group">
+        <vtu-input-group>
+            <view class="info-group_item" wx:for="{{infoThreeList}}" wx:key="index" wx:for-item="threeList">
+                <view class="item-subTitle">
+                    <view class="item-subTitle_tag"><text>*</text></view>
+                    <view class="item-subTitle_text"><text>{{threeList.title}}</text></view>
+                </view>
+                <view class="item-input">
+                    <vtu-input 
+                        placeholder="{{threeList.placeholder}}" 
+                        type="input" 
+                        text-align="left"
+                        data-index="{{index}}"
+                        bind:input="infoGroupThreeInput"></vtu-input>
+                </view>
+            </view>
+            <!-- <view class="info-group_item">
+                <view class="item-subTitle">
+                    <view class="item-subTitle_tag"><text>*</text></view>
+                    <view class="item-subTitle_text"><text>车牌照号：</text></view>
+                </view>
+                <view class="item-input">
+                    <vtu-input 
+                        placeholder="请输入车辆牌照号" 
+                        type="input" 
+                        text-align="left"
+                        bind:input="infoGroupOneInput"></vtu-input>
+                </view>
+            </view>
+            <view class="info-group_item">
+                <view class="item-subTitle">
+                    <view class="item-subTitle_tag"><text>*</text></view>
+                    <view class="item-subTitle_text"><text>车牌照号：</text></view>
+                </view>
+                <view class="item-input">
+                    <vtu-input 
+                        placeholder="请输入车辆牌照号" 
+                        type="input" 
+                        text-align="left"
+                        bind:input="infoGroupOneInput"></vtu-input>
+                </view>
+            </view>
+            <view class="info-group_item">
+                <view class="item-subTitle">
+                    <view class="item-subTitle_tag"><text>*</text></view>
+                    <view class="item-subTitle_text"><text>车牌照号：</text></view>
+                </view>
+                <view class="item-input">
+                    <vtu-input 
+                        placeholder="请输入车辆牌照号" 
+                        type="input" 
+                        text-align="left"
+                        bind:input="infoGroupOneInput"></vtu-input>
+                </view>
+            </view> -->
+        </vtu-input-group>
+    </view>
+    <!-- 信息分组4 -->
+    <view class="info-group">
+        <vtu-input-group>
+            <view class="info-group_item" wx:for="{{infoFourList}}" wx:key="index" wx:for-item="fourList">
+                <view class="item-subTitle">
+                    <view class="item-subTitle_tag"><text>*</text></view>
+                </view>
+                <view class="item-input">
+                    <vtu-input 
+                        type="{{fourList.type}}" 
+                        value="{{fourList.title}}"
+                        text-align="left"></vtu-input>
+                    <van-radio-group value="{{ fourList.radio }}" data-index="{{index}}" bind:change="infoGroupFourRadio">
+                        <van-radio name="1" checked-color="#E3211FFF">是</van-radio>
+                        <van-radio name="2" checked-color="#E3211FFF">否</van-radio>
+                    </van-radio-group>
+                </view>
+            </view>
+            <!-- <view class="info-group_item">
+                <view class="item-subTitle">
+                    <view class="item-subTitle_tag"><text>*</text></view>
+                </view>
+                <view class="item-input">
+                    <vtu-input 
+                        type="default" 
+                        value="运输产生安全事故-是否发生:"
+                        text-align="left"
+                        bind:input="infoGroupOneInput"></vtu-input>
+                    <van-radio-group value="{{ radio }}" bind:change="onChange">
+                        <van-radio name="1" checked-color="#E3211FFF">是</van-radio>
+                        <van-radio name="2" checked-color="#E3211FFF">否</van-radio>
+                    </van-radio-group>
+                </view>
+            </view>
+            <view class="info-group_item">
+                <view class="item-subTitle">
+                    <view class="item-subTitle_tag"><text>*</text></view>
+                </view>
+                <view class="item-input">
+                    <vtu-input 
+                        type="default" 
+                        value="运输产生安全事故-是否发生:"
+                        text-align="left"
+                        bind:input="infoGroupOneInput"></vtu-input>
+                    <van-radio-group value="{{ radio }}" bind:change="onChange">
+                        <van-radio name="1" checked-color="#E3211FFF">是</van-radio>
+                        <van-radio name="2" checked-color="#E3211FFF">否</van-radio>
+                    </van-radio-group>
+                </view>
+            </view>
+            <view class="info-group_item">
+                <view class="item-subTitle">
+                    <view class="item-subTitle_tag"><text>*</text></view>
+                </view>
+                <view class="item-input">
+                    <vtu-input 
+                        type="default" 
+                        value="运输产生安全事故-是否发生:"
+                        text-align="left"
+                        bind:input="infoGroupOneInput"></vtu-input>
+                    <van-radio-group value="{{ radio }}" bind:change="onChange">
+                        <van-radio name="1" checked-color="#E3211FFF">是</van-radio>
+                        <van-radio name="2" checked-color="#E3211FFF">否</van-radio>
+                    </van-radio-group>
+                </view>
+            </view>
+            <view class="info-group_item">
+                <view class="item-subTitle">
+                    <view class="item-subTitle_tag"><text>*</text></view>
+                </view>
+                <view class="item-input">
+                    <vtu-input 
+                        type="default" 
+                        value="运输产生安全事故-是否发生:"
+                        text-align="left"
+                        bind:input="infoGroupOneInput"></vtu-input>
+                    <van-radio-group value="{{ radio }}" bind:change="onChange">
+                        <van-radio name="1" checked-color="#E3211FFF">是</van-radio>
+                        <van-radio name="2" checked-color="#E3211FFF">否</van-radio>
+                    </van-radio-group>
+                </view>
+            </view>
+            <view class="info-group_item">
+                <view class="item-subTitle">
+                    <view class="item-subTitle_tag"><text>*</text></view>
+                </view>
+                <view class="item-input">
+                    <vtu-input 
+                        type="default" 
+                        value="运输产生安全事故-是否发生:"
+                        text-align="left"
+                        bind:input="infoGroupOneInput"></vtu-input>
+                    <van-radio-group value="{{ radio }}" bind:change="onChange">
+                        <van-radio name="1" checked-color="#E3211FFF">是</van-radio>
+                        <van-radio name="2" checked-color="#E3211FFF">否</van-radio>
+                    </van-radio-group>
+                </view>
+            </view> -->
+            <view class="info-group_item">
+                <view class="item-subTitle">
+                    <view class="item-subTitle_tag"><text>*</text></view>
+                    <view class="item-subTitle_text"><text>承运人：</text></view>
+                </view>
+                <view class="item-input">
+                    <vtu-input 
+                        placeholder="请输入无车承运人试点企业名称" 
+                        type="input" 
+                        text-align="left"
+                        bind:input="infoGroupFourInput"></vtu-input>
+                </view>
+            </view>
+        </vtu-input-group>
+    </view>
+    <!-- 添加车照片 -->
+    <view class="info-group">
+        <vtu-input-group>
+            <view class="info-group-title">
+                <view class="info-group-title_tag">*</view>
+                <view class="info-group-title_text">添加车图片</view>
+            </view>
+            <view class="info-group-image">
+                <van-uploader
+                    file-list="{{ imageList }}"
+                    max-count="9"
+                    bind:after-read="handImagetUpload"
+                    />
+            </view>
+        </vtu-input-group>
+    </view>
+    <!-- 添加车视频 -->
+    <view class="info-group">
+        <vtu-input-group>
+            <view class="wrap-resource" bindtap="handleVideo">
+                <view class="wrap-resource_add">
+                    <view class="info-group-title">
+                        <view class="info-group-title_tag">*</view>
+                        <view class="info-group-title_text">添加车视频</view>
+                    </view>
+                    <view class="item-image" wx:if="{{!videoFile}}">
+                        <image src="/images/my/tjsp@3x.png"></image>
+                        <text>添加视频</text>
+                    </view>
+                    <view class="item-video" wx:if="{{videoFile}}">
+                        <video src="{{shipVideo}}" controls="{{false}}" objectFit="cover"></video>
+                    </view>
+                </view>
+            </view>
+        </vtu-input-group>
+    </view>
+    <view class="info-group">
+        <view class="info-group-radio">
+          <i-radio value="{{radioTitle}}" checked="{{checked}}" bindchange="handleAnimalChange">
+          </i-radio>
+          <view class="info-group-radio_text">提交认证 将同意</view>
+          <navigator url="">《马太道路运输协议》</navigator>
+        </view>
+        <view class="info-group_button" bindtap="handleSubmit">确认添加</view>
+    </view>
+</view>

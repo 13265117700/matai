@@ -1,7 +1,0 @@
-<view class="p">
-  <view class="title">{{ info.name }}</view>
-  <rich-text nodes="{{info.content}}"></rich-text>
-</view>
-<view wx:if="{{info.jumpLink}}" class="fiedx-bottom" data-path="/pages/design/mall/info/info?id={{info.jumpLink}}" bindtap="goPath">
-  <view class="btn">我要参与活动</view>
-</view>

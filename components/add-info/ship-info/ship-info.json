@@ -1,0 +1,10 @@
+{
+    "component": true,
+    "usingComponents": {
+        "van-popup": "/miniprogram_npm/@vant/weapp/popup/index",
+        "van-picker": "/miniprogram_npm/@vant/weapp/picker/index",
+        "van-field": "/miniprogram_npm/@vant/weapp/field/index",
+        "van-checkbox": "/miniprogram_npm/@vant/weapp/checkbox/index",
+        "van-checkbox-group": "/miniprogram_npm/@vant/weapp/checkbox-group/index"
+    }
+}

@@ -1,0 +1,63 @@
+<view class="address-container">
+    <view class="address-title">
+        <text>请选择地区</text>
+    </view>
+    <view class="address-crumbs">
+        <view class="address-crumbs_item {{ addressNameItem.active ? 'active':'' }}"
+            wx:for="{{ addressName }}"
+            wx:key="index"
+            wx:for-item="addressNameItem"
+            data-index="{{ index }}"
+            data-id="{{ addressNameItem.id }}"
+            bindtap="clickCrumbs">{{ addressNameItem.name }}</view>
+        <view class="address-crumbs_item" wx:if="{{ crumbsLength < 4 }}">请选择地区</view>
+    </view>
+    <view class="address-list">
+        <view class="address-item" wx:if="{{ addressName.length < 4 }}"
+            wx:for="{{ address }}"
+            wx:key="index"
+            wx:for-item="addressItem"
+            data-index="{{ index }}"
+            data-id="{{ addressItem.id }}"
+            bindtap="getAddressChild">
+            <view class="address-item_active" wx:if="{{ addressItem.active }}">
+                <image src="/images/my/region/xz@3x.png"></image>
+            </view>
+            <view class="address-item_name">
+                <text>{{ addressItem.name }}</text>
+            </view>
+        </view>
+        <van-cell-group wx:if="{{ addressName.length >= 4 }}">
+            <van-cell title="{{ cellValue }}" border="{{ false }}" custom-class="region-cell" is-link bind:click="getWharfList" />
+        </van-cell-group>
+        <van-popup
+            show="{{ popupShow }}"
+            round
+            position="bottom"
+            bind:close="wharfShow">
+            <view>
+                <van-picker 
+                    default-index="0"
+                    show-toolbar
+                    columns="{{ pickerList }}" 
+                    bind:cancel="onClose"
+                    bind:confirm="handleConfirmPicker" />
+            </view>
+            <view class="popup-input">
+                <van-field
+                    label="其它："
+                    label-class="popup-input_label"
+                    input-class="popup-input_text"
+                    value="{{addvalue}}"
+                    type="textarea"
+                    placeholder="如以上没有您需要的选项请在此输入"
+                    border="{{ false }}"
+                    bind:input="handlePopupInput"
+                    autosize/>
+            </view>
+        </van-popup>
+    </view>
+    <view class="address-button">
+        <van-button type="danger" square size="large" custom-style="{{ buttonStyle }}" bind:click="bindleConfirm">确认</van-button>
+    </view>
+</view>

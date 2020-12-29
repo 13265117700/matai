@@ -1,0 +1,83 @@
+.login-container{
+  background: #ffffff;
+  height: 100vh;
+}
+
+
+/* company-info-container */
+
+.company-info-container{
+  text-align: center;
+  padding: 20px 0 70px;
+}
+.company-info-logo{
+  width: 59.5px;
+  height: 60.5px;
+  margin-bottom: 12.5px;
+}
+.company-info-name{
+  font-size: 19px;
+  font-family: PingFang-SC-Bold;
+  font-weight: Bold;
+  margin-bottom: 9.5px;
+  color: #000000;
+}
+.company-info-desc{
+  font-size: 15px;
+  font-family: PingFang-SC-Medium;
+  font-weight: Medium;
+  color: #555555;
+}
+
+
+
+/* login-form-container */
+
+.form-item{
+  width: 328px;
+  margin: 0 auto;
+}
+.from-button{
+  margin: 40px auto 0;
+}
+.from-button button{
+  margin-bottom: 22px;
+}
+.form-item .form-item-text{
+  color: #CD1F38;
+  cursor: pointer;
+  /* width: 328px; */
+  /* margin: 9.5px auto 0; */
+  font-size: 12px;
+  width: 305px;
+  margin: 0 auto;
+}
+
+
+/* weChat-login-container */
+
+
+.weChat-login-container{
+  position: absolute;
+  text-align: center;
+  bottom: 30px;
+  width: 328px;
+  /* margin: 0 auto; */
+  left: 50%;
+  transform: translateX(-50%)
+}
+.weChat-login-button{
+  width: 100%;
+  margin: 20px 0 24px 0;
+}
+.weChat-login-explain{
+  font-family: PingFang-SC-Medium;
+  font-weight: Medium;
+  font-size: 13px;
+  color: #555555;
+  display: flex;
+  justify-content: center;
+}
+.weChat-login-explain navigator{
+  color: #3E80C9;
+}

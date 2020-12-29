@@ -1,0 +1,54 @@
+.page-mian{
+    background: #E5E5E5;
+  }
+  .user-search{
+    margin-right: 55px;
+  }
+  .user-list{
+    margin-top: 6px;
+  }
+  .user-item{
+    padding: 20.5px 15px 16px;
+    margin-bottom: 10px;
+    background: #ffffff;
+    border-radius: 10px;  
+  }
+  .user-cell{
+    display: flex;
+    font-family: PingFang-SC-Heavy;
+    font-weight: Heavy;
+    color: #191919;
+    font-size: 15px;
+  }
+  .user-cell:first-child{
+    padding-bottom: 15.5px;
+    border-bottom: 1px solid #E5E5E5;
+    margin-bottom: 19.5px;
+  }
+  .user-cell_avatar{
+    margin-right: 14.5px;
+  }
+  .user-cell_avatar image{
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+  }
+  .user-cell_info{
+    flex: 1;
+  }
+  .user-name{
+    font-family: PingFang-SC-Bold;
+    font-weight: bold;
+    color: #191919;
+    font-size: 15px;
+    margin-bottom: 5px;
+  }
+  .user-amount{
+    font-family: PingFang-SC-Medium;
+    font-weight: Medium;
+    color: #878787;
+    font-size: 12px;
+  }
+  .user-cell_title{
+    margin-right: 18.5px;
+  }

@@ -1,9 +1,0 @@
-{
-  "navigationBarTextStyle": "white",
-  "navigationStyle": "custom",
-  "usingComponents": {
-    "searchbar":"/components/searchbar/searchbar"
-  }
-
-
-}

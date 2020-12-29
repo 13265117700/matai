@@ -1,0 +1,22 @@
+<view class="page-container">
+    <view class="page-navbar">
+        <vtu-navbar 
+        title="{{navbarTitle}}" 
+        homeStyle="cachet" 
+        bgColor="#F0222FFF" 
+        fontColor="#ffffff" 
+        icon="iconfont icon-shangchuan"></vtu-navbar>
+    </view>
+    <view class="page-main">
+        <!-- 船舶添加 -->
+        <add-ship-info wx:if="{{ id === '115' }}"></add-ship-info>
+        <!-- 车辆添加 -->
+        <add-car-info wx:if="{{ id === '192' }}"></add-car-info>
+        <!-- 货源发布 -->
+        <release-cargo-info wx:if="{{ id === '855' }}" bind:myevent="onMyEvent"></release-cargo-info>
+        <!-- 船源发布 -->
+        <release-ship-info wx:if="{{ id === '567' }}" bind:myevent="onMyEvent"></release-ship-info>
+        <!-- 车源发布 -->
+        <release-car-info wx:if="{{ id === '609' }}" bind:myevent="onMyEvent"></release-car-info>
+    </view>
+</view>

@@ -1,0 +1,41 @@
+.release-shipInfo-container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.info-group:nth-child(2){
+    flex: 1;
+}
+.info-item{
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+    height: 60px;
+    line-height: 60px;
+}
+.item-subTitle{
+    width: 70px;
+    font-size: 14px;
+    font-family: PingFang-SC-Medium;
+    font-weight: Medium;
+    color: #333333;
+}
+.item-input{
+    flex: 1;
+}
+.input-wrap{
+    display: flex;
+    align-items: center;
+}
+.info-input{
+    margin-left: 5px !important;
+}
+.region-title-close{
+    position: absolute;
+    right: 20px;
+    top: 75px;
+}
+.region-title-close image{
+    width: 16px;
+    height: 16px;
+}

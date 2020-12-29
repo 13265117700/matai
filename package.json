@@ -1,16 +1,6 @@
 {
   "dependencies": {
-    "vant-weapp": "^0.5.28",
+    "@vant/weapp": "^1.6.2",
     "vtuweapp": "^1.2.7"
-  },
-  "name": "combat-applets",
-  "description": "",
-  "version": "1.0.0",
-  "main": "app.js",
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC"
+  }
 }

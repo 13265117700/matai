@@ -1,4 +1,0 @@
-<view class="title" style="text-align: center;">{{info.name}}</view>
-<view class="cover">
-  <image src="{{info.thumbnail}}" style="width: 100%; margin: 20rpx 0;" mode="widthFix"></image>
-</view>

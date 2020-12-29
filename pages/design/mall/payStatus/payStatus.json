@@ -1,8 +1,0 @@
-{
-  "navigationBarTextStyle": "white",
-  "navigationBarTitleText": "购买成功",
-  "backgroundColor": "#ffffff",
-  "backgroundTextStyle": "light",
-  "enablePullDownRefresh": false,
-  "navigationStyle": "custom"
-}

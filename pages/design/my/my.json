@@ -1,8 +1,0 @@
-{
-  "navigationBarTextStyle": "white",
-  "navigationBarTitleText": "我的",
-  "backgroundColor": "#ffffff",
-  "backgroundTextStyle": "light",
-  "enablePullDownRefresh": true,
-  "navigationStyle": "custom"
-}

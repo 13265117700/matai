@@ -1,0 +1,37 @@
+.page-container{
+
+}
+.page-main{
+    padding: 0 20px;
+}
+.input-list{
+    margin-top: 12px;
+}
+.input-item{
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+}
+van-cell-group{
+    width: 100%;
+}
+.cell-container{
+    display: flex;
+    padding: 3px 0;
+    align-items: center;
+}
+.cell-title{
+    width: 87px;
+}
+.cell-describe{
+    margin-left: 10px;
+    color: #E5E5E5;
+}
+.cell-switch{
+    flex: 1;
+    text-align: right;
+    height: 19px;
+}
+.new-cell_style{
+    border-radius: 10px;
+}

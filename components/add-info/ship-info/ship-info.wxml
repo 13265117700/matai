@@ -1,0 +1,490 @@
+<!--components/my/user-admin/user-admin-info/user-admin-info.wxml-->
+<view class="add-shipInfo-container">
+    <!-- 信息分组1 -->
+    <view class="info-group">
+        <vtu-input-group>
+            <view class="info-group_item" wx:for="{{infoGroupOne}}" wx:key="index">
+                <view class="item-subTitle">
+                    <view class="item-subTitle_tag"><text>*</text></view>
+                    <view class="item-subTitle_text"><text>{{item.title}}</text></view>
+                </view>
+                <view class="item-input">
+                    <vtu-input wx:if="{{item.type != 'default'}}"
+                        placeholder="{{item.placeholder}}" 
+                        type="{{item.type}}" 
+                        arrow="{{item.arrow}}"
+                        text-align="left"
+                        data-index="{{index}}"
+                        bind:input="infoGroupOneInput">
+                    </vtu-input>
+                    <vtu-input wx:if="{{item.type === 'default'}}"
+                        type="{{item.type}}" 
+                        value="{{item.placeholder}}"
+                        arrow="{{item.arrow}}"
+                        range="{{item.list}}"
+                        range-key="label"
+                        text-align="left"
+                        bind:click="handShipTypeChoose">
+                    </vtu-input>
+                </view>
+            </view>
+            <van-popup
+                show="{{ shipTypeShow }}"
+                round
+                position="bottom">
+                <!-- <view class="popup-title">
+                    <view class="popup-title_cancel" bindtap="onClose">取消</view>
+                    <view class="popup-title_confirm" bindtap="handShipTypeConfirm">确认</view>
+                </view> -->
+                <view class="popup-selector">
+                    <van-picker
+                        default-index="2"
+                        show-toolbar
+                        columns="{{ typeList }}" 
+                        value-key="{{typeList.id}}"
+                        bind:cancel="onClose"
+                        bind:confirm="handleType" />
+                </view>
+                <view class="popup-input">
+                    <van-field
+                        label="其它："
+                        label-class="popup-input_label"
+                        input-class="popup-input_text"
+                        value="{{addvalue}}"
+                        type="textarea"
+                        placeholder="如以上没有您需要的选项请在此输入"
+                        border="{{ false }}"
+                        bind:input="addShipType"
+                        autosize/>
+                </view>
+            </van-popup>
+        </vtu-input-group>
+    </view>
+    <!-- 船长身份证 -->
+    <view class="info-group">
+        <vtu-input-group>
+            <view class="info-group-title">
+                <view class="info-group-title_tag">*</view>
+                <view class="info-group-title_text">船长身份证</view>
+            </view>
+            <view class="info-group-image">
+                <view class="info-group-image_item" bindtap="justAfterRead">
+                    <view class="item-upload" wx:if="{{!idenJust}}">
+                        <view class="item-upload_icon">
+                            <image src="/images/my/tjzs@3x.png"></image>
+                        </view>
+                        <view class="item-upload_text">
+                            <text>上传身份证正面</text>
+                        </view>
+                    </view>
+                    <view class="item-upload" wx:if="{{idenJust}}">
+                        <image src="{{idenJust}}"></image>
+                    </view>
+                </view>
+                <view class="info-group-image_item" bindtap="backAfterRead">
+                    <view class="item-upload" wx:if="{{!idenBack}}">
+                        <view class="item-upload_icon">
+                            <image src="/images/my/tjzs@3x.png"></image>
+                        </view>
+                        <view class="item-upload_text">
+                            <text>上传身份证反面</text>
+                        </view>
+                    </view>
+                    <view class="item-upload" wx:if="{{idenBack}}">
+                        <image src="{{idenBack}}"></image>
+                    </view>
+                </view>
+            </view>
+        </vtu-input-group>
+    </view>
+    <!-- 上传船长特征 -->
+    <view class="info-group">
+        <vtu-input-group>
+            <view class="info-group-title">
+                <view class="info-group-title_tag">*</view>
+                <view class="info-group-title_text">上传船长特征</view>
+            </view>
+            <view class="info-group-image">
+                <van-uploader
+                    file-list="{{ traitList }}"
+                    max-count="9"
+                    bind:after-read="handTrait"
+                    />
+            </view>
+        </vtu-input-group>
+    </view>
+    <!-- 上传船舶主要项目 -->
+    <view class="info-group">
+        <vtu-input-group>
+            <view class="info-group-title">
+                <view class="info-group-title_tag">*</view>
+                <view class="info-group-title_text">上传船舶主要项目</view>
+                <!-- <view class="info-group-title_text" wx:if="{{ahtcId === 'a1a2a3'}}">上传身份证照片</view> -->
+            </view>
+            <view class="info-group-image">
+                <van-uploader
+                    file-list="{{ mainItemsShip }}"
+                    max-count="9"
+                    bind:after-read="handProject"
+                    />
+            </view>
+        </vtu-input-group>
+    </view>
+    <!-- AIS证书、内河适航证书 -->
+    <view class="info-group">
+        <vtu-input-group>
+            <view class="info-group-title">
+                <view class="info-group-title_tag">*</view>
+                <view class="info-group-title_text">AIS证书、内河适航证书</view>
+            </view>
+            <view class="info-group-image">
+                <view class="info-group-image_item" bindtap="aisUpload">
+                    <view class="item-upload" wx:if="{{!aisCertificate}}">
+                        <view class="item-upload_icon">
+                            <image src="/images/my/tjzs@3x.png"></image>
+                        </view>
+                        <view class="item-upload_text">
+                            <text>上传AIS证书</text>
+                        </view>
+                    </view>
+                    <view class="item-upload" wx:if="{{aisCertificate}}">
+                        <image src="{{aisCertificate}}"></image>
+                    </view>
+                </view>
+                <view class="info-group-image_item" bindtap="hanoiCertificateUpload">
+                    <view class="item-upload" wx:if="{{!hanoiCertificate }}">
+                        <view class="item-upload_icon">
+                            <image src="/images/my/tjzs@3x.png"></image>
+                        </view>
+                        <view class="item-upload_text">
+                            <text>上传河内适航证书</text>
+                        </view>
+                    </view>
+                    <view class="item-upload" wx:if="{{hanoiCertificate }}">
+                        <image src="{{hanoiCertificate }}"></image>
+                    </view>
+                </view>
+            </view>
+        </vtu-input-group>
+    </view>
+    <!-- 船舶运营证书、船舶年审合格证书 -->
+    <view class="info-group">
+        <vtu-input-group>
+            <view class="info-group-title">
+                <view class="info-group-title_tag">*</view>
+                <view class="info-group-title_text">船舶运营证书、船舶年审合格证书</view>
+            </view>
+            <view class="info-group-image">
+                <view class="info-group-image_item" bindtap="handShipOperationCertificate">
+                    <view class="item-upload" wx:if="{{!shipOperationCertificate}}">
+                        <view class="item-upload_icon">
+                            <image src="/images/my/tjzs@3x.png"></image>
+                        </view>
+                        <view class="item-upload_text">
+                            <text>上传AIS证书</text>
+                        </view>
+                    </view>
+                    <view class="item-upload" wx:if="{{shipOperationCertificate}}">
+                        <image src="{{shipOperationCertificate}}"></image>
+                    </view>
+                </view>
+                <view class="info-group-image_item" bindtap="handShipAnnualCertificate">
+                    <view class="item-upload" wx:if="{{!shipAnnualCertificate }}">
+                        <view class="item-upload_icon">
+                            <image src="/images/my/tjzs@3x.png"></image>
+                        </view>
+                        <view class="item-upload_text">
+                            <text>上传河内适航证书</text>
+                        </view>
+                    </view>
+                    <view class="item-upload" wx:if="{{shipAnnualCertificate }}">
+                        <image src="{{shipAnnualCertificate }}"></image>
+                    </view>
+                </view>
+            </view>
+        </vtu-input-group>
+    </view>
+    <!-- 上传船舶检验证书 -->
+    <view class="info-group">
+        <vtu-input-group>
+            <view class="info-group-title">
+                <view class="info-group-title_tag">*</view>
+                <view class="info-group-title_text">上传船舶检验证书</view>
+            </view>
+            <view class="info-group-image">
+                <van-uploader
+                    file-list="{{ shipTestCertificate }}"
+                    max-count="9"
+                    bind:after-read="handShipTestCertificate"
+                    />
+            </view>
+        </vtu-input-group>
+    </view>
+    <!-- 信息分组2 -->
+    <view class="info-group">
+        <vtu-input-group>
+            <view class="info-group_item" wx:for="{{infoGroupTwo}}" wx:key="index" wx:for-item="infoTwo">
+                <view class="item-subTitle">
+                    <view class="item-subTitle_tag"><text>*</text></view>
+                    <view class="item-subTitle_text"><text>{{infoTwo.title}}</text></view>
+                </view>
+                <view class="item-input">
+                    <vtu-input wx:if="{{infoTwo.type != 'default'}}"
+                        placeholder="{{infoTwo.placeholder}}" 
+                        type="{{infoTwo.type}}" 
+                        arrow="{{infoTwo.arrow}}"
+                        range="{{infoTwo.list}}"
+                        range-key="{{infoTwo.rangeKey}}"
+                        text-align="left"
+                        mode="{{infoTwo.mode}}"
+                        data-index="{{index}}"
+                        bind:input="infoGroupTwoInput"
+                        bindchange="infoGroupTwoDropDown">
+                    </vtu-input>
+                    <vtu-input wx:if="{{infoTwo.type === 'default'}}"
+                        type="{{infoTwo.type}}" 
+                        value="{{infoTwo.placeholder}}"
+                        arrow="{{infoTwo.arrow}}"
+                        range="{{infoTwo.list}}"
+                        data-index="{{index}}"
+                        range-key="label"
+                        text-align="left"
+                        bind:click="infoGroupTwoChoose">
+                    </vtu-input>
+                </view>
+            </view>
+            <van-popup show="{{ shipSealShow }}" round position="bottom">
+                <!-- <view class="popup-title">
+                    <view class="popup-title_cancel" bindtap="onClose">取消</view>
+                    <view class="popup-title_confirm" bindtap="handShipSealConfirm">确认</view>
+                </view> -->
+                <view class="popup-selector">
+                    <van-picker
+                        default-index="1"
+                        show-toolbar
+                        columns="{{ sealList }}" 
+                        bind:cancel="onClose"
+                        bind:confirm="handShipSealConfirm" />
+                </view>
+                <view class="popup-input">
+                    <van-field
+                        label="其它："
+                        label-class="popup-input_label"
+                        input-class="popup-input_text"
+                        value="{{addvalue}}"
+                        type="textarea"
+                        placeholder="如以上没有您需要的选项请在此输入"
+                        border="{{ false }}"
+                        bind:input="addShipSeal"
+                        autosize/>
+                </view>
+            </van-popup>
+            <van-popup show="{{ shipCargoShow }}" round position="bottom">
+                <view class="popup-title">
+                    <view class="popup-title_cancel" bindtap="onClose">取消</view>
+                    <view class="popup-title_confirm" bindtap="handShipCargoConfirm">确认</view>
+                </view>
+                <van-checkbox-group value="{{ kola }}" bind:change="onChange">
+                    <van-checkbox 
+                        wx:for="{{checkboxList}}" wx:key="index" wx:for-item="checkbox"
+                        data-index="{{index}}"
+                        name="{{checkbox.name}}" checked-color="#F0222FFF">{{checkbox.name}}</van-checkbox>
+                </van-checkbox-group>
+            </van-popup>
+        </vtu-input-group>
+        <!-- <vtu-input-group>
+            <view class="info-group_item">
+                <view class="item-subTitle">
+                    <view class="item-subTitle_tag"><text>*</text></view>
+                    <view class="item-subTitle_text"><text>船舶名称：</text></view>
+                </view>
+                <view class="item-input">
+                    <vtu-input 
+                        placeholder="请输入船舶名称" 
+                        type="input" 
+                        text-align="left"></vtu-input>
+                </view>
+            </view>
+            <view class="info-group_item">
+                <view class="item-subTitle">
+                    <view class="item-subTitle_tag"><text>*</text></view>
+                    <view class="item-subTitle_text"><text>载货量A级：</text></view>
+                </view>
+                <view class="item-input">
+                    <vtu-input 
+                        placeholder="请输入船舶名称" 
+                        type="input" 
+                        text-align="left"></vtu-input>
+                    <view class="item-input_tag">
+                        <text>吨</text>
+                    </view>
+                </view>
+            </view>
+            <view class="info-group_item">
+                <view class="item-subTitle">
+                    <view class="item-subTitle_tag"><text>*</text></view>
+                    <view class="item-subTitle_text"><text>载货量B级：</text></view>
+                </view>
+                <view class="item-input">
+                    <vtu-input 
+                        placeholder="请输入船舶名称" 
+                        type="input" 
+                        text-align="left"></vtu-input>
+                    <view class="item-input_tag">
+                        <text>吨</text>
+                    </view>
+                </view>
+            </view>
+            <view class="info-group_item">
+                <view class="item-subTitle">
+                    <view class="item-subTitle_tag"><text>*</text></view>
+                    <view class="item-subTitle_text"><text>AIS码：</text></view>
+                </view>
+                <view class="item-input">
+                    <vtu-input 
+                        placeholder="请输入船舶名称" 
+                        type="input" 
+                        text-align="left"></vtu-input>
+                </view>
+            </view>
+            <view class="info-group_item">
+                <view class="item-subTitle">
+                    <view class="item-subTitle_tag"><text>*</text></view>
+                    <view class="item-subTitle_text"><text>船舶类型：</text></view>
+                </view>
+                <view class="item-input">
+                    <vtu-input 
+                        placeholder="请输入船舶名称" 
+                        type="input" 
+                        text-align="left"></vtu-input>
+                    <view class="item-input_tag">
+                        <image src="/images/my/ck@3x.png"></image>
+                    </view>
+                </view>
+            </view>
+            <view class="info-group_item">
+                <view class="item-subTitle">
+                    <view class="item-subTitle_tag"><text>*</text></view>
+                    <view class="item-subTitle_text"><text>船长姓名：</text></view>
+                </view>
+                <view class="item-input">
+                    <vtu-input 
+                        placeholder="请输入船舶名称" 
+                        type="input" 
+                        text-align="left"></vtu-input>
+                </view>
+            </view>
+            <view class="info-group_item">
+                <view class="item-subTitle">
+                    <view class="item-subTitle_tag"><text>*</text></view>
+                    <view class="item-subTitle_text"><text>船长电话：</text></view>
+                </view>
+                <view class="item-input">
+                    <vtu-input 
+                        placeholder="请输入船舶名称" 
+                        type="input" 
+                        text-align="left"></vtu-input>
+                </view>
+            </view>
+            <view class="info-group_item">
+                <view class="item-subTitle">
+                    <view class="item-subTitle_tag"><text>*</text></view>
+                    <view class="item-subTitle_text"><text>船长电话：</text></view>
+                </view>
+                <view class="item-input">
+                    <vtu-input 
+                        placeholder="请输入船舶名称" 
+                        type="input" 
+                        text-align="left"></vtu-input>
+                </view>
+            </view>
+            <view class="info-group_item">
+                <view class="item-subTitle">
+                    <view class="item-subTitle_tag"><text>*</text></view>
+                    <view class="item-subTitle_text"><text>船长电话：</text></view>
+                </view>
+                <view class="item-input">
+                    <vtu-input 
+                        placeholder="请输入船舶名称" 
+                        type="input" 
+                        text-align="left"></vtu-input>
+                </view>
+            </view>
+            <view class="info-group_item">
+                <view class="item-subTitle">
+                    <view class="item-subTitle_tag"><text>*</text></view>
+                    <view class="item-subTitle_text"><text>船长电话：</text></view>
+                </view>
+                <view class="item-input">
+                    <vtu-input 
+                        placeholder="请输入船舶名称" 
+                        type="input" 
+                        text-align="left"></vtu-input>
+                </view>
+            </view>
+            <view class="info-group_item">
+                <view class="item-subTitle">
+                    <view class="item-subTitle_tag"><text>*</text></view>
+                    <view class="item-subTitle_text"><text>船长电话：</text></view>
+                </view>
+                <view class="item-input">
+                    <vtu-input 
+                        placeholder="请输入船舶名称" 
+                        type="input" 
+                        text-align="left"></vtu-input>
+                </view>
+            </view>
+            <view class="info-group_item">
+                <view class="item-subTitle">
+                    <view class="item-subTitle_tag"><text>*</text></view>
+                    <view class="item-subTitle_text"><text>船长电话：</text></view>
+                </view>
+                <view class="item-input">
+                    <vtu-input 
+                        placeholder="请输入船舶名称" 
+                        type="input" 
+                        text-align="left"></vtu-input>
+                </view>
+            </view>
+        </vtu-input-group> -->
+    </view>
+    <!-- 添加船图片 -->
+    <view class="info-group">
+        <vtu-input-group>
+            <view class="info-group-title">
+                <view class="info-group-title_tag">*</view>
+                <view class="info-group-title_text">添加船图片</view>
+            </view>
+            <view class="info-group-image">
+                <van-uploader
+                    file-list="{{ shipChart }}"
+                    max-count="9"
+                    bind:after-read="handShipChartUpload"
+                    />
+            </view>
+        </vtu-input-group>
+    </view>
+    <!-- 添加船视频 -->
+    <view class="info-group">
+        <vtu-input-group>
+            <view class="wrap-resource" bindtap="handleVideo">
+                <view class="wrap-resource_add">
+                    <view class="info-group-title">
+                        <view class="info-group-title_tag">*</view>
+                        <view class="info-group-title_text">添加船视频</view>
+                    </view>
+                    <view class="item-image" wx:if="{{!shipVideo}}">
+                        <image src="/images/my/tjsp@3x.png"></image>
+                        <text>添加视频</text>
+                    </view>
+                    <view class="item-video" wx:if="{{shipVideo}}">
+                        <video src="{{shipVideo}}" controls="{{false}}" objectFit="cover"></video>
+                    </view>
+                </view>
+            </view>
+        </vtu-input-group>
+    </view>
+    <view class="info-group">
+        <view class="info-group_button" bindtap="handleSubmit">确认添加</view>
+    </view>
+</view>

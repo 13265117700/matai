@@ -1,0 +1,59 @@
+<view class="page-container">
+  <view class="page-navbar">
+    <vtu-navbar 
+        title="{{navbarTitle}}" 
+        homeStyle="cachet" 
+        bgColor="#F0222FFF" 
+        fontColor="#ffffff" 
+        icon="iconfont icon-shangchuan"></vtu-navbar>
+  </view>
+  <view class="page-main">
+    <view class="page-tabs">
+      <van-tabs bind:click="handleGetResources">
+        <van-tab
+          wx:for="{{ tabsList }}"
+          wx:key="index"
+          wx:for-item="tabsItem"
+          title="{{tabsItem.title}}"
+          name="{{tabsItem.status}}">
+          <view class="resources-list" wx:if="{{ total != 0 }}">
+            <view class="resources-item" 
+              wx:for="{{ resourcesList }}"
+              wx:key="index"
+              wx:for-item="resourcesItem"
+              data-id="{{ resourcesItem.id }}"
+              wx:if="{{ resourcesItem.status === tabsStatus }}"
+              bindtap="getResourcesItem">
+              <view class="resources-title">{{ resourcesItem.nameVessel }}</view>
+              <view class="resources-describe" wx:if="{{ tabsStatus != 0 }}">查看原因</view>
+              <view class="resources-icon">
+                <image src="/images/my/ck@3x.png"></image>
+              </view>
+            </view>
+          </view>
+          <view class="emptyData">
+            <van-empty
+              wx:if="{{ total === 0 }}"
+              class="custom-image"
+              image="/images/my/qsy@3x.png"
+              description="暂时没有数据"/>
+          </view>
+        </van-tab>
+      </van-tabs>
+      <van-popup
+        show="{{ resourcesShow }}"
+        custom-style="height: 100%;width: 100%;padding-top:60px;border-radius: 0;"
+        round
+        position="right">
+        <view class="popup-close" bindtap="onClosePopup">
+            <image src="/images/my/region/gb@1.png"></image>
+        </view>
+        <resources-info></resources-info>
+      </van-popup>
+    </view>
+    <view class="addButton" bindtap="addButton">
+        <view class="addButton-Semicircle"></view>
+        {{addButtonText}}
+    </view>
+  </view>
+</view>

@@ -1,0 +1,59 @@
+<view class="page-container">
+    <view class="page-navbar">
+        <vtu-navbar title="收货地址" 
+            homeStyle="cachet" 
+            bgColor="#F0222FFF"
+            fontColor="#ffffff" 
+            icon="iconfont icon-shangchuan"></vtu-navbar>
+    </view>
+    <view class="page-main">
+        <view class="user-list">
+            <view class="user-item">
+                <view class="user-top">
+                    <view class="user-info">
+                        <view class="user-name">陈冠希</view>
+                        <view class="user-phone">157****1268</view>
+                    </view>
+                    <view class="user-address">
+                        <text>广东广州天河区  车陂北门大街1号 </text>
+                    </view>
+                </view>
+                <view class="user-bottom">
+                    <view class="user-bottom_item">
+                        <van-checkbox value="{{ checked }}" checked-color="#F0222F" bind:change="onChange">默认地址</van-checkbox>
+                    </view>
+                    <view class="user-bottom_item">
+                        <view class="user-bottom_icon">
+                            <image src="/images/my/address/compile@3x.png"></image>
+                        </view>
+                        <view class="user-bottom_text">
+                            <text>编辑</text>
+                        </view>
+                    </view>
+                    <view class="user-bottom_item">
+                        <view class="user-bottom_icon">
+                            <image src="/images/my/address/del@3x.png"></image>
+                        </view>
+                        <view class="user-bottom_text">
+                            <text>删除</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="add-button">
+            <van-button 
+                type="danger" 
+                square 
+                size="large" 
+                custom-style="{{ buttonStyle }}" 
+                bindtap="handleAddButton"
+                >
+                <view class="add-button_wrap">
+                    <view class="add-button_icon"></view>
+                    <view class="add-button_text">新增地址</view>
+                </view>
+            </van-button>
+        </view>
+    </view>
+</view>

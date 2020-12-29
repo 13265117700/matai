@@ -1,15 +1,34 @@
 <view class="container">
     <view class="page-header">
         <view class="user-info">
-            <view class="user-avatar">
-                <image src="/images/my/logo@3x.png"></image>
+            <view class="user-info_item">
+                <view class="user-avatar">
+                    <vtu-avatar 
+                        src="{{userInfo.faceImage}}" 
+                        wx:if="{{userInfo}}"
+                        circle 
+                        size="default"></vtu-avatar>
+                    <vtu-avatar 
+                        src="/images/my/logo@3x.png" 
+                        wx:if="{{!userInfo}}"
+                        circle 
+                        size="default"></vtu-avatar>
+                </view>
             </view>
-            <!-- <view class="user-name">12321</view> -->
-            <view class="user-login">
-                <view class="user-login_text">请登录 /注册您的账号</view>
-                <view class="user-login_button">
-                    <!-- <vtu-btn plain="true" round="true">普通按钮</vtu-btn> -->
-                    <button plain="true" bindtap="bindLogin">点击登录</button>
+            <view class="user-info_item {{userInfo != '' ? 'active' : ''}}" wx:if="{{userInfo}}">
+                <view class="user-name">
+                    <text>{{userInfo.nickName}}</text>
+                </view>
+                <view class="user-group">
+                    <text>{{userInfo.mtUserGroup.name}}</text>
+                </view>
+            </view>
+            <view class="user-info_item {{userInfo != '' ? 'active' : ''}}"  wx:if="{{!userInfo}}">
+                <view class="user-login">
+                    <view class="user-login_text">请登录 /注册您的账号</view>
+                    <view class="user-login_button">
+                        <button plain="true" bindtap="bindLogin">点击登录</button>
+                    </view>
                 </view>
             </view>
         </view>
@@ -40,7 +59,8 @@
         <view class="page-item" 
             wx:for="{{ceilList}}" 
             wx:for-item="ceilList" 
-            wx:key="index">
+            wx:key="index"
+            wx:if="{{ceilList.state === true}}">
             <view class="cell-item" 
                 wx:for="{{ceilList.ceilItem}}" 
                 wx:for-item="ceilItem" 

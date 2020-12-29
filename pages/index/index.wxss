@@ -89,6 +89,10 @@
   padding: 20px 10px 15px 15px;
   margin: 0 10px 15px;
 }
+.order-item:last-child{
+  border: none;
+  box-shadow: none;
+}
 .order-item-top{
   display: flex;
   padding-bottom: 9px;
@@ -210,6 +214,6 @@
   height: 50px;
   position: fixed;
   right: 5%;
-  bottom: 3%;
+  bottom: 10%;
   cursor: pointer;
 }

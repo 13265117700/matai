@@ -1,0 +1,14 @@
+<vtu-tabbar 
+    active-icon-color="orange" 
+    current="{{activeIndex}}" 
+    bind:change="onChange" 
+    custom-class="tabbar-content" 
+    navbar-height="{{navBarHeight}}">
+    <vtu-tabbar-item
+        wx:for="{{tabBar}}"
+        wx:key="index"
+        large="{{item.large}}"
+        label="{{item.name}}"
+        src="{{item.icon.normal}}"
+        active-src="{{item.icon.active}}"></vtu-tabbar-item>
+</vtu-tabbar>

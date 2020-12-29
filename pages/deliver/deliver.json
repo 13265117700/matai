@@ -1,5 +1,7 @@
 {
-    "usingComponents": {
-
-    }
+  "usingComponents": {
+    "car-info":"/components/release-info/car-info/car-info",
+    "cargo-info":"/components/release-info/cargo-info/cargo-info",
+    "ship-info":"/components/release-info/ship-info/ship-info"
+  }
 }

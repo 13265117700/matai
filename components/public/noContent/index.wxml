@@ -1,4 +1,0 @@
-<view class="no-list">
-  <image class="empty-img" src="http://csyimg.oss-cn-shenzhen.aliyuncs.com/images/2020/07/09/15942821511459446.png" mode="widthFix"></image>
-  <view class="no-data">{{ title }}</view>
-</view>

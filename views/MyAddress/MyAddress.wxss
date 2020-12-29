@@ -1,0 +1,109 @@
+.page-container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.page-main{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.user-list{
+    flex: 1;
+    margin-top: 12px;
+}
+.user-item{
+    background: #ffffff;
+    padding: 15px 17px 17px 17px;
+    margin-bottom: 10px;
+}
+.user-top{
+    padding-bottom: 14.5px;
+    border-bottom: 1px solid #DADADB;
+}
+.user-info{
+    display: flex;
+    align-items: center;
+    font-family: PingFang-SC-Bold;
+    font-weight: bold;
+    font-size: 15px;
+    color: #222222;
+    margin-bottom: 13.5px;
+}
+.user-name{
+    margin-right: 19px;
+}
+.user-phone{
+
+}
+.user-address{
+    font-family: PingFang-SC-Medium;
+    font-weight: Medium;
+    color: #505050;
+    font-size: 13px;
+}
+.user-bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15.5px;
+}
+.user-bottom_item{
+    display: flex;
+    align-items: center;
+    font-family: PingFang-SC-Medium;
+    font-weight: Medium;
+    color: #909090;
+    font-size: 15px;
+    margin-left: 25px;
+}
+.user-bottom_item:nth-child(1){
+    flex: 1;
+    margin: 0;
+}
+.user-bottom_icon{
+    display: flex;
+}
+.user-bottom_icon image{
+    width: 16px;
+    height: 16px;
+}
+.user-bottom_text{
+    margin-left: 8.5px;
+}
+
+.add-button{
+    position: relative;
+}
+.add-button_wrap{
+    display: flex;
+    align-items: center;
+}
+.add-button_icon{
+    width: 16px;
+    height: 16px;
+    display: flex;
+    position: relative;
+}
+.add-button_icon::after{
+    content: '';
+    width: 16px;
+    height: 2px;
+    background: #ffffff;
+    position: absolute;
+    top:7.5px;
+    transform: translateY(-50%);
+    left: 0;
+}
+.add-button_icon::before{
+    content: '';
+    width: 2px;
+    height: 16px;
+    background: #ffffff;
+    position: absolute;
+    top: 0;
+    left: 7.5px;
+}
+.add-button_text{
+    margin-left: 10px;
+}

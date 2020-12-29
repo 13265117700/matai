@@ -22,15 +22,23 @@ Page({
       mode: "widthFix"
     }],
     cardList:[{
+      tips:'index',
+      id:9999999,
       url: '/images/index/chuanyuan@3x.png',
       text: '船源信息'
     },{
+      id:9999998,
+      tips:'index',
       url: '/images/index/huoyuan@3x.png',
       text: '船运货源'
     },{
+      id:9999997,
+      tips:'index',
       url: '/images/index/cy@3x.png',
       text: '车运货源'
     },{
+      tips:'index',
+      id:9999996,
       url: '/images/index/daolu@3x.png',
       text: '车辆信息'
     }],
@@ -102,6 +110,13 @@ Page({
     }],
     loading: false
   },
+  onShow(){
+    if(typeof this.getTabBar === "function" && this.getTabBar()){
+      this.getTabBar().setData({
+        activeIndex:0
+      })
+    }
+  },
   bindChange: function(e) {
     this.setData({
       current: e.detail.current
@@ -109,5 +124,13 @@ Page({
   },
   bindLoad: function() {
     this.loading = true
+  },
+  gotoResourcesList(e){
+    console.log(e)
+    let id = e.currentTarget.dataset.id;
+    let data = e.currentTarget.dataset.data;
+    wx.navigateTo({
+      url: '/views/FindResources/FindResources?id=' + id + '&data=' + data,
+    })
   }
 })

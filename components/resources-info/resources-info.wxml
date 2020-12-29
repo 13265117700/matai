@@ -1,0 +1,49 @@
+<view class="resources-container">
+  <view class="resources-state">
+    <view class="resources-state_img">
+      <image src="/images/my/process.png"></image>
+    </view>
+    <view class="resources-state_title">您的货主认证正在审核中</view>
+    <view class="resources-state_describe">请耐心等待...</view>
+  </view>
+  <view class="resources-info">
+    <view class="resources-list">
+      <view class="resources-item">
+        <view class="resources-item_subtitle">车辆牌照号：</view>
+        <view class="resources-item_text">粤B 888888  </view>
+      </view>
+      <view class="resources-item">
+        <view class="resources-item_subtitle">车辆颜色代码:</view>
+        <view class="resources-item_text">黑色  </view>
+      </view>
+      <view class="resources-item">
+        <view class="resources-item_subtitle">车辆类型代码：</view>
+        <view class="resources-item_text">车辆类型代码信息  </view>
+      </view>
+      <view class="resources-item">
+        <view class="resources-item_subtitle">车辆类型代码：</view>
+        <view class="resources-item_text">车辆类型代码信息  </view>
+      </view>
+      <view class="resources-item">
+        <view class="resources-item_subtitle">车辆类型代码：</view>
+        <view class="resources-item_text">车辆类型代码信息  </view>
+      </view>
+      <view class="resources-item">
+        <view class="resources-item_subtitle">车辆类型代码：</view>
+        <view class="resources-item_text">车辆类型代码信息  </view>
+      </view>
+      <view class="resources-item">
+        <view class="resources-item_subtitle">车图片：</view>
+        <van-tag plain type="primary" size="large">已上传</van-tag>
+      </view>
+      <view class="resources-item">
+        <view class="resources-item_subtitle">车图片：</view>
+        <van-tag plain type="primary" size="large">已上传</van-tag>
+      </view>
+      <view class="resources-item">
+        <view class="resources-item_subtitle">提交时间：</view>
+        <view class="resources-item_text">2020-08-11 17:31:20</view>
+      </view>
+    </view>
+  </view>
+</view>

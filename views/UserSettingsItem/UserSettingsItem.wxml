@@ -1,0 +1,91 @@
+<view class="page-container">
+    <view class="page-navbar">
+        <vtu-navbar 
+            title="绑定手机号" 
+            homeStyle="cachet" 
+            bgColor="#F0222FFF" 
+            fontColor="#ffffff" 
+            icon="iconfont icon-shangchuan"></vtu-navbar>
+    </view>
+    <view class="form-container">
+        <view class="form-list">
+            <!-- 修改名字 -->
+            <view class="form-item" wx:if="{{peIndex === '1'}}">
+                <vtu-input-group>
+                    <view class="form-item_input">
+                        <vtu-input 
+                        title="姓名" 
+                        placeholder="请输入姓名" 
+                        type="input" 
+                        text-align="left"
+                        bind:input="nameInput"></vtu-input>
+                    </view>
+                </vtu-input-group>
+            </view>
+            <!-- 修改手机 -->
+            <view class="form-item" wx:if="{{peIndex === '2'}}">
+                <view class="form-item_tips top">设置密码后可通过手机号+秘密或短信验证登录</view>
+                <vtu-input-group>
+                    <view class="form-item_input">
+                        <vtu-input 
+                        placeholder="请输入手机号" 
+                        title="绑定手机" 
+                        type="input" 
+                        text-align="left"
+                        bind:input="phoneInput"></vtu-input>
+                    </view>
+                    <view class="form-item_input">
+                        <vtu-input 
+                        text-align="left"  
+                        placeholder="输入验证码" 
+                        title="验证码" 
+                        type="input" 
+                        input-type="number"
+                        bind:input="codeInput">
+                        <vtu-btn 
+                            slot="after" 
+                            my-class="phoneNumberBtn" 
+                            size="small"
+                            bind:click="handCode">{{buttonName}}</vtu-btn>
+                        </vtu-input>
+                    </view>
+                </vtu-input-group>
+                <view class="form-item_tips bottom">密码必须8个字符，而且同时包含字母和数字，不允许特殊字符，如%￥#*@</view>
+            </view>
+            <!-- 修改密码 -->
+            <view class="form-item" wx:if="{{peIndex === '3'}}">
+                <view class="form-item_tips top">设置密码后可通过手机号+秘密或短信验证登录</view>
+                <vtu-input-group>
+                    <view class="form-item_input">
+                        <vtu-input 
+                        title="设置密码" 
+                        placeholder="请输入姓名" 
+                        type="input" 
+                        text-align="left"
+                        bind:input="passwordInput"></vtu-input>
+                    </view>
+                    <view class="form-item_input">
+                        <vtu-input 
+                        title="新密码" 
+                        placeholder="请输入密码" 
+                        type="input" 
+                        text-align="left"
+                        bind:input="newPasswordInput"></vtu-input>
+                    </view>
+                    <view class="form-item_input">
+                        <vtu-input 
+                        title="确认密码" 
+                        placeholder="请再次输入新密码" 
+                        type="input" 
+                        text-align="left"
+                        bind:input="confirmPasswordInput"></vtu-input>
+                    </view>
+                </vtu-input-group>
+                <view class="form-item_tips bottom">密码必须8个字符，而且同时包含字母和数字，不允许特殊字符，如%￥#*@</view>
+            </view>
+        </view>
+        <view class="setUp-Submit">
+            <vtu-btn type="danger" bind:click="handSubmit">保存</vtu-btn>
+        </view>
+    </view>
+</view>

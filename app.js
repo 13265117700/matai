@@ -1,18 +1,5 @@
 //app.js
 App({
-  // onShow: function () {
-  //   let Authorization = wx.getStorageSync('Authorization')
-  //   console.log(Authorization)
-  //   if(!Authorization){
-  //     wx.navigateTo({
-  //       url: '/pages/login/login',
-  //     })
-  //   }else{
-  //     wx.redirectTo({
-  //       url: '/components/tabBar/tabBar',
-  //     })
-  //   }
-  // },
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []

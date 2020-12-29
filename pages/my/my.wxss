@@ -20,15 +20,21 @@
     width: 43px;
     height: 43.5px;
 }
-.user-login{
-    font-size: 12px;
-    font-size: PingFang-SC-Medium;
-    font-weight: Medium;
-    color: #FFFFFFFF;
-    opacity: 0.8;
+.user-info_item.active{
     position: absolute;
     top: 97.5px;
     left: 91.5px;
+    color: #FFFFFFFF;
+    font-size: 12px;
+    font-size: PingFang-SC-Medium;
+    font-weight: Medium;
+    opacity: 0.8;
+}
+.user-info_item .user-name{
+    font-size: 19px;
+    font-family: PingFang-SC-Bold;
+    font-weight: Bold;
+    margin-bottom: 10px;
 }
 .user-login_button{
     width: 72.5px;

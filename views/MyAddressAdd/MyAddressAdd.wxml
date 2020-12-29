@@ -1,0 +1,84 @@
+<view class="page-container">
+    <view class="page-navbar">
+        <vtu-navbar 
+            title="添加地址" 
+            homeStyle="cachet" 
+            bgColor="#F0222FFF" 
+            fontColor="#ffffff" 
+            icon="iconfont icon-shangchuan"></vtu-navbar>
+    </view>
+    <view class="page-main">
+        <view class="input-list">
+            <view class="input-item">
+                <van-cell-group>
+                    <van-field
+                        label="收件人"
+                        placeholder-style="color: #E5E5E5;"
+                        placeholder="请输入收件人姓名"
+                        type="input"
+                        border="{{ false }}"
+                        custom-style="height: 50px;align-items: center;"
+                        bind:change="onChange"
+                    />
+                </van-cell-group>
+            </view>
+            <view class="input-item">
+                <van-cell-group>
+                    <van-field
+                        value="{{ value }}"
+                        label="手机号码"
+                        placeholder="请输入手机号码"
+                        border="{{ false }}"
+                        custom-style="height: 50px;align-items: center;"
+                        bind:change="onChange"
+                    />
+                </van-cell-group>
+            </view>
+            <view class="input-item">
+                <van-cell-group>
+                    <van-cell custom-class="new-cell_style" is-link>
+                        <view slot="title" class="cell-container">
+                            <view class="cell-title">地址</view>
+                            <view class="cell-describe">请选择详细地址</view>
+                        </view>
+                    </van-cell>
+                </van-cell-group>
+            </view>
+            <view class="input-item">
+                <van-cell-group>
+                    <van-field
+                        value="{{ value }}"
+                        label="详细地址"
+                        placeholder="请输入收货详细地址"
+                        border="{{ false }}"
+                        custom-style="height: 50px;align-items: center;"
+                        bind:change="onChange"
+                    />
+                </van-cell-group>
+            </view>
+            <view class="input-item">
+                <van-cell-group>
+                    <van-cell custom-class="new-cell_style">
+                        <view slot="title" class="cell-container">
+                            <view class="cell-title">设为默认地址</view>
+                            <view class="cell-switch">
+                                <van-switch checked="{{ checked }}" active-color="#D61718" size="16px" bind:change="onChange" />
+                            </view>
+                        </view>
+                    </van-cell>
+                </van-cell-group>
+            </view>
+        </view>
+        <view class="add-button">
+            <van-button 
+                type="danger" 
+                square 
+                size="large" 
+                custom-style="{{ buttonStyle }}" 
+                bindtap="handleAddButton"
+                >
+                <view class="add-button_text">保存</view>
+            </van-button>
+        </view>
+    </view>
+</view>

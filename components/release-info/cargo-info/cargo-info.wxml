@@ -1,0 +1,262 @@
+<!--components/my/release-info/cargo-info/cargo-info.wxml-->
+<view class="release-cargoInfo-container">
+    <!-- 信息分组1 -->
+    <view class="info-group">
+        <vtu-input-group>
+            <view class="info-group_item" wx:for="{{ infoGroupOne }}" wx:key="index" wx:for-item="GroupOne">
+                <view class="item-subTitle">
+                    <view class="item-subTitle_tag" wx:if="{{GroupOne.rate === true}}"><text>*</text></view>
+                    <view class="item-subTitle_text"><text>{{GroupOne.title}}</text></view>
+                </view>
+                <view class="item-input">
+                    <vtu-input wx:if="{{ GroupOne.type != 'default' }}"
+                        placeholder="{{ GroupOne.placeholder }}" 
+                        type="{{ GroupOne.type }}" 
+                        arrow="{{ GroupOne.arrow }}"
+                        data-index="{{ index }}"
+                        text-align="left"
+                        bind:input="infoGroupOneInput">
+                    </vtu-input>
+                    <vtu-input wx:if="{{ GroupOne.type === 'default' }}"
+                        type="{{ GroupOne.type }}" 
+                        value="{{ GroupOne.placeholder }}"
+                        arrow="{{ GroupOne.arrow }}"
+                        data-id="{{ GroupOne.id }}"
+                        data-index="{{ index }}"
+                        text-align="left"
+                        bind:click="GroupOneClick">
+                    </vtu-input>
+                </view>
+            </view>
+            <!-- 选择货名 -->
+            <van-popup
+                show="{{ cargoNameShow }}"
+                round
+                position="bottom">
+                <view class="popup-selector">
+                    <van-picker 
+                        default-index="0"
+                        show-toolbar
+                        title="请选择货名"
+                        columns="{{ cargoNameList }}" 
+                        bind:cancel="onClose"
+                        bind:confirm="handObtainGoods" />
+                </view>
+            </van-popup>
+
+            <!-- 地址弹框 -->
+            <van-popup
+                show="{{ addressShow }}"
+                custom-style="height: 100%;width: 100%;padding-top:60px;border-radius: 0;"
+                round
+                position="right">
+                <view class="region-title-close" bindtap="onCloseAddress">
+                    <image src="/images/my/region/gb@1.png"></image>
+                </view>
+                <address-selection prop-ID="{{ infoGroupOneIndexID }}" bind:myevent="onMyEvent"></address-selection>
+            </van-popup>
+        </vtu-input-group>
+    </view>
+    <!-- 信息分组2 -->
+    <view class="info-group">
+        <vtu-input-group>
+            <view class="info-group_item" wx:for="{{ infoGroupTwo }}" wx:key="index" wx:for-item="GroupTwo">
+                <view class="item-subTitle">
+                    <view class="item-subTitle_tag" wx:if="{{ GroupTwo.rate === true }}"><text>*</text></view>
+                    <view class="item-subTitle_text"><text>{{ GroupTwo.title }}</text></view>
+                </view>
+                <view class="item-input">
+                    <view class="item-input-child" wx:if="{{ !GroupTwo.list }}">
+                        <vtu-input wx:if="{{ GroupTwo.type != 'default' }}"
+                            placeholder="{{ GroupTwo.placeholder }}" 
+                            type="{{ GroupTwo.type }}" 
+                            arrow="{{ GroupTwo.arrow }}"
+                            mode="{{ GroupTwo.mode }}"
+                            text-align="left"
+                            data-index="{{index}}"
+                            bindchange="infoGroupTwoDate"
+                            bind:input="infoGroupTwoInput">
+                        </vtu-input>
+                        <vtu-input wx:if="{{ GroupTwo.type === 'default' }}"
+                            type="{{ GroupTwo.type }}" 
+                            value="{{ GroupTwo.placeholder }}"
+                            arrow="{{ GroupTwo.arrow }}"
+                            data-id="{{ GroupTwo.id }}"
+                            text-align="left"
+                            bind:click="totalPicker">
+                        </vtu-input>
+                    </view>
+                    <view class="item-input-child" wx:if="{{ GroupTwo.list }}">
+                        <van-radio-group value="{{ GroupTwo.radioValue }}" bind:change="onChangeRadio" data-index="{{ index }}">
+                            <van-radio
+                                wx:for="{{ GroupTwo.list.radio }}"
+                                wx:for-item="groupTwoRadio"
+                                wx:key="index"
+                                name="{{ groupTwoRadio.number }}" 
+                                checked-color="#E3211FFF">
+                                {{ groupTwoRadio.name }}
+                            </van-radio>
+                        </van-radio-group>
+                        <view class="input-child-wrap" wx:for="{{ GroupTwo.list.input }}" wx:key="index" wx:for-item="groupTwoInput">
+                            <view class="input-child-wrap_subTitle" wx:if="{{ groupTwoInput.subTitle }}">{{ groupTwoInput.subTitle }}</view>
+                            <vtu-input
+                                placeholder="{{ groupTwoInput.placeholder }}" 
+                                type="{{ groupTwoInput.type }}" 
+                                data-id="{{ groupTwoInput.id }}"
+                                text-align="left"
+                                bind:input="infoGroupTwoListInput">
+                            </vtu-input>
+                            <view class="input-child-wrap_msg">{{ groupTwoInput.msg }}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </vtu-input-group>
+    </view>
+    <!-- 信息分组3 -->
+    <view class="info-group">
+        <vtu-input-group>
+            <view class="info-group_item" wx:for="{{ infoGroupThree }}" wx:key="index" wx:for-item="GroupThree">
+                <view class="item-subTitle">
+                    <view class="item-subTitle_tag" wx:if="{{ GroupThree.rate === true }}"><text>*</text></view>
+                    <view class="item-subTitle_text"><text>{{ GroupThree.title }}</text></view>
+                </view>
+                <view class="item-input">
+                    <view class="item-input-child" wx:if="{{ GroupThree.list }}">
+                        <view class="input-child-wrap">
+                            <view class="item-input-child_text">
+                                <text>{{ GroupThree.off === true ? '请设置货物赔偿约定' : '不约定' }}</text>
+                            </view>
+                            <view class="item-input-child_off">
+                                <vtu-switch 
+                                    checked="{{ GroupThree.off }}" 
+                                    type="circle" 
+                                    size="small" 
+                                    active-color="red" 
+                                    label="否" 
+                                    active-label="是" bind:change="handleSwith"></vtu-switch>
+                            </view>
+                        </view>
+                        <view class="input-child-wrap" 
+                            wx:if="{{ GroupThree.off }}"
+                            wx:for="{{ GroupThree.list.input }}" 
+                            wx:key="index" 
+                            wx:for-item="groupThreeInput">
+                            <view class="input-child-wrap_subTitle">{{ groupThreeInput.subTitle }}</view>
+                            <vtu-input
+                                placeholder="{{ groupThreeInput.placeholder }}" 
+                                type="{{ groupThreeInput.type }}" 
+                                data-index="{{ index }}"
+                                text-align="left"
+                                bind:input="compensationInput">
+                            </vtu-input>
+                            <view class="input-child-wrap_msg">{{ groupThreeInput.msg }}</view>
+                        </view>
+                    </view>
+                    <view class="item-input-child" wx:if="{{ GroupThree.on }}">
+                        <view class="input-child-wrap">
+                            <vtu-input placeholder="请输入" type="input" text-align="center" bind:input="vesselMinimum"></vtu-input>
+                            至
+                            <vtu-input type="input" text-align="center" bind:input="vesselMaximum"></vtu-input>
+                            吨
+                        </view>
+                    </view>
+                    <view class="item-input-child" wx:if="{{ !GroupThree.list && !GroupThree.on }}">
+                        <vtu-input wx:if="{{ GroupThree.type != 'default' }}"
+                            placeholder="{{ GroupThree.placeholder }}" 
+                            type="{{ GroupThree.type }}" 
+                            arrow="{{ GroupThree.arrow }}"
+                            text-align="left"
+                            bind:input="infoGroupTwoInput">
+                        </vtu-input>
+                        <vtu-input wx:if="{{ GroupThree.type === 'default' }}"
+                            type="{{ GroupThree.type }}" 
+                            value="{{ GroupThree.placeholder }}"
+                            arrow="{{ GroupThree.arrow }}"
+                            data-id="{{ GroupThree.id }}"
+                            text-align="left"
+                            bind:click="totalPicker">
+                        </vtu-input>
+                    </view>
+                </view>
+            </view>
+        </vtu-input-group>
+    </view>
+    <!-- 信息分组4 -->
+    <view class="info-group">
+        <vtu-input-group>
+            <vtu-input 
+                placeholder="请输入留言给船东"
+                type="textarea" 
+                text-align="left" 
+                show-max-label="{{false}}" 
+                text-height="100px"
+                bind:input="infoGroupFour"></vtu-input>
+        </vtu-input-group>
+    </view>
+    <!-- 功能弹框 -->
+    <view class="info-group">
+        <van-popup
+            show="{{ handlePickerShow }}"
+            round
+            position="bottom">
+            <!-- <view class="popup-title">
+                <view class="popup-title_cancel" bindtap="onClose">取消</view>
+                <view class="popup-title_confirm" bindtap="handShipTypeConfirm">确认</view>
+            </view> -->
+            <view class="popup-selector">
+                <van-picker
+                    default-index="0"
+                    show-toolbar
+                    columns="{{ pickerList }}" 
+                    value-key="{{ pickerListRows }}"
+                    bind:cancel="onClose"
+                    bind:confirm="handlePickerConfirm" />
+            </view>
+            <view class="popup-input">
+                <van-field
+                    label="其它："
+                    label-class="popup-input_label"
+                    input-class="popup-input_text"
+                    type="textarea"
+                    placeholder="如以上没有您需要的选项请在此输入"
+                    border="{{ false }}"
+                    bind:input="handlePickerInput"
+                    autosize/>
+            </view>
+        </van-popup>
+    </view>
+    <!-- 添加按钮 -->
+    <view class="info-group">
+        <van-button type="danger" 
+            size="large" 
+            square 
+            custom-style="{{buttonStyle}}"
+            bind:click="handleCargoRelease">发布货源</van-button>
+    </view>
+    <van-dialog
+        use-slot
+        title="是否指定船东"
+        show="{{ visible }}"
+        show-cancel-button="{{ false }}"
+        show-confirm-button="{{ false }}">
+        <view class="button-container">
+            <view class="button-item {{ button.active === true ? 'active':'' }}" 
+                wx:for="{{ confirmButton }}"
+                wx:key="index"
+                wx:for-item="button"
+                data-index="{{ index }}"
+                bindtap="handleconfirmButton">{{button.name}}</view>
+        </view>
+    </van-dialog>
+    <van-popup
+        show="{{ specifiedShow }}"
+        round
+        position="right"
+        custom-style="height: 100%;width: 100%;padding-top:60px;border-radius: 0;">
+        <view class="region-title-close" bindtap="onCloseAddress">
+            <image src="/images/my/region/gb@1.png"></image>
+        </view>
+        <shipowner-list></shipowner-list>
+    </van-popup>
+</view>

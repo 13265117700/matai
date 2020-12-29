@@ -1,8 +1,0 @@
-{
-  "usingComponents": {
-    "c-link-list": "/components/design/swiperDesign/index",
-    "c-comment": "/components/public/comment/comment",
-    "c-buy": "/components/public/buy/buy"
-  },
-  "navigationBarTitleText": "作品详情"
-}

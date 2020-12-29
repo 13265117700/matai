@@ -1,0 +1,42 @@
+<view class="page-container">
+  <view class="page-navbar">
+    <vtu-navbar 
+      title="个人设置" 
+      homeStyle="cachet" 
+      bgColor="#F0222FFF" 
+      fontColor="#ffffff" 
+      icon="iconfont icon-shangchuan"></vtu-navbar>
+  </view>
+  <view class="user-setUp">
+    <view class="user-setUp_list">
+      <view class="user-setUp_item"
+        wx:for="{{setUpList}}"
+        wx:key="index"
+        data-index="{{index}}"
+        data-id="{{item.id}}"
+        bindtap="handSetUp">
+        <view class="item-title">{{item.title}}</view>
+        <view class="item-text">{{item.text}}</view>
+        <view class="item-avatar" wx:if="{{item.avatar}}">
+          <vtu-avatar src="{{item.avatar}}" round></vtu-avatar>
+        </view>
+        <view class="item-tag">
+          <image src="/images/my/ck@3x.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <van-popup
+    show="{{ show }}"
+    round
+    position="bottom"
+    custom-style="height: 183px">
+    <view class="popup-button">
+      <view class="popup-button_item"
+        wx:for="{{popupButton}}"
+        wx:key="index"
+        data-index="{{index}}"
+        bindtap="handPopup">{{item.text}}</view>
+    </view>
+  </van-popup>
+</view>

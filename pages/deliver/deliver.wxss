@@ -1,11 +1,12 @@
-.deliver-container{
+/* .deliver-container{
     padding: 0 15px;
     margin: 18px 0 37px;
-}
+} */
 .current-time{
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
+    width: 345px;
+    margin: 10px auto 15px;
 }
 .current-time .number{
     font-size: 40px;
@@ -50,6 +51,14 @@
     font-family: PingFang-SC-Bold;
     font-weight: bold;
     color: #ffffff;
+}
+.deliver-item-tag{
+    width: 22px;
+    height: 4px;
+    background: #ffffff;
+    position: absolute;
+    left: 15px;
+    bottom: 36.5px;
 }
 .mode-status{
     display: flex;

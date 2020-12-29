@@ -1,0 +1,52 @@
+<view class="page-container">
+    <view class="page-navbar">
+        <vtu-navbar title="{{ navBarTitle }}" 
+            homeStyle="cachet" 
+            bgColor="#F0222FFF"
+            fontColor="#ffffff" 
+            icon="iconfont icon-shangchuan"></vtu-navbar>
+    </view>
+    <view class="page-main">
+        <view class="info-group">
+            <vtu-input-group>
+                <view class="info-item" wx:for="{{ inputList }}" wx:key="index" wx:for-item="inputItem">
+                    <!-- <view class="item-subTitle">
+                        <text>{{ inputItem.title }}</text>
+                    </view> -->
+                    <view class="item-input">
+                        <vtu-input 
+                            wx:if="{{ inputItem.type != 'default' }}"
+                            type="{{ inputItem.type }}" 
+                            title="{{ inputItem.title }}"
+                            placeholder="{{ inputItem.placeholder }}"
+                            value="{{ inputItem.pickerDate }}"
+                            mode="{{ inputItem.mode }}"
+                            data-index="{{ index }}"
+                            text-align="left"
+                            border="{{ inputItem.border }}"
+                            arrow="{{ inputItem.arrow }}"
+                            bindchange="handleconfirm"></vtu-input>
+                        <vtu-input 
+                            wx:if="{{ inputItem.type === 'default' }}"
+                            type="{{ inputItem.type }}" 
+                            title="{{ inputItem.title }}"
+                            value="{{ inputItem.placeholder }}"
+                            data-index="{{ index }}"
+                            data-id="{{ inputItem.id }}"
+                            text-align="left"
+                            border="{{ inputItem.border }}"
+                            arrow="{{ inputItem.arrow }}"
+                            bind:click="handleOpenPopup"></vtu-input>
+                    </view>
+                </view>
+            </vtu-input-group>
+        </view>
+        <view class="confirm-button">
+            <van-button 
+                type="danger" 
+                square 
+                size="large"
+                custom-style="{{confirmButtom}}">确认</van-button>
+        </view>
+    </view>
+</view>

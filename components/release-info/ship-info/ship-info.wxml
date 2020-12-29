@@ -1,0 +1,86 @@
+<view class="release-shipInfo-container">
+    <view class="info-group">
+        <vtu-input-group>
+            <view class="info-item" wx:for="{{ inputList }}" wx:key="index" wx:for-item="inputItem">
+                <view class="item-subTitle">
+                    <text>{{ inputItem.title }}</text>
+                </view>
+                <view class="item-input">
+                    <vtu-input 
+                        wx:if="{{ inputItem.type != 'default' }}"
+                        type="{{ inputItem.type }}" 
+                        placeholder="{{ inputItem.placeholder }}"
+                        value="{{ inputItem.pickerDate }}"
+                        mode="{{ inputItem.mode }}"
+                        data-index="{{ index }}"
+                        text-align="left"
+                        border="{{ inputItem.border }}"
+                        arrow
+                        bindchange="handleconfirm"></vtu-input>
+                    <vtu-input 
+                        wx:if="{{ inputItem.type === 'default' }}"
+                        type="{{ inputItem.type }}" 
+                        value="{{ inputItem.placeholder }}"
+                        data-index="{{ index }}"
+                        data-id="{{ inputItem.id }}"
+                        text-align="left"
+                        border="{{ inputItem.border }}"
+                        arrow
+                        bind:click="handleOpenPopup"></vtu-input>
+                </view>
+            </view>
+            <van-popup
+                show="{{ addressShow }}"
+                custom-style="height: 100%;width: 100%;padding-top:60px;border-radius: 0;"
+                round
+                position="right">
+                <view class="region-title-close" bindtap="onCloseAddress">
+                    <image src="/images/my/region/gb@1.png"></image>
+                </view>
+                <address-selection prop-ID="{{ id }}" bind:myevent="onMyEvent"></address-selection>
+            </van-popup>
+            <van-popup
+                show="{{ popupShow }}"
+                closeable="{{ popupStyle.closeable }}"
+                close-icon="{{ popupStyle.closeIcon }}"
+                position="{{ popupStyle.position }}"
+                bind:close="onClose">
+                <view class="info-popup">
+                    <view class="info-popup_picker">
+                        <van-picker
+                            show-toolbar
+                            title="请选择船舶"
+                            columns="{{ shipList }}"
+                            default-index="1"
+                            confirm-button-text=""
+                            cancel-button-text=""
+                            bind:change="handlePickerItem"/>
+                    </view>
+                    <view class="info-popup_btn">
+                        <van-button 
+                            type="danger" 
+                            custom-style="{{ buttonStyle }}"
+                            square 
+                            size="large" 
+                            bindtap="handleConfirmShip">确认</van-button>
+                    </view>
+                </view>
+            </van-popup>
+        </vtu-input-group>
+    </view>
+    <view class="info-group">
+        <vtu-input-group>
+            <vtu-input 
+                v-class="info-input"
+                title="备注" 
+                placeholder="请输入想对船东说的内容" 
+                type="textarea" 
+                text-align="left" 
+                text-height="100px" 
+                show-max-label="{{false}}"></vtu-input>
+        </vtu-input-group>
+    </view>
+    <view class="info-group">
+        <van-button type="danger" square size="large" custom-style="{{ buttonStyle }}">发布船期</van-button>
+    </view>
+</view>
