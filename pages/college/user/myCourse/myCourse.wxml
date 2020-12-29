@@ -1,0 +1,34 @@
+<view class="college-dhl ">
+	<scroll-view class="scroll-view-tabs" scroll-x="true" bindscroll="scroll" style="width: 100%">
+		<view class="scroll-view-tab ">
+			<view class="college-dhl-bq {{ currentTab === '全部' ? 'main-color' : '' }}" bindtap="tabChange" data-name="全部" data-id="">
+				<view class="college-dhl-bq-wenzi">全部</view>
+				<view class="college-dhl-bq-yanse"> </view>
+			</view>
+		</view>
+		<view wx:for="{{ collegeData }}" wx:for-index='key' class="scroll-view-tab ">
+			<view class="college-dhl-bq {{ currentTab === item.name ? 'main-color' : '' }}" bindtap="tabChange" data-name="{{ item.name }}" data-id="{{ item.id }}">
+				<view class="college-dhl-bq-wenzi"> {{ item.name }}</view>
+				<view class="college-dhl-bq-yanse"> </view>
+			</view>
+		</view>
+	</scroll-view>
+</view>
+<view class="college-qbkc">
+	<view class="college-qbkc-lb" wx:if="{{advertisingRmLbData.length}}">
+		<view class="college-qbkc-lb-nr" wx:for="{{ advertisingRmLbData }}">
+			<navigator class="navigator-jied" url="../../collegeContent/collegeContent?viewId={{ item.id }}">
+				<image class="college-qbkc-lb-img" src="{{ item.thumbnail }}" />
+				<view class="college-qbkc-lb-wznr">
+					{{ item.name }}
+				</view>
+			</navigator>
+		</view>
+	</view>
+	<view class="no-data" wx:else>
+		<image src="/images/icon/gwc@2x.png" mode="widthFix"></image>
+		<view>还没有购买任何课程</view>
+		<view class="sub-text">学习知识要善于思考，思考，再思考。</view>
+		<view class="go" data-path="/pages/college/college" bindtap="goPath">去看看</view>
+	</view>
+</view>

@@ -1,0 +1,41 @@
+/* 底部导航栏 */
+.fix-bottom-bar {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  z-index: 99999999;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #C8C7CC;
+}
+
+.fix-bottom-bar .item {
+  flex: 1;
+  padding-top: 20rpx;
+  padding-bottom: 10rpx;
+  text-align: center;
+  font-size: 18rpx;
+  color: #A1A1A1;
+}
+
+.fix-bottom-bar .icon {
+  width: 100%;
+}
+
+.fix-bottom-bar .icon .icon-content {
+  width: 40rpx;
+}
+
+.fix-bottom-bar .icon .icon-content.add {
+  width: 54rpx;
+}
+
+.fix-bottom-bar .item .t{
+  line-height: 1;
+}
+
+.fix-bottom-bar .item.active .t{
+  color: #191919;
+}

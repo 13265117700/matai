@@ -1,4 +1,15 @@
 {
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "首页",
+  "backgroundColor": "#ffffff",
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": false,
+  "navigationStyle": "custom",
   "usingComponents": {
+    "c-recommend": "/components/index/recommend/index",
+    "c-event": "/components/index/event/index",
+    "c-zhishi": "/components/index/zhishi/index",
+    "c-follow": "/components/index/follow/index",
+    "c-shop": "/components/index/shop/index"
   }
 }

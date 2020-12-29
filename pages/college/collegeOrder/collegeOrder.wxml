@@ -1,0 +1,56 @@
+<view class="order-top">
+	<text class="order-to-wz">课程信息</text>
+	<view wx:for="{{viewOrderData.csCollegeList}}" class="order-to-lb">
+		<image src="{{item.thumbnail}}" class="order-to-img" />
+		<view class="order-to-nr">
+			<view class="order-to-bt">
+				{{item.name}}
+			</view>
+			<text class="video-jiag"><text class="video-jia-fh">￥</text>{{item.coursePrice}}</text>
+		</view>
+	</view>
+</view>
+
+<view class="order-zj">
+	<view class="order-spje">
+		<text class="order-spje-bt">商品金额</text>
+		<text class="order-spje-jg">￥{{viewOrderData.orderPrice}}</text>
+	</view>
+	<view class="order-yfje">
+		<text class="order-yfje-bt">应付金额</text>
+		<text class="order-yfje-jg">￥{{viewOrderData.orderPrice}}</text>
+	</view>
+</view>
+<view class="order-zffs">
+	<text class="order-zffs-bs">支付方式</text>
+	<view style="display: {{ globalSettings.appletPaymentSwitch == 0 ? 'none' : 'block' }};">
+		<view class="order-zffs-xz {{ xzzffs == 1 ? '' : 'xzzffs' }}" bindtap="pay_xuanz" data-xzzffs="1">
+			<image src="../../../img/college/order/weixzhf.png" class="order-zffs-tb" />
+			<text class="order-zffs-bt">微信支付</text>
+			<view class="order-zffs-xuanz">
+				<image src="../../../img/college/order/yxzf.png" class="order-zffs-xzan" />
+			</view>
+		</view>
+		<view class="order-zffs-xz {{ xzzffs == 0 ? '' : 'xzzffs' }}" bindtap="pay_xuanz" data-xzzffs="0">
+			<image src="../../../img/college/order/yezf.png" class="order-zffs-tb" />
+			<text class="order-zffs-bt">余额支付</text>
+			<view class="order-zffs-xuanz">
+				<image src="../../../img/college/order/yxzf.png" class="order-zffs-xzan" />
+			</view>
+		</view>
+	</view>
+	<view style="display: {{ globalSettings.appletPaymentSwitch == 1 ? 'none' : 'block' }};">
+		请到图可图PC端进行支付
+	</view>
+</view>
+
+<view class="pt-xy">
+	<image src="../../../img/college/order/ddqr-ts.png" class="pt-xy-tb" />
+	<text class="xieyi">购买即代表您已经同意 <text class="xieyi-bs">《创秀云服务协议》 和 《创秀云知识产权保护协议》</text></text>
+</view>
+<view class="tjiaoann">
+	<text class="jiag-xs"> <text class="jiag-xs-fh">￥</text>{{viewOrderData.orderPrice}}</text>
+	<view class="zhif" bindtap="pay_xcx" style="display: {{ globalSettings.appletPaymentSwitch == 0 ? 'none' : 'block' }};">
+		立即购买
+	</view>
+</view>

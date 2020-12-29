@@ -1,0 +1,11 @@
+/* @import '../event/index.wxss'; */
+@import '../../../pages/design/mall/mall.wxss';
+
+.default {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.college-top {
+  padding-top: 20rpx;
+}

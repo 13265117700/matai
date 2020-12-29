@@ -1,0 +1,86 @@
+<wxs module="utils">
+	function toFixed2(num) {
+		if (!num) {
+			return num
+		} else {
+			return Number(num).toFixed(2)
+		}
+	}
+	module.exports = {
+		toFixed2: toFixed2
+	}
+</wxs>
+<!-- 自定义导航栏 -->
+<navBar background='transparent' iconTheme="white" color="#ffffff" title="发展团队" back="{{true}}" bindback="back"></navBar>
+<view class="page-content">
+	<view class="top" style="background-image: url('http://csyimg.oss-cn-shenzhen.aliyuncs.com/images/2020/07/17/15949790562776020.png');">
+		<view class="numbers">
+			<view class="m-content">
+				<view class="t1">
+					<view>
+						分享收益（元）
+					</view>
+					<view class="share-rule" data-path="./rule/rule" bindtap="goPath">
+						分享规则
+					</view>        
+        </view>
+				<view class="t2">
+					<view class="total-price">
+						￥<text>{{ userInfo.distributionPrice }}</text>
+					</view>
+					<view class="tx" data-path="/pages/design/my/wallet/transaction/transaction?orderType=1" bindtap="goPath">
+						收益明细
+					</view>
+				</view>
+				<view class="t3">
+					<!-- <view class="t3-item">
+						<text class="t3-name">累计金额</text>
+						<view class="t3-number">￥{{ userInfo.distributionPrice }}</view>
+					</view>
+					<view class="t3-item">
+						<text class="t3-name">累计提现</text>
+						<view class="t3-number">￥{{ userInfo.successfulCommission }}</view>
+					</view>
+					<view class="t3-item">
+						<text class="t3-name">我的团队</text>
+						<view class="t3-number">{{totals}}</view>
+					</view> -->
+					<view>我的团队</view>
+					<view>{{totals}}</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<!-- top end -->
+	<view class="content">
+		<view class="page-section">
+			<scroll-view class="scroll-view-tabs" style="width: 100%">
+				<view wx:for="{{ tabs }}" wx:key="id" class="scroll-view-tab {{ currentTab === item.id ? 'main-color' : '' }}" bindtap="tabChange" data-name="{{ item.name }}" data-status="{{item.id}}">
+					{{ item.name }}
+				</view>
+			</scroll-view>
+		</view>
+		<view style="height: 20rpx; background: #f3f3f3;"></view>
+
+		<view class="list" wx:if="{{ list.length }}">
+			<view class="item" wx:for="{{list}}" wx:key="id">
+				<view class="left">
+					<image class="avatar" src="{{ item.faceImage || 'http://csyimg.oss-cn-shenzhen.aliyuncs.com/images/2020/07/17/15949519098579878.jpg' }}"></image>
+				</view>
+				<view class="right">
+					<view class="nick-name">{{ item.nickName }}</view>
+					<!-- <view class="total-price">累计订单金额：￥{{ utils.toFixed2(item.aturnover) }}</view> -->
+				</view>
+			</view>
+		</view>
+
+		<view class="no-list" wx:if="{{ !list.length && showNoData }}">
+			<noContent />
+		</view>
+	</view>
+	<!-- content 结束 -->
+</view>
+
+<view class="fxb-content">
+  <view class="share-banner" data-path="/pages/design/my/share/share" bindtap="goPath" style="background-image: url('http://csyimg.oss-cn-shenzhen.aliyuncs.com/images/2020/07/17/15949819002761234.png')"></view>
+</view>

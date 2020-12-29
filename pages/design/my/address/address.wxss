@@ -1,0 +1,128 @@
+page {
+  background-color: #f4f4f4;
+}
+
+.page-address {
+  padding-bottom: 140rpx;
+}
+
+.empty {
+  width: 100%;
+  box-sizing: border-box;
+  height: 100%;
+  display: flex;
+  padding: 250rpx 44rpx 0;
+  flex-direction: column;
+  align-items: center;
+  font-size: 28rpx;
+  color: #505050;
+}
+
+.empty image {
+  width: 324rpx;
+}
+
+.empty view {
+  margin: 10rpx;
+}
+
+.address-list {
+  padding: 20rpx 0;
+}
+
+.address-list .item {
+  background-color: #fff;
+  margin-bottom: 20rpx;
+}
+
+.item>view {
+  padding: 20rpx 30rpx;
+}
+
+.item>view image {
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.top {
+  border-bottom: 1px solid #dadadb;
+}
+
+.top>view {
+  display: flex;
+  align-items: center;
+}
+
+.top>view text {
+  margin-right: 36rpx;
+}
+
+.top .info {
+  color: #222;
+  font-weight: bold;
+  font-size: 30rpx;
+  margin-bottom: 10rpx;
+}
+
+.top .address {
+  font-size: 26rpx;
+  color: #505050;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bottom>view {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  line-height: 1;
+  color: #909090;
+}
+
+.bottom>.tools>view {
+  display: flex;
+  align-items: center;
+}
+
+.bottom>.tools view:last-of-type {
+  margin-left: 30rpx;
+}
+
+.bottom>.tools view text {
+  margin-left: 10rpx;
+}
+
+.bottom>.tools image {
+  margin-right: 18rpx;
+}
+
+
+.add-address {
+  padding: 20rpx;
+  background-color: #fff;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+.add-address view {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 46rpx;
+  padding: 24rpx 0;
+  line-height: 1;
+  background: linear-gradient(to right, #1BE2DB, #009EBB);
+}
+
+.add-address .text {
+  margin-right: 10rpx;
+  transform: scale(1.4);
+}

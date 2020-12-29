@@ -1,0 +1,56 @@
+<navBar background='linear-gradient(to right, #00D1D3, #009EBB)' title="订单支付" iconTheme="white" color="#ffffff" back="{{true}}" bindback="back">
+</navBar>
+<view style="padding-top: 50rpx; background-color: #fff;"></view>
+<view wx:for="{{orderInfo.csOrderDesignerWorks}}" wx:key="id" class="content">
+	<view class="info">
+		<view class="left" style="background-image: url('{{ item.csDesignWorks.thumbnail }}')"></view>
+		<view class="right">
+			<view class="info-title">{{item.csDesignWorks.name}}</view>
+			<view class="price">￥{{item.orderPrice}}</view>
+		</view>
+	</view>
+	<view class="text">
+		购买模式
+    <text wx:if="{{item.typePurchase == 3}}">企业授权</text>
+    <text wx:if="{{item.typePurchase == 2 || item.typePurchase == 1}}">个人授权</text>
+    <text wx:if="{{item.typePurchase == 5}}">买断</text>
+	</view>
+	<view class="text">
+		授权期限 <text wx:if="{{item.typePurchase == 5}}">永久</text>
+    <text wx:else>{{item.years}}年</text>
+	</view>
+</view>
+
+<view class="t-title" style="margin-top: 20rpx; padding-botom: 10rpx;">支付方式</view>
+<view class="pay-type">
+	<view class="type" bindtap="bindChange" data-index="1">
+		<view class="left">
+			<image mode="widthFix" src="/images/icon/my/pay/weixzhf@2x.png"></image>
+			微信支付
+		</view>
+		<view class="right {{active == 1 ? 'active' : ''}}">
+      <view class="maru"></view>
+      <image src="/images/icon/my/pay/yxzf@2x.png"></image>
+    </view>
+	</view>
+	<view class="type" bindtap="bindChange" data-index="2">
+		<view class="left">
+			<image mode="widthFix" src="/images/icon/my/pay/yezf@2x.png"></image>
+			余额支付
+		</view>
+		<view class="right {{active == 2 ? 'active' : ''}}">
+      <view class="maru"></view>
+      <image src="/images/icon/my/pay/yxzf@2x.png"></image>
+    </view>
+	</view>
+</view>
+<view class="f-bottom">
+	<view class="price">
+		实付 <text>￥{{ orderInfo.orderPrice || 0 }}</text>
+	</view>
+	<view class="btn" bindtap="doPay">
+		立即支付
+	</view>
+</view>
+
+<!-- <button bindtap="getOrderInfo">获取订单信息</button> -->

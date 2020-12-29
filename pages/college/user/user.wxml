@@ -1,0 +1,47 @@
+<view class="college-user-top">
+	<view class="college-user-ydl " wx:if="{{userInfo}}">
+		<view class="user-tx">
+			<image class="user-tx-img" src="{{userInfo.faceImage}}"></image>
+		</view>
+		<view class="user-grxx">
+			<text  class="user-nickName">{{userInfo.nickName}}</text>
+			<text  class="user-phone" wx:if="{{mphone != '****'}}"> {{mphone}}</text>
+			<text  class="user-phone" wx:if="{{mphone == '****'}}"> 还没绑定手机号码</text>
+		</view>
+	</view>
+	<navigator url="/pages/auth/auth" wx:if="{{!userInfo}}">
+		<view class="wdengl">
+			未登陆
+		</view>
+	</navigator>
+</view>
+
+<view class="college-user-zhong">
+	<view class="college-user-lieb">
+		<navigator url="myCourse/myCourse">
+			<view class="college-user-lju"> <text class="college-user-biaot">我的课程</text>
+				<image class="college-user-img" src="../../../img/college/order/chk.png" />
+			</view>
+		</navigator>
+		<navigator url="myCollection/myCollection">
+			<view class="college-user-lju"> <text class="college-user-biaot">我的收藏</text>
+				<image class="college-user-img" src="../../../img/college/order/chk.png" />
+			</view>
+		</navigator>
+		<navigator url="userOrder/userOrderList/userOrderList">
+			<view class="college-user-lju"> <text class="college-user-biaot">我的订单</text>
+				<image class="college-user-img" src="../../../img/college/order/chk.png" />
+			</view>
+		</navigator>
+		<navigator url="/pages/college/collegeShoppingCart/collegeShoppingCart">
+			<view class="college-user-lju"> <text class="college-user-biaot">购物车</text>
+				<image class="college-user-img" src="../../../img/college/order/chk.png" />
+			</view>
+		</navigator>
+		<navigator url="../helpCenter/helpCenter">
+			<view class="college-user-lju"> <text class="college-user-biaot">帮助中心</text>
+				<image class="college-user-img" src="../../../img/college/order/chk.png" />
+			</view>
+		</navigator>
+	</view>
+</view>

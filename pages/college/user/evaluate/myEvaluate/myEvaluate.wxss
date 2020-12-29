@@ -1,0 +1,140 @@
+
+page{
+    background-color: #F6F6F6;
+    height: 100%;
+}
+
+
+page view,
+page text,
+page scroll-view,
+page input,
+page button,
+page image,
+page cover-view {
+  box-sizing: content-box;
+}
+
+.user-xx{
+    overflow: hidden;
+    background-color: #fff;
+
+}
+
+.user-tx{
+    width:100rpx;
+    height:100rpx;
+    float: left;
+    margin: 36rpx 25rpx 48rpx 36rpx;
+}
+
+
+.user-tx-img{
+    width:100rpx;
+    height:100rpx;
+    border:2rpx solid rgba(0,209,211,1);
+    border-radius:50%;
+}
+
+.user-grxx{
+    float: left;
+    font-size:34rpx;
+    font-weight:bold;
+    color:rgba(30,30,30,1);
+    line-height:36rpx;
+    margin-top: 64rpx;
+}
+
+.wdequanbpl{
+    font-size:30rpx;
+    font-weight:bold;
+    color:rgba(30,30,30,1);
+    line-height:30rpx;
+    background-color: #fff;
+    display: block;
+    padding-left: 31rpx;
+}
+
+.wdepaji-lieb{
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.evaluation-lieb{
+    height: 142rpx;
+    padding-top: 30rpx;
+}
+
+
+.evaluation-lieb-shang{
+    width:196rpx;
+    height:110rpx;
+    margin: 0 30rpx 0 29rpx;
+    float: left;
+  
+}
+
+.evaluation-lieb-tx{
+    width:196rpx;
+    height:110rpx;
+    border-radius:10rpx;
+}
+
+.pcyuan{
+    float: left;
+    width: 443rpx;
+}
+
+.evaluation-lieb-xingm{
+    display: block;
+    font-size:26rpx;
+    font-weight:500;
+    color:rgba(47,47,47,1);
+    line-height:26rpx;
+    margin-top: 7rpx;
+    margin-bottom: 22rpx;    
+}
+
+
+
+
+
+.evaluation-lieb-zhong-pf{
+    overflow: hidden;
+    float: left;
+}
+
+
+
+.evaluation-lieb-zhong-pf-xx{
+    float: left;
+    width: 18rpx;
+    height: 18rpx;
+    line-height: 13rpx;
+    margin-right: 10rpx;
+}
+.evaluation-lieb-zhong-pf-xx image{
+    width: 18rpx;
+    height: 18rpx;
+}
+
+.pjann{
+    width:112rpx;
+    height:56rpx;
+    background:rgba(255,255,255,1);
+    border:1rpx solid rgba(0,209,211,1);
+    border-radius:28rpx;
+    font-size:28rpx;
+    font-weight:500;
+    color:rgba(0,209,211,1);
+    line-height:56rpx;
+    text-align: center;
+    float: right;
+}
+
+
+.user-top{
+    overflow: hidden;
+    padding-bottom: 50rpx;
+    background-color: #fff;
+}

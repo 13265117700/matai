@@ -1,0 +1,60 @@
+page {
+  padding: 60rpx 40rpx;
+  background-color: #fff;
+}
+
+.m-title {
+  font-size: 60rpx;
+  color: #000;
+  margin-bottom: 20rpx;
+}
+
+.sub-text {
+  color: #555555;
+  font-size: 26rpx;
+  margin-top: 20rpx;
+}
+
+.sub-text text {
+  color: #3E80C9;
+}
+
+.verify-code {
+  margin-top: 120rpx;
+  padding: 20rpx 180rpx 20rpx 10rpx;
+  border-bottom: 1px solid #E6E6E6;
+  position: relative;
+}
+
+.verify-code .abs {
+  position: absolute;
+  right: 0;
+  top: 10rpx;
+  border: 1px solid #1FCCCD;
+  color: #1FCCCD;
+  font-size: 30rpx;
+  padding: 16rpx 20rpx;
+  line-height: 1;
+  border-radius: 32rpx;
+}
+
+.verify-code .abs.cd {
+  color: #999999;
+  border-color: transparent;
+}
+
+.login-btn {
+  width: 100% !important;
+  margin-top: 90rpx;
+  margin-bottom: 40rpx;
+  line-height: 1;
+  color: #fff;
+  font-size: 32rpx;
+  background: rgba(31, 204, 205, 0.5);
+  padding: 30rpx 0;
+  border-radius: 56rpx;
+}
+
+.login-btn.active {
+  background: rgba(31, 204, 205, 1);
+}

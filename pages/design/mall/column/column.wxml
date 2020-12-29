@@ -1,0 +1,26 @@
+<navBar background='#ffffff' back="{{true}}" bindback="back" iconTheme="black">
+	<view class='lxy-nav-bar-search' slot="center" style="background: #F4F4F4; border-radius: 23px;" data-path="/pages/design/mall/search/search" bindtap="goPath">
+		<view class='lxy-nav-bar-search__input' style="display: flex; align-items: center; padding: 14rpx 24rpx 14rpx 90rpx;">
+			<view style="text-align: center; margin-right: 40rpx; font-size: 24rpx; color: #878787;">
+				商品名称
+			</view>
+			<image src="/images/icon/so01.png" style="width: 30rpx; height: 30rpx;"></image>
+		</view>
+	</view>
+</navBar>
+
+<view class="column">
+	<scroll-view class="tag-list" scroll-y="{{true}}" style="height: calc(100vh - {{height}}px)">
+		<view wx:for="{{ columnList }}" wx:key="id" data-id="{{item.id}}" bindtap="changeTag" class="tag-list-item {{item.id == current ? 'active' : ''}}">{{ item.name }}</view>
+	</scroll-view>
+	<scroll-view class="list-content" scroll-y="{{true}}" style="height: calc(100vh - {{height}}px)">
+		<view class="top-banner" style="background-image: url('{{currentTag.sectionThumbnails}}')"></view>
+		<view class="current-tag">{{ currentTag.name }}</view>
+		<view class="second-column">
+			<view wx:for="{{secondColumnList}}" wx:key="id" class="second-column-item" bindtap="goSearch" data-name="{{item.name}}" data-id="{{item.id}}">
+				<view class="icon" style="background-image: url('{{item.sectionThumbnails}}')"></view>
+				<view class="column-name">{{ item.name }}</view>
+			</view>
+		</view>
+	</scroll-view>
+</view>

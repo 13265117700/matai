@@ -1,0 +1,64 @@
+<view class="user-info">
+  <view class="avatar" bindtap="uploadImg" data-name="faceImage">
+    <view class="face-image">
+      <image src="{{form.faceImage}}"></image>
+    </view>
+    <view>修改头像</view>
+  </view>
+  	<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+		<view class="page__bd">
+			<mp-form id="form" rules="{{rules}}" models="{{formData}}">
+				<mp-cells title="" footer="">
+					<mp-cell prop="nickName" title="用户名" ext-class="">
+						<input bindinput="formInputChange" maxlength="12" value="{{form.nickName}}" data-field="nickName" class="weui-input" placeholder="请输入用户名" />
+					</mp-cell>
+				</mp-cells>
+			</mp-form>
+      <!-- 性别 -->
+			<view class="weui-cells weui-cells_after-title">
+				<view class="weui-cell weui-cell_select">
+					<view class="weui-cell__hd weui-cell__hd_in-select-after">
+						<view class="weui-label" style="text-align: center;">性别</view>
+					</view>
+					<view class="weui-cell__bd">
+						<picker bindchange="bindGenderChange" range-key="name" value="{{genderIndex}}" range="{{genders}}">
+							<view class="weui-select weui-select_in-select-after">{{genders[genderIndex].name}}</view>
+						</picker>
+					</view>
+				</view>
+			</view>
+      <!-- 城市 -->
+			<view class="weui-cells weui-cells_after-title">
+				<view class="weui-cell weui-cell_select">
+					<view class="weui-cell__hd weui-cell__hd_in-select-after">
+						<view class="weui-label" style="text-align: center;">城市</view>
+					</view>
+					<view class="weui-cell__bd">
+						<picker bindchange="bindRegionChange" mode="region" value="{{region}}">
+							<view wx:if="{{region.length}}" class="weui-select weui-select_in-select-after">{{region[0]}}-{{region[1]}}-{{region[2]}}</view>
+							<view wx:else class="weui-select weui-select_in-select-after">未填写</view>              
+						</picker>
+					</view>
+				</view>
+			</view>
+      <!-- 职业 -->
+			<view class="weui-cells weui-cells_after-title">
+				<view class="weui-cell weui-cell_select">
+					<view class="weui-cell__hd weui-cell__hd_in-select-after">
+						<view class="weui-label" style="text-align: center;">设计领域</view>
+					</view>
+					<view class="weui-cell__bd">
+						<picker bindchange="bindCountryChange" range-key="name" value="{{countryIndex}}" range="{{countries}}">
+							<view class="weui-select weui-select_in-select-after">{{countries[countryIndex].name}}</view>
+						</picker>
+					</view>
+				</view>
+			</view>
+
+		</view>
+	</view>
+
+	<view class="bottom">
+		<view class="btn" bindtap="submit">保存</view>
+	</view>
+</view>

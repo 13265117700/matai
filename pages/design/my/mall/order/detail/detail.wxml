@@ -1,0 +1,89 @@
+  <wxs module="f">
+  	function textFormat(str) {
+  		return str.slice(0, 3) + '****' + str.slice(7)
+  	}
+  	module.exports = {
+  		textFormat: textFormat
+  	}
+  </wxs>
+
+  <!-- 自定义导航栏 -->
+  <navBar background='transparent' iconTheme="white" color="#ffffff" title="" back="{{true}}" bindback="back"></navBar>
+  <view class="page-content">
+  	<view class="top" style="background-image: url('http://csyimg.oss-cn-shenzhen.aliyuncs.com/images/2020/07/10/15943670497034280.png');">
+  		<view wx:if="{{status == 1}}" class="order-status">
+  			<view class="wait">
+  				<image src="/images/icon/my/ddxq-sj.png"></image>
+  				等待付款
+  			</view>
+  			<view class="pay-price">
+  				需付款：￥
+  				<text>￥{{info.orderPrice}}<text wx:if="{{info.sharePrice}}"> + {{info.sharePrice}}共享分</text></text>
+  			</view>
+  			<view class="to-pay">
+  				<view class="pay-btn" data-path="../payment/payment?orderId={{info.orderId}}" catchtap="goPath">
+  					去支付
+  				</view>
+  			</view>
+  		</view>
+  		<view wx:if="{{status == 2}}" class="order-status">
+  			<view class="wait">
+  				<image src="/images/icon/my/dfh@2x.png"></image>
+  				待发货
+  			</view>
+  		</view>
+  		<view wx:if="{{status == 3}}" class="order-status">
+  			<view class="wait">
+  				<image src="/images/icon/my/dsh@2x.png"></image>
+  				待收货
+  			</view>
+  		</view>
+  		<view wx:if="{{status == 4}}" class="order-status">
+  			<view class="wait">
+  				<image src="/images/icon/my/ddxq-wc.png"></image>
+  				已完成
+  			</view>
+  		</view>
+  	</view>
+  	<!-- top end -->
+  	<view class="content" wx:if="{{info.id}}">
+  		<view class="address">
+  			<view class="address-name">{{info.csPointsMallOrderAddress.name}} {{f.textFormat(info.csPointsMallOrderAddress.phone)}}</view>
+  			<view class="address-text">{{info.csPointsMallOrderAddress.provinceCity}}{{info.csPointsMallOrderAddress.detailedAddress}}</view>
+  		</view>
+  		<view class="content-list" wx:for="{{info.csPointsMallOrderProducts}}" wx:for-item="design" wx:key="id" data-path="/pages/design/mall/info/info?id={{design.csPointsMall.id}}" bindtap="goPath">
+  			<view class="cover">
+  				<image src='{{design.csPointsMall.productThumbnail}}'></image>
+  			</view>
+  			<view class="info">
+  				<view class="title">{{design.csPointsMall.name}}</view>
+  				<text>数量：{{design.quantity}}</text>
+  				<view class="price">￥{{design.orderPrice}}<text wx:if="{{design.totalSharePrice}}"> + {{design.totalSharePrice}}共享分</text></view>
+  			</view>
+  		</view>
+  		<view class="order-info">
+  			<view>订单编号：<text>{{info.orderId}}</text> </view>
+  			<view>订单时间：<text>{{info.createTime}}</text> </view>
+  			<view wx:if="{{status > 1}}">支付时间：<text>{{info.paymentTime || info.createTime}}</text> </view>
+  		</view>
+  		<view class="total-price">
+  			<view class="t-price">
+  				<text>订单总额：</text>
+  				<text>￥{{info.orderPrice}}<text wx:if="{{info.sharePrice}}"> + {{info.sharePrice}}共享分</text></text>
+  			</view>
+  			<block wx:if="{{ info.logisticsCompany }}">
+  				<view class="t-price">
+  					<text>物流公司：</text>
+  					<text>{{info.logisticsCompany}}</text>
+  				</view>
+  				<view class="t-price">
+  					<text>物流单号：</text>
+  					<view>{{info.logisticsNumber}} <text bindtap="copyText" style="color: #00d1d3;" data-text="{{info.logisticsNumber}}">复制</text></view>
+  				</view>
+  			</block>
+  		</view>
+  	</view>
+  	<!-- content 结束 -->
+  </view>
+
+  <view wx:if="{{status == 1}}" class="go-to-pay" data-path="../payment/payment?orderId={{info.orderId}}" catchtap="goPath">去支付</view>

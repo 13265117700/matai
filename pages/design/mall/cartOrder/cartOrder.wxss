@@ -1,0 +1,5 @@
+@import '../createOrder/createOrder.wxss';
+
+.info {
+  margin-bottom: 20rpx;
+}

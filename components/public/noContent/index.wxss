@@ -1,0 +1,17 @@
+.no-list {
+  padding-top: 100rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #333333;
+}
+
+.no-list .empty-img {
+  width: 234rpx;
+  margin-bottom: 30rpx;
+}
+
+.no-list .pc {
+  color: #00d1d3;
+  font-size: 28rpx;
+  margin-top: 20rpx;
+}

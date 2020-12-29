@@ -1,0 +1,18 @@
+<!-- 顶部导航栏 -->
+<navBar background='linear-gradient(to right, #00D1D3, #009EBB)' iconTheme="white" color="#ffffff" title="温馨提示" back="{{true}}" bindback="back"></navBar>
+<view class="tx-content">
+	<view class="status">
+    <image src="http://csyimg.oss-cn-shenzhen.aliyuncs.com/images/2020/07/22/15954116468245714.png"></image>
+    <view class="status-text">充值成功</view>
+	</view>
+  <view class="info">
+    <view>
+      <text>充值金额</text>
+      <text>{{ withdrawal.price }}元</text>
+    </view>
+    <view>
+      <text>充值时间</text>
+      <text>{{ withdrawal.time }}</text>
+    </view>
+  </view>
+</view>

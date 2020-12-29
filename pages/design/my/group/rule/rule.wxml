@@ -1,0 +1,6 @@
+<navBar background='linear-gradient(to right, #00D1D3, #009EBB)' iconTheme="white" color="#ffffff" back="{{true}}" bindback="back">
+	<view slot="center">分享规则</view>
+</navBar>
+<view>
+  <image style="width: 100%;" mode="widthFix" src="http://csyimg.oss-cn-shenzhen.aliyuncs.com/images/2020/07/31/1596185564048583.jpg" ></image>
+</view>

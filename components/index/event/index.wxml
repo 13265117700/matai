@@ -1,0 +1,22 @@
+<view class="default">
+	<view class="event-column">
+		<view wx:for="{{list}}" wx:key="id" bindtap="eventTagChange" data-id="{{item.id}}" data-index="{{index}}" class="tag {{current == index ? ' active' : ''}}">
+			{{ item.name }}
+			<image src="{{item.bg}}" class="tag-image"></image>
+
+		</view>
+	</view>
+	<!-- 列表 -->
+	<view class="event-list">
+		<view class="item" wx:for="{{eventList}}" wx:key="id" data-path="/pages/design/event/info/info?id={{item.id}}" bindtap="goPath">
+			<view class="l">
+				<image class="cover" src="{{ item.picture }}"></image>
+				<view class="t">{{ item.t }}</view>
+			</view>
+			<view class="r">
+				<view class="title">{{ item.name }}</view>
+				<view class="date">{{ item.createTime }}</view>
+			</view>
+		</view>
+	</view>
+</view>

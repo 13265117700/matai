@@ -1,0 +1,139 @@
+page {
+  padding: 60rpx 32rpx 40rpx;
+}
+
+/* top */
+.top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 30rpx;
+  color: #555555;
+  margin-bottom: 30rpx;
+}
+
+.top .logo {
+  width: 228rpx;
+  margin-bottom: 50rpx;
+}
+
+.top .title {
+  font-size: 38rpx;
+  color: #000;
+  font-weight: bold;
+}
+
+.forget-password {
+  display: inline-block;
+  color: #1FCCCD;
+  font-size: 24rpx;
+  margin: 8rpx 0 30rpx;
+  text-indent: 16px;
+}
+
+.login-btn {
+  width: 100% !important;
+  margin-top: 40rpx;
+  margin-bottom: 40rpx;
+  line-height: 1;
+  color: #fff;
+  font-size: 32rpx;
+  background: rgba(31,204,205,0.5);
+  padding: 30rpx 0;
+  border-radius: 56rpx;
+}
+
+.verify {
+  margin-top: 40rpx;
+}
+
+.verify .default {
+  border: 1px solid #1FCCCD;
+  color: #1FCCCD;
+  background-color: #fff;
+}
+
+.login-btn.active {
+  background: rgba(31,204,205,1);
+}
+
+.reg {
+  width: 90%;
+  margin: 0 auto;
+  color: #5F5F5F;
+  font-size: 30rpx;
+}
+
+.max-container {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  justify-content: center;
+  z-index: 999;
+  flex-direction: column;
+  padding: 40rpx;
+}
+
+.max-container .items {
+  margin-bottom: 50rpx;
+  width: 100%;
+}
+
+.max-container .items button {
+  border-radius: 54rpx;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  font-size: 32rpx;
+  border: 1px solid #3D3D3D;
+  padding: 30rpx 0;
+  width: 100%;
+  color: #000;
+  text-align: center;
+  justify-content: center;
+}
+
+.max-container .items .wx-login {
+  background-color: #00D1D3;
+  border-color: #00d1d3;
+  color: #fff;
+}
+
+.max-container .items button image {
+  margin-right: 12rpx;
+  width: 50rpx;
+}
+
+.allow {
+  color: #999999;
+  font-size: 30rpx;
+  margin-top: 50rpx;
+  text-align: center;
+  line-height: 1;
+}
+
+.sub-text {
+  color: #555555;
+  font-size: 26rpx;
+  margin-top: 20rpx;
+}
+
+.sub-text text {
+  color: #3E80C9;
+}
+
+.login-btn.wx {
+  font-weight: normal;
+  margin: 0 0 40rpx;
+}
+
+.weui-select {
+  height: 36rpx;
+  line-height: 36rpx;
+}

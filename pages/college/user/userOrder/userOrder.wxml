@@ -1,0 +1,140 @@
+<view class="order-top">
+
+
+
+	<view class="order-top-bj" wx:if="{{status == 1}}">
+		<image src="../../../../img/college/order/ddxq-bg.png" />
+	</view>
+	<view class="order-top-bj order-top-bj1" wx:if="{{status == 3}}">
+		<image src="../../../../img/college/order/ddxq-wcbg.png" />
+	</view>
+
+	<view class="fanhqu" bindtap="goBack">
+		<view>
+			<image src="../../../../img/college/order/fk.png" />
+		</view>
+	</view>
+
+	<view class="order-top-nr">
+
+
+		<view class="order-wzf" wx:if="{{status == 1}}">
+
+			<view class="order-wzf-s">
+				<image src="../../../../img/college/order/ddxq-sj.png" class="order-wzf-tb" />
+				<text class="order-wzf-ddfk">等待付款</text>
+
+			</view>
+
+
+			<text class="order-wzf-xfk">需付款：￥<text class="order-wzf-je">{{viewOrderData.orderPrice}}</text></text>
+
+			<view class="order-wzf-anb">
+				<navigator url="/pages/college/collegeOrder/collegeOrder?vieworderid={{ viewOrderData.orderId }}">
+					<view class="order-wzf-an">
+
+						去支付
+					</view>
+				</navigator>
+
+			</view>
+		</view>
+
+
+		<view class="order-zfcg" wx:if="{{status == 3}}">
+
+			<view class="order-wzf-s">
+				<image src="../../../../img/college/order/ddxq-wc.png" class="order-wzf-tb" />
+				<text class="order-wzf-ddfk">完成</text>
+
+			</view>
+		</view>
+
+
+
+
+		<view class="order-sp-lb">
+
+
+
+			<view class="order-collegeList" wx:for="{{viewOrderData.csCollegeList}}">
+				<navigator url="../../collegeContent/collegeContent?viewId={{ item.id }}">
+					<image src="{{item.thumbnail}}" class="order-collegeList-img" />
+
+					<view class="order-collegeList-nr">
+						<view class="order-collegeList-bt">{{item.name}}</view>
+
+						<view class="order-collegeList-price"><text class="price-fh" >￥</text>{{item.coursePrice}}</view>
+
+
+					</view>
+
+
+
+				</navigator>
+
+
+			</view>
+
+
+
+
+		</view>
+
+
+	</view>
+
+
+
+
+
+
+</view>
+
+
+
+<view class="order-zj">
+	<view class="order-zj-xx"><text class="order-zj-xx-0">订单编号：</text><text class="order-zj-xx-1">{{viewOrderData.orderId}}</text></view>
+	<view class="order-zj-xx"><text class="order-zj-xx-0">订单时间：</text><text class="order-zj-xx-1">{{viewOrderData.createTime}}</text></view>
+	<view class="order-zj-fg"></view>
+	<view class="order-zj-xx"><text class="order-zj-xx-0">支付方式：</text><text class="order-zj-xx-1 ">在线支付</text></view>
+
+
+</view>
+
+
+<view class="order-spze">
+	<view class="order-spze-ze">
+		<text class="order-spze-bt">商品总额：</text>
+		<text class="order-spze-price">￥{{viewOrderData.orderPrice}}</text>
+	</view>
+
+	<text class="order-xfk" wx:if="{{status == 1}}">需付款：<text class="order-xfk1"><text class="order-xfk2">￥</text>{{viewOrderData.orderPrice}}</text></text>
+	<text class="order-xfk" wx:if="{{status == 3}}">实付款：<text class="order-xfk1"><text class="order-xfk2">￥</text>{{viewOrderData.orderPrice}}</text></text>
+
+</view>
+
+
+<navigator url="/pages/college/collegeOrder/collegeOrder?vieworderid={{ viewOrderData.orderId }}" wx:if="{{status == 1}}">
+
+
+	<view class="fdong-quzf">
+
+		去支付
+
+
+
+
+	</view>
+
+</navigator>
+
+
+<view wx:if="{{false}}" class="order-db-ann">
+
+	<view class="order-shenq-fp">申请发票</view>
+		<navigator url="/pages/college/user/evaluate/evaluate?collegeId={{ viewOrderData.id }}">
+			<view class="order-shenq-sdpj">评价晒单</view>
+		</navigator>
+
+	</view>

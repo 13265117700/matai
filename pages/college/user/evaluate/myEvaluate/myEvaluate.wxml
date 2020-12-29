@@ -1,0 +1,77 @@
+
+<view class="user-top">
+
+<view class="user-xx">
+
+        <view class="user-tx">
+                <image class="user-tx-img"  src="{{userInfo.faceImage}}"></image>
+
+            </view>
+            <view class="user-grxx">
+                    <text  class="user-nickName">{{userInfo.nickName}}</text>
+             </view>
+
+<navigator url="/pages/auth/auth"  wx:if="{{!userInfo}}">
+
+      <view class="wdengl">
+        未登陆
+      </view>
+
+  </navigator>
+
+</view>
+
+
+<text class="wdequanbpl">我的全部评论 </text>
+
+
+<view class="wdepaji-lieb">
+
+        <view class="evaluation-lieb" wx:for="{{collegeEvaluationData}}">
+    <navigator class="navigator-jied"  url="/pages/college/collegeContent/collegeContent?viewId={{ item.csCollege.id }}">
+        <view class="evaluation-lieb-shang">
+              <image src="{{item.csCollege.thumbnail}}" class="evaluation-lieb-tx"/>
+        </view>
+
+        <view class="pcyuan">
+
+         <text class="evaluation-lieb-xingm" >{{item.csCollege.name}}</text>
+         <view class="evaluation-lieb-zhong">
+                <view class="evaluation-lieb-zhong-pf">
+                  <view class="evaluation-lieb-zhong-pf-xx"><image src="../../../../../img/college/content/pjzl1.png" class=""/></view>
+                  <view class="evaluation-lieb-zhong-pf-xx">
+                    <image src="../../../../../img/college/content/pjzl1.png" wx:if="{{item.score >= 2}}"/>
+                    <image src="../../../../../img/college/content/pjzl2.png" wx:if="{{item.score < 2}}" />
+                  </view>
+                  <view class="evaluation-lieb-zhong-pf-xx">
+                    <image src="../../../../../img/college/content/pjzl1.png" wx:if="{{item.score >= 3}}"/>
+                    <image src="../../../../../img/college/content/pjzl2.png" wx:if="{{item.score < 3}}" />
+                  </view>
+                  <view class="evaluation-lieb-zhong-pf-xx">
+                    <image src="../../../../../img/college/content/pjzl1.png" wx:if="{{item.score >= 4}}"/>
+                    <image src="../../../../../img/college/content/pjzl2.png" wx:if="{{item.score < 4}}" />
+                  </view>
+                  <view class="evaluation-lieb-zhong-pf-xx">
+                    <image src="../../../../../img/college/content/pjzl1.png" wx:if="{{item.score >= 5}}"/>
+                    <image src="../../../../../img/college/content/pjzl2.png" wx:if="{{item.score < 5}}" />
+                  </view>
+                
+                </view>
+
+                <view class="pjann">查看</view>
+
+
+
+            
+            </view>
+
+          </view>
+
+
+</navigator>
+        </view>
+
+
+
+</view>
+</view>

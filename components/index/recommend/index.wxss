@@ -1,0 +1,203 @@
+.default {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.main-list {
+  padding: 20rpx;
+  background-color: #fff;
+}
+
+.list-item {
+  margin-bottom: 40rpx;
+}
+
+.list-item .cover {
+  border-radius: 20rpx;
+  overflow: hidden;
+  width: 100%;
+  padding-bottom: 78%;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.list-item .title {
+  color: #191919;
+  font-size: 36rpx;
+  margin: 16rpx 0;
+  font-weight: 700;
+}
+
+.list-item .sub-title {
+  color: #878787;
+  font-size: 24rpx;
+  line-height: 1;
+  margin: 0 0 22rpx;
+}
+
+.list-item .states {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rpx 0;
+}
+
+.list-item .states .details {
+  display: flex;
+  align-items: center;
+}
+
+.list-item .states .details .d-i {
+  width: 34rpx;
+  margin-right: 14rpx;
+}
+
+.list-item .states .details .d-t {
+  margin-right: 40rpx;
+  font-size: 26rpx;
+  color: #353535;
+}
+
+.list-item .states .share {
+  padding: 0 10rpx;
+  position: relative;
+  overflow: hidden;
+}
+
+.list-item .states .share .share-icon {
+  width: 28rpx;
+}
+
+.list-item .states .share .share-btn {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  top: 0;
+  left: 0;
+}
+
+/* author */
+.author {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10rpx;
+  font-size: 26rpx;
+}
+
+.author .info {
+  display: flex;
+  align-items: center;
+  color: #191919;
+}
+
+.author .info .info-image {
+  width: 44rpx;
+  max-height: 44rpx;
+  border-radius: 50%;
+  margin-right: 16rpx;
+}
+
+.author .time {
+  color: #878787;
+}
+
+/* 知识课程 */
+.college {
+  background-color: #F3F3F3;
+  padding: 30rpx 0;
+}
+
+.college .title {
+  line-height: 1;
+  font-size: 34rpx;
+  color: #2F2F2F;
+  font-weight: bold;
+  text-indent: 10rpx;
+  padding: 20rpx;
+  background-color: #fff;
+  position: relative;
+}
+
+.college .title .more {
+  position: absolute;
+  right: 20rpx;
+  top: 14rpx;
+}
+
+.scroll-view-tabs.zs {
+  white-space: nowrap;
+  padding: 0 20rpx;
+  background-color: #fff;
+}
+
+.scroll-view-contaner .content {
+  margin-top: 12rpx;
+  padding-top: 0;
+}
+
+.scroll-view-contaner .content .item {
+  width: 344rpx;
+  display: inline-block;
+  /* height: 352rpx; */
+  background-color: #fff;
+  margin-right: 14rpx;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+
+.scroll-view-contaner .content .item .cover {
+  width: 100%;
+  height: 194rpx;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.scroll-view-contaner .content .item .name {
+  font-size: 28rpx;
+  padding: 18rpx;
+  color: #2F2F2F;
+  /* text-overflow: ellipsis; */
+  /* overflow: hidden; */
+}
+.scroll-view-contaner .content .item .sub-name {
+  color: #999999;
+  font-size: 24rpx;
+  padding: 0 20rpx 20rpx;
+}
+
+.goods-item {
+  width: 688rpx;
+  margin: 0 auto;
+  overflow-x: hidden;
+  font-size: 36rpx;
+  color: #191919;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+
+.goods-item .cover {
+  width: 100%;
+  padding-bottom: 56%;
+  border-radius: 20rpx;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.goods-item .info {
+  display: flex;
+  align-items: center;
+}
+
+.goods-item .info .title {
+  max-width: 70%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-right: 20rpx;
+  overflow-x: hidden;
+}

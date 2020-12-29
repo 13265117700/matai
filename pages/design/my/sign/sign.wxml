@@ -1,0 +1,74 @@
+<view class="page-sign">
+	<view class="top" style="background-image: url('http://csyimg.oss-cn-shenzhen.aliyuncs.com/images/2020/07/20/15952375535525101.png')">
+		<!-- 当前共享分 -->
+		<view class="share-points">
+			<view class="item">
+				<view class="sub">获得共享分</view>
+				<view class="num">{{integral}}</view>
+			</view>
+			<view class="item">
+				<view class="sub">可用共享分</view>
+				<view class="num">{{integral}}</view>
+			</view>
+		</view>
+		<view class="step">
+			<view class="rule">
+				<view class="day">签到<text>{{current}}</text>天</view>
+				<view>
+					<text data-path="/pages/design/my/sign/rule/rule" bindtap="goPath">规则</text>
+					<!-- <text class="p">|</text>
+					<text>明细</text> -->
+				</view>
+			</view>
+			<view class="c">
+				<view wx:for="{{checkList}}" wx:key="id" class="c-item {{item.isCurrent ? 'curr' : ''}}" data-index="{{index}}" bindtap="doCheck">
+					<image wx:if="{{item.isCurrent}}" class="icon" src="{{item.icon2}}"></image>
+					<image wx:elif="{{item.id < current}}" class="icon" src="{{item.icon1}}"></image>
+					<image wx:else="{{item.id >= current}}" class="icon" src="{{item.icon3}}"></image>
+					<view>
+						{{ item.name }}
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<!-- top end -->
+	<view class="middle">
+		<view class="rule">
+			<view class="day">做任务送共享分</view>
+		</view>
+    <view class="t2">
+      <image class="share-icon" src="/images/icon/my/sign/fx@2x.png"></image>
+      <view class="text" bindtap="doModalShow">
+        <view>分享赚共享分 <image class="image" src="/images/icon/my/sign/fxzqgz@2x.png"></image></view>
+        <view class="sub">邀请新用户成功注册赚共享分</view>
+      </view>
+      <view class="do-share" data-path="/pages/design/my/share/share" bindtap="goPath">分享</view>
+    </view>
+	</view>
+  <!-- middle end -->
+  <!-- 兑换专区 -->
+  <view class="exchange">
+    <view class="ex-top">
+      <image src="/images/icon/my/sign/sptj@2x.png"></image>
+      <text>兑换专区</text>
+    </view>
+    <view class="content">
+      敬请等待
+    </view>
+  </view>
+  <!-- 兑换专区 end -->
+</view>
+
+<view class="fx-cover {{modalShow ? '' : 'hide'}}" style="background-image: url('http://csyimg.oss-cn-shenzhen.aliyuncs.com/images/2020/07/21/15953175164803439.png')">
+  <view class="t1">连续签到<text>{{current}}</text>天</view>
+  <view class="t2">恭喜获得<text>{{current == 7 ? 388 : 38}}</text>共享分</view>
+  <view class="t3">
+    <image src="http://csyimg.oss-cn-shenzhen.aliyuncs.com/images/2020/07/21/15953157089301357.png"></image>
+    <text class="abs">{{current == 7 ? 388 : 38}}</text>
+  </view>
+  <view class="t4">签到越多获得的共享分越多！做任务获得更多共享分！</view>
+  <view class="t5" bindtap="close">
+    <image src="/images/icon/my/sign/close.png"></image>
+  </view>
+</view>

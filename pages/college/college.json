@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "图可图知识",
+  "navigationBarTextStyle": "white",
+  "backgroundColor": "#ffffff",
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": false,
+  "navigationStyle": "custom"
+}

@@ -1,0 +1,36 @@
+.lxy-nav-bar-search {
+  background: #F4F4F4;
+  border-radius: 23px;
+}
+
+.lxy-nav-bar-search__input {
+  display: flex;
+  position: relative;
+  align-items: center;
+  padding: 14rpx 40rpx 14rpx 20rpx;
+}
+
+.lxy-nav-bar-search__input .input {
+  border-radius: 46rpx;
+  font-size: 28rpx;
+  line-height: 28rpx;
+  padding-right: 20rpx;
+}
+
+.lxy-nav-bar-search__input .icon-container {
+  width: 50rpx;
+  height: 100%;
+  position: absolute;
+  right: 14rpx;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.lxy-nav-bar-search__input .icon-container .icon {
+
+  width: 30rpx;
+  height: 30rpx;
+}

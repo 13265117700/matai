@@ -1,0 +1,10 @@
+{
+  "navigationBarTextStyle": "white",
+  "backgroundColor": "#ffffff",
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": false,
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "c-swiper": "/components/public/swiper/index"
+  }
+}

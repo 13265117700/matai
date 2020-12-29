@@ -1,0 +1,143 @@
+page{
+    background-color: #F6F6F6;
+    height: 100%;
+}
+
+page view,
+page text,
+page scroll-view,
+page input,
+page button,
+page image,
+page cover-view {
+  box-sizing: content-box;
+}
+
+.pj-bj{
+    width: 100%;
+    height: 310rpx;
+    position: absolute;
+    z-index: 0;
+}
+
+
+.pj-bj image{
+    width: 100%;
+    height: 310rpx;
+}
+
+.pjne{
+    position: relative;
+    z-index: 999;
+    height: 310rpx;
+    margin-bottom: 31rpx;
+}
+
+.pjia-top{
+    overflow: hidden;
+}
+
+.pjia-top-img{
+    width: 44rpx;
+    height: 44rpx;
+    float: left;
+    margin: 38rpx 14rpx 37rpx 201rpx;
+
+}
+
+.pjia-top-wz{
+    font-size:36rpx;
+    font-weight:bold;
+    color:rgba(255,255,255,1);
+    line-height:36rpx;
+    margin-top: 41rpx;
+    float: left;
+}
+
+.pjia-shili{
+    text-align: center;
+    display: block;
+    margin-bottom: 50rpx;
+    font-size:24rpx;
+    font-weight:500;
+    color:rgba(255,255,255,1);
+    line-height:24rpx;
+}
+
+.chakwdepj{
+    width:204rpx;
+    height:55rpx;
+    background-color:rgba(255, 255, 255, 0.226);
+   
+    margin-left: 273rpx;
+    border:2rpx solid rgba(255,255,255,1);
+    border-radius:28rpx;
+    line-height: 55rpx;
+    text-align: center;
+    font-size:24rpx;
+    font-weight:500;
+    color:rgba(255,255,255,1);
+
+}
+
+.wdekec{
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.xinqbucuo{
+    font-size:34rpx;
+    font-weight:bold;
+    color:rgba(30,30,30,1);
+    line-height:34rpx;
+    text-align: center;
+    display: block;
+    margin: 40rpx 0 16rpx 0;
+}
+
+.college-qbkc-lb-nr{
+    overflow: hidden;
+    height: 144rpx;
+    border-bottom: 1rpx solid #F6F6F6;
+    margin-top: 30rpx;
+}
+
+.college-qbkc-lb-img{
+    width:196rpx;
+    height:110rpx;
+    background:rgba(0,209,211,1);
+    border-radius:10rpx;
+    float: left;
+    margin: 0 30rpx;
+}
+
+
+.college-qbkc-lb-wznr{
+    float: left;
+    font-size:26rpx;
+    font-weight:500;
+    color:rgba(47,47,47,1);
+    line-height:36rpx;
+    width: 463rpx;
+
+}
+.biaitj{
+    display: block;
+    width: 100%;
+    margin-bottom: 22rpx;
+}
+
+
+.pjann{
+    width:112rpx;
+    height:56rpx;
+    background:rgba(255,255,255,1);
+    border:1rpx solid rgba(0,209,211,1);
+    border-radius:28rpx;
+    font-size:28rpx;
+    font-weight:500;
+    color:rgba(0,209,211,1);
+    line-height:56rpx;
+    text-align: center;
+    float: right;
+}

@@ -1,0 +1,108 @@
+<!--主盒子-->
+<view class="container">
+
+  <!--左侧栏-->
+  <view class="nav_left">
+    <block wx:for="{{collegeColumnData}}">
+      <!--当前项的id等于item项的id，那个就是当前状态-->
+      <!--用data-index记录这个数据在数组的下标位置，使用data-id设置每个item的id值，供打开2级页面使用-->
+      <view class="nav_left_items {{curNav == item.id ? 'active' : ''}}" bindtap="switchRightTab" data-index="{{index}}" data-id="{{item.id}}">
+        
+        <text class="nav_left_text" data-index="{{index}}" data-id="{{item.id}}"></text> 
+        <text class="nav_left_text_name" data-index="{{index}}" data-id="{{item.id}}">{{item.name}} </text> 
+        
+
+      </view>
+    </block>
+  </view>
+  <!--右侧栏-->
+  <view class="nav_right">
+
+
+   
+
+
+    <!--如果有数据，才遍历项-->
+    <view wx:if="{{collegeColumnData[curIndex].csCollegeColumnList.length !== 0}}">
+
+      <image class="sectionThumbnails" src="{{collegeColumnData[curIndex].mobileThumbnails}}"></image>
+
+      <text class="biaoyu"> 知识体系</text>
+
+      <view class="nav_right_liebiao">
+
+        <view class="nav_right_items">
+          <!--界面跳转 -->
+            <navigator url='../collegeList/collegeList?collegeColumnId={{collegeColumnData[curIndex].id}}&curNav={{collegeColumnData[curIndex].id}}&curIndex={{curIndex}}'>
+              <image src="../../../img/college/qb.png"></image>
+              <text> 全部课程</text>
+            </navigator>
+          </view>
+
+
+        <block wx:for="{{collegeColumnData[curIndex].csCollegeColumnList}}">
+
+        
+
+
+
+          <view class="nav_right_items" style="display: {{ item.status == 1 ? 'block' : 'none' }};"  >
+          <!--界面跳转 -->
+            <navigator url="../collegeList/collegeList?collegeColumnId={{item.id}}&fatherAndSon=1&topId={{collegeColumnData[curIndex].id}}&curNav={{collegeColumnData[curIndex].id}}&xbid={{item.id}}&curIndex={{curIndex}}">
+              <image src="{{item.sectionThumbnails}}"></image>
+              <text> {{item.name}}</text>
+            </navigator>
+          </view>
+
+        </block>
+
+  
+    </view>
+
+    <text class="biaoyu"> 软件类别</text>
+
+
+    <view class="rjleib">
+
+      <view class="rjleib-lieb rjleib-active">
+                <!--界面跳转 -->
+                  <navigator url="../../detail/detail">
+                  
+                    <text>全部 </text>
+                  </navigator>
+      </view>
+
+      <block wx:for="{{rjleibei}}">
+
+        
+
+        <view class="rjleib-lieb ">
+                        <!--界面跳转 -->
+                          <navigator url="../../detail/detail">
+                          
+                            <text>{{item.name}} </text>
+                          </navigator>
+              </view>
+
+        
+
+        </block>
+
+
+
+
+    </view>
+  
+    
+
+
+
+
+
+
+    </view>
+    <!--如果无数据，则显示数据-->
+    <view class="nodata_text" wx:else>该分类暂无数据</view>
+  </view>
+</view>
+

@@ -1,0 +1,1 @@
+<web-view wx:if="{{!Shinjitunopage}}" src="https://www.c-soo.com/index.php"></web-view>

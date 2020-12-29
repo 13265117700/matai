@@ -1,0 +1,152 @@
+page {
+  background: #C1F6FF;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.page-ewm {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.content {
+  width: 270px;
+  height: 481px;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 10px;
+}
+
+.content .canvas {
+  width: 270px;
+  height: 481px;
+}
+
+.content2 {
+  position: absolute;
+  top: 10000px;
+  opacity: 0;
+}
+
+.canvas2 {
+  width: 540px;
+  height: 962px;
+}
+
+/* 刷新 */
+.refresh {
+  position: fixed;
+  top: 30rpx;
+  right: 0;
+  background-color: #f9f9f9;
+  padding: 22rpx 28rpx;
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  color: #191919;
+  border-radius: 36rpx 0 0 36rpx;
+  line-height: 1;
+}
+
+.refresh .icon {
+  width: 30rpx;
+  height: 28rpx;
+  margin-right: 20rpx;
+}
+
+/* 分享&保存 */
+.share {
+  display: flex;
+  padding: 40rpx 60rpx;
+  align-items: center;
+  justify-content: space-around;
+  color: #fff;
+  font-size: 30rpx;
+}
+
+.share .my-share-btn {
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+  padding: 30rpx 50rpx;
+  line-height: 1;
+  background-color: #00CCD1;
+  border-radius: 90rpx;
+}
+
+.share .my-share-btn2 {
+  background-color: #F16723;
+  position: relative;
+}
+
+.share .my-share-btn .icon {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 20rpx;
+}
+
+/* 布局容器 */
+.share-content {
+  /* 宽高在js中设置了 */
+  /* width: 72%;
+  height: 962rpx; */
+  position: relative;
+  margin: 6% auto 0;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.share-content .bottom-info {
+  box-sizing: border-box;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  background: #fff;
+  height: 212rpx;
+}
+
+.share-content .bottom-info .bi-left {
+  flex: 1;
+  /* margin-right: 20rpx; */
+  font-size: 20rpx;
+  color: #222222;
+}
+
+.share-content .bottom-info .bi-left-item {
+  margin-bottom: 8rpx;
+}
+
+.share-content .bottom-info .bi-left .t1 {
+  display: flex;
+  align-items: center;
+}
+
+.share-content .bottom-info .bi-left .t1 .face-image {
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-right: 16rpx;
+}
+
+.share-content .bottom-info .bi-left .t1 .nick-name {
+  font-size: 36rpx;
+  color: #069fbb;
+}
+
+.share-content .bottom-info .bi-right {
+  width: 170rpx;
+  height: 170rpx;  
+}
+
+.share-content .bottom-info .bi-right .ewm {
+  width: 100%;
+}

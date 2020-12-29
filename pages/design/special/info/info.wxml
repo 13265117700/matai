@@ -1,0 +1,46 @@
+<view class="top-bar">
+	<!-- 透明顶部导航栏 -->
+	<navBar background='rgba(255,255,255,0)' iconTheme="white" back="{{true}}" bindback="back"></navBar>
+</view>
+<view class="page-specail">
+  <view class="top">
+  <!-- http://csyimg.oss-cn-shenzhen.aliyuncs.com/images/2020/07/06/15940175945483233.png -->
+    <view 
+      class="cover"
+      style="background-image: url('http://csyimg.oss-cn-shenzhen.aliyuncs.com/images/2020/07/06/15940175945483233.png')">
+    </view>
+
+    <view class="info">
+      <view class="title">{{ info.name }}</view>
+      <view class="design-num">共{{ list.length }}张作品</view>
+    </view>
+  </view>
+
+  <!-- 主内容 -->
+  <view class="content">
+    <view class="keyword {{showMore ? 'open' : ''}}">
+      <view class="l">关键字：</view>
+      <view class="r">
+        <text class="t" wx:for="{{keywords}}" wx:key="item" data-path="/pages/design/design?keyword={{item}}&classification=1" bindtap="goPath">{{ item }}</text>
+      </view>
+      <view class="more">
+        <view wx:if="{{keywords.length > 5}}" class="more-c" bindtap="seeMore">
+          {{ showMore ? '展示简短信息' : '展示完整信息' }}
+          <image class="more-icon" src="/images/icon/zkxx.png"></image>
+        </view>
+      </view>
+    </view>
+    <!-- 列表 -->
+    <view class="list">
+      <view
+        class="item"
+        wx:for="{{list}}"
+        wx:key="id"
+        data-path="/pages/design/info/info?id={{item.id}}"
+        bindtap="goPath"
+        >
+        <image class="thumbnail" src="{{item.thumbnail}}" mode="widthFix"></image>
+      </view>
+    </view>
+  </view>
+</view>

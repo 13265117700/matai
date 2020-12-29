@@ -1,0 +1,13 @@
+	<!-- 列表 -->
+<view class="event-list">
+  <view class="item" wx:for="{{eventList}}" wx:key="id" data-path="/pages/design/event/info/info?id={{item.id}}" bindtap="goPath">
+    <view class="l">
+      <image class="cover" src="{{ item.picture }}"></image>
+      <view class="t">{{ item.t }}</view>
+    </view>
+    <view class="r">
+      <view class="title1">{{ item.name }}</view>
+      <view class="date">{{ item.createTime }}</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,103 @@
+<!-- <block wx:if="{{Shinjitunopage}}"> -->
+<view class="">
+	<view class="page-card">
+		<!-- 顶部导航栏 -->
+		<navBar background='linear-gradient(to right, #00D1D3, #009EBB)' back="{{false}}" bindback="back">
+			<view class='location' slot="left" style="margin-left: 30rpx; width: 90px; overflow: hidden;">
+				<image src="/images/logo2.png" mode="heightFix" style="height: 32rpx; display: block;"></image>
+			</view>
+			<view class='lxy-nav-bar-search' slot="center" style="background:rgba(1,137,161, .2); border-radius: 23px; width: 302rpx;" data-path="/pages/design/search/search" bindtap="goPath">
+				<view class='lxy-nav-bar-search__input' style="display: flex; width: 100%; align-items: center; justify-content: center; padding: 10rpx;">
+					<image src="/images/icon/so01@2x.png" style="width: 30rpx; height: 30rpx;"></image>
+					<view style="text-align: center; margin-left: 10rpx; font-size: 24rpx; color: #01F0F3;">
+						搜索
+					</view>
+				</view>
+			</view>
+		</navBar>
+		<!-- swiper 广告轮播图 -->
+		<c-swiper list="{{adList}}" width="{{100}}" heightScale="{{0.56}}"  wx:if="{{showSwiper === true}}"/>
+		<!-- 大标签 -->
+		<view class="design-tag" wx:if="{{showDesignTag === true}}">
+			<view class="title">作品</view>
+			<view class="tag-list">
+				<view wx:for="{{designTags}}" wx:key="id" class="tag-item" data-path="{{item.advertisingLinks}}" bindtap="goPath" style="background-image: url('{{item.advertisingPicture}}');">
+					<view class="t">{{ item.name1 }}</view>
+					<view class="t-sub">{{ item.name2 }}</view>
+				</view>
+			</view>
+		</view>
+	</view>
+
+	<!-- 知识课程 -->
+	<view wx:if="{{Shinjitunopage}}" class="college" wx:if="{{showSwiper === true}}">
+		<view class="title">
+			知识课程
+			<view class="more" bindtap="goSwitch" data-path="/pages/college/college">
+				<text>更多</text>
+				<mp-icon icon="arrow" color="#878787" size="{{12}}"></mp-icon>
+			</view>
+		</view>
+		<scroll-view class="scroll-view-tabs zs" scroll-x="true" style="width: 100%">
+			<view class="scroll-view-contaner">
+				<view class="content">
+					<view wx:for="{{ collegeList }}" wx:key="id" class="item" data-path="/pages/college/collegeContent/collegeContent?viewId={{item.id}}" bindtap="goPath">
+						<view class="cover" style="background-image: url('{{item.thumbnail}}')"></view>
+						<view class="name">{{ item.name }}</view>
+						<view class="sub-name">{{ item.actualSales }}人报名</view>
+					</view>
+				</view>
+			</view>
+		</scroll-view>
+	</view>
+
+	<!-- 商城 -->
+	<view wx:if="{{Shinjitunopage}}" class="college goods" wx:if="{{showSwiper === true}}">
+		<view class="title">
+			优品商城
+			<view class="more" bindtap="goSwitch" data-path="/pages/design/mall/mall">
+				<text>更多</text>
+				<mp-icon icon="arrow" color="#878787" size="{{12}}"></mp-icon>
+			</view>
+		</view>
+		<!-- 列表 -->
+		<view class="goods-list">
+			<view class="item" wx:for="{{mallList}}" wx:key="id" data-path="/pages/design/mall/info/info?id={{item.id}}" bindtap="goPath">
+				<view class="l">
+					<image class="cover" src="{{ item.productThumbnail }}"></image>
+				</view>
+				<view class="title1">{{ item.name }}</view>
+				<view class="price">￥{{ item.commodityPrice }}</view>
+			</view>
+		</view>
+	</view>
+
+	<!-- 活动 -->
+	<view class="college">
+		<view class="title">
+			最新活动
+			<view class="more" bindtap="goPath" data-path="/pages/design/event/event">
+				<text>更多</text>
+				<mp-icon icon="arrow" color="#878787" size="{{12}}"></mp-icon>
+			</view>
+		</view>
+		<!-- 列表 -->
+		<view class="event-list">
+			<view class="item" wx:for="{{eventList}}" wx:key="id" data-path="/pages/design/event/info/info?id={{item.id}}" bindtap="goPath">
+				<view class="l">
+					<image class="cover" src="{{ item.picture }}"></image>
+					<view class="t">{{ item.t }}</view>
+				</view>
+				<view class="r">
+					<view class="title1">{{ item.name }}</view>
+					<view class="date">{{ item.createTime }}</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+<!-- </block> -->
+<!-- <block wx:else> -->
+<!-- <image src="http://csyimg.oss-cn-shenzhen.aliyuncs.com/images/2020/07/24/15955851086113400.jpg" style="width: 100%;" mode="widthFix"></image> -->
+<!-- <web-view src="https://www.c-soo.com/index.php?c=category&id=41"></web-view> -->
+<!-- </block> -->

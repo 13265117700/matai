@@ -1,5 +1,29 @@
-/**app.wxss**/
-page{
-  background-color: #F6F6F6;
+@import '/miniprogram_npm/weui-miniprogram/weui-wxss/dist/style/weui.wxss';
+
+.main-color {
+  color: #00d1d3 !important;
 }
 
+.main-bg {
+  background-color: #00d1d3 !important;
+}
+
+/* 分享按钮 */
+.share-btn {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  left: 0;
+  top: 0;
+}
+
+/* 未开启支付全局设置时, 不显示的内容 */
+.is-pay {
+  display: none !important;
+}
+
+/* 有自定导航栏的页面 */
+.diy-bottom-bar {
+  padding-bottom: 96rpx;
+}

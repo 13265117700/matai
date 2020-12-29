@@ -1,0 +1,5 @@
+<view class="list-no-more">
+  <view class="line"></view>
+  <view>没有更多了</view>
+  <view class="line"></view>
+</view>

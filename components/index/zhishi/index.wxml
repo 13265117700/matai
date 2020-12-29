@@ -1,0 +1,93 @@
+<!-- 列表 
+<view class="event-list">
+  <view class="item" wx:for="{{collegeList}}" wx:key="id" data-path="/pages/college/collegeContent/collegeContent?viewId={{item.id}}" bindtap="goPath">
+    <view class="l">
+      <image class="cover" src="{{ item.thumbnail }}"></image>
+    </view>
+    <view class="r">
+      <view class="title">{{ item.name }}</view>
+      <view class="date">已有{{ item.salesVolume }}人购买 <text class="price">￥{{item.coursePrice}}</text></view>
+    </view>
+  </view>
+</view>
+-->
+
+<view class="page-college-default default">
+  <view class="college-top">
+    <swiper indicator-dots="true" indicator-active-color="#00D1D3" indicator-color="#FFF" autoplay="true" interval="5000">
+      <swiper-item wx:for="{{ advertisingData }}">
+        <image src="https://csyimg.oss-cn-shenzhen.aliyuncs.com/{{ item.advertisingPicture }}"> </image>
+      </swiper-item>
+    </swiper>
+
+    <view class="college-dhl ">
+      <scroll-view class="scroll-view-tabs" scroll-x="true" style="width: 100%">
+        <view wx:for="{{ collegeData }}" wx:for-index='key' class="scroll-view-tab ">
+          <view class="college-dhl-bq {{ currentTab === item.name ? 'main-color' : '' }}" bindtap="tabChange" data-name="{{ item.name }}" data-id="{{ item.id }}">
+            <view class="college-dhl-bq-img">
+              <image src="{{ item.mobileIcon }}" />
+            </view>
+            <view class="college-dhl-bq-wenzi"> {{ item.name }}</view>
+          </view>
+        </view>
+        <view class="scroll-view-tab " data-path="/pages/college/classification/classification" bindtap="goPath">
+          <view class="college-dhl-bq">
+            <view class="college-dhl-bq-img">
+              <image src="http://csyimg.oss-cn-shenzhen.aliyuncs.com/images/2020/07/13/15946284375546010.png" />
+            </view>
+            <view class="college-dhl-bq-wenzi">全部</view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+  <view class="page">
+    <view class="page__bd">
+      <mp-loading ext-class="demo0" type="dot-gray" show="{{show}}"></mp-loading>
+    </view>
+  </view>
+  <view class="college-sbdf">
+    <view class="college-rmkc">热门课程</view>
+    <view class="college-rmkc-lb">
+      <view class="college-rmkc-lb-kc" wx:for="{{ advertisingRmLbData }}">
+        <navigator url="/pages/college/collegeContent/collegeContent?viewId={{ item.id }}">
+          <view class="college-rmkc-lb-kc-img">
+            <image src="{{ item.thumbnail }}" />
+          </view>
+          <view class="college-rmkc-lb-kc-bt">{{ item.name }}</view>
+        </navigator>
+      </view>
+    </view>
+    <view class="college-rmkc-lb-hyp" bindtap="changeBatch" data-page="{{1}}">
+      <image class="" src="/img/college/sx.png" />
+      <text class="">换一批</text>
+    </view>
+  </view>
+
+  <view class="college-qbkc">
+    <view class="college-qbkc-tb">
+      <view class="college-qbkc-btwz">全部课程</view>
+      <navigator url="/pages/college/classification/classification">
+        <view class="college-qbkc-ssan" bind:tap="onTap" data-curnav="1" data-curindex="0">
+          <text class="college-qbkc-ssan-wz">筛选课程</text>
+          <image class="college-qbkc-ssan-tb" src="/img/college/ckkc.png" />
+        </view>
+      </navigator>
+    </view>
+
+    <view class="college-qbkc-lb">
+      <view class="college-qbkc-lb-nr" wx:for="{{ advertisingRmLbDatal }}">
+        <navigator url="/pages/college/collegeContent/collegeContent?viewId={{ item.id }}">
+          <image class="college-qbkc-lb-img" src="{{ item.thumbnail }}" />
+          <view class="college-qbkc-lb-wznr">
+            <text class="college-qbkc-lb-bt">{{ item.name }}</text>
+            <view class="college-qbkc-lb-cs">
+              <text class="college-qbkc-lb-bmrs">{{ item.salesVolume }}人报名</text>
+              <text class="college-qbkc-lb-jg">￥{{ item.coursePrice }}</text>
+            </view>
+          </view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+</view>

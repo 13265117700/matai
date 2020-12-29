@@ -1,0 +1,99 @@
+page{
+    background-color: #F6F6F6;
+    height: 100%;
+}
+
+
+page view,
+page text,
+page scroll-view,
+page input,
+page button,
+page image,
+page cover-view {
+  box-sizing: content-box;
+}
+.kecnr{
+    border-top:1rpx solid rgba(229,229,229,1);
+    padding: 26rpx 0 26rpx 30rpx;
+    overflow: hidden;
+    background-color: #fff;
+    margin-bottom: 10rpx;
+}
+
+.kec-tup{
+    width:196rpx;
+    height:110rpx;
+    border-radius:10rpx;
+    float: left;
+}
+
+.dianp{float: left;}
+
+.sxun{
+    
+    font-size:26rpx;
+    font-weight:bold;
+    color:rgba(47,47,47,1);
+    line-height:26rpx;
+    display: block;
+    margin: 12rpx 0 24rpx 29rpx;
+}
+
+.evaluation-lieb-zhong-pf{
+    float: left;
+    margin-left: 29rpx;
+    margin-right: 14rpx;
+}
+
+.evaluation-lieb-zhong-pf-xx{
+    float: left;
+    width: 34rpx;
+    height: 34rpx;
+    line-height: 34rpx;
+    margin-right: 20rpx;
+}
+
+
+.evaluation-lieb-zhong-pf-xx image{
+    width: 34rpx    ;
+    height: 34rpx;
+}
+
+.feichang{
+    margin-top: 6rpx;
+    float: left;
+    font-size:24rpx;
+    font-weight:500;
+    color:rgba(135,135,135,1);
+    line-height:24rpx;
+}
+
+
+.weui-input{
+    height: 300rpx;
+}
+
+.weui-input{
+    width: 670rpx;
+    background-color: #fff;
+    padding: 30rpx 40rpx 30rpx 40rpx ;
+    font-size:28rpx;
+    font-weight:500;
+    line-height:36rpx;
+
+}
+
+.weui-submit{
+    width:750rpx;
+    height:100rpx;
+    padding: 0;
+    line-height: 100rpx;
+    border-radius: 0px;
+    font-size:30rpx;
+    font-weight:800;
+    color:rgba(255,255,255,1);
+    position: fixed;
+    z-index: 99999;
+    bottom: 0;
+}

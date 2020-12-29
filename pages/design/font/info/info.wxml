@@ -1,0 +1,19 @@
+<view class="page-design-info" wx:if="{{info.id}}">
+  <view class="title">{{ info.name }}
+    <view class="share">
+      <image mode="widthFix" src="/images/icon/fenxiang.png"></image>
+      <button class="share-btn" open-type="share" data-path="/pages/design/font/info/info?id={{info.id}}" data-title="{{info.name}}" data-cover="{{info.thumbnail}}"></button>
+    </view>
+  </view>
+  <!-- 缩略图 防止没有详情页.... -->
+  <view class="cover">
+    <image class="img" mode="widthFix" src="{{info.thumbnail}}"></image>
+  </view>
+  <view class="content">
+    <rich-text nodes="{{info.content}}"></rich-text>
+  </view>
+</view>
+<!-- 相关作品 -->
+<view class="link-list">
+  <c-link-list wx:if="{{list.length}}" list="{{list}}" />
+</view>

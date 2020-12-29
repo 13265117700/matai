@@ -1,0 +1,47 @@
+<navBar background='linear-gradient(to right, #00D1D3, #009EBB)' iconTheme="white" color="#ffffff" back="{{true}}" bindback="back">
+  <view slot="center">我的订单</view>
+</navBar>
+
+<view class="order">
+	<!-- tab 标签栏 -->
+	<view class="page-section">
+		<scroll-view class="scroll-view-tabs" scroll-x="true" bindscroll="scroll" style="width: 100%">
+			<view wx:for="{{ tabs }}" wx:key="id" class="scroll-view-tab {{ currentTab === item.name ? 'main-color' : '' }}" bindtap="tabChange" data-name="{{ item.name }}" data-status="{{item.status}}">
+				{{ item.name }}
+			</view>
+		</scroll-view>
+	</view>
+	<!-- 订单列表 -->
+	<view class="order-list">
+		<view wx:for="{{list}}" wx:key="id" class="item" data-path="./detail/detail?id={{item.orderId}}&status={{item.status}}" bindtap="goPath">
+			<view class="order-num">
+        <text>订单编号：{{ item.orderId }}</text>
+        <text wx:if="{{item.status == 1}}" class="status1">待付款</text>
+        <text wx:if="{{item.status == 2}}" class="status2">待发货</text>
+        <text wx:if="{{item.status == 3}}" class="status3">已发货</text>
+        <text wx:if="{{item.status == 4}}" class="status4">已完成</text>
+      </view>
+			<!-- 作品内容 -->
+			<view class="content" wx:for="{{item.csPointsMallOrderProducts}}" wx:for-item="design" wx:key="id">
+				<view class="cover">
+					<image src='{{design.csPointsMall.productThumbnail}}'></image>
+				</view>
+				<view class="info">
+					<view class="title">{{design.csPointsMall.name}}</view>
+					<view class="price">￥{{design.orderPrice}} x {{design.quantity}}<text wx:if="{{design.totalSharePrice}}"> + {{design.totalSharePrice}}共享分</text></view>
+				</view>
+			</view>
+			<!-- 状态 -->
+			<view class="status">
+				<!-- 当前无发票, 无晒单 被买断的作品, 前端无法查看作品信息 原判断条件 item.status == 3 -->
+        <block wx:if="{{false}}">
+          <view class="tool">申请发票</view>
+          <view class="tool" data-path="">评价晒单</view>
+        </block>
+				<view wx:if="{{item.status == 1}}" class="tool pay" data-path="./payment/payment?orderId={{item.orderId}}" catchtap="goPath">去付款</view>
+			</view>
+		</view>
+
+    <noContent wx:if="{{ !list.length && showNoData }}" />
+	</view>
+</view>

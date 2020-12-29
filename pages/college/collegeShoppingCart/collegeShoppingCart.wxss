@@ -1,0 +1,276 @@
+
+
+page{
+    height: 100%;
+    background:rgba(246,246,246,1);
+}
+
+
+page view,
+page text,
+page scroll-view,
+page input,
+page button,
+page image,
+page cover-view {
+  box-sizing: content-box;
+}
+.goods_edit_view {
+    height: 76rpx;
+    line-height: 76rpx;
+    text-align: right;
+    font-size:36rpx;
+    background-color: #fff;
+    font-weight:500;
+    color:#000;
+    
+    border-radius: 0 0 20rpx 20rpx;
+    position: fixed;
+    width:100% ;
+  }
+
+.goods_edit_right_view{
+    padding-right: 50rpx;
+}
+  
+
+.good_view{
+    margin-top: 20rpx;
+    height: 194rpx;
+    width: 100%;
+    border-radius:20rpx ;
+    background-color: #fff;
+
+}
+
+.dot_view{
+    margin: 73rpx 29rpx 0 40rpx;
+    float: left;
+    width: 48rpx;
+    height: 48rpx;
+}
+
+.dot_else{
+    width: 48rpx;
+    height: 48rpx;
+    border:3rpx solid rgba(135,135,135,1);
+    border-radius:50%;
+}
+
+
+.good_center_img_view{
+    float: left;
+    width: 240rpx;
+    height: 132rpx;
+    margin: 30rpx 25rpx 0 0;
+    border-radius:10rpx;
+}
+.good_img{
+    width: 240rpx;
+    height: 132rpx;
+}
+
+ 
+.dot_s {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: rgba(0, 209, 211, 1);
+    text-align: center;
+}
+.dot_s_img{
+    width: 32rpx;
+    height: 24rpx;
+}
+
+
+
+.good_center_col{
+    float: left;
+}
+
+.good_name_view{
+    margin-top: 30rpx;
+    display: block;
+    font-size:30rpx;
+    font-weight:500;
+    width: 340rpx;
+    color:rgba(47,47,47,1);
+    line-height:38rpx;
+}
+
+.good_price_view    {
+    margin-top: 10rpx;
+    font-size:24rpx;
+    font-weight:800;
+    color:rgba(0,209,211,1);
+    line-height:24rpx;
+}
+
+    
+
+
+
+
+
+
+
+   
+   
+  /* 数量选择 */
+   
+   
+  .cart_bottom_vew{
+    position: fixed;
+    width: 100%;
+    height: 100rpx;
+    background-color: #fff;
+    bottom:0rpx;
+
+ 
+    z-index: 2;
+    box-shadow:-1rpx -2rpx 8rpx 1rpx rgba(229,229,229,1);
+  }
+
+.cart_bottom_left_view{
+    float: left;
+
+}
+
+
+.cart_bottom_left_view .dot_view{
+    margin: 32rpx 0 0 34rpx ;
+    height: 36rpx;
+    width: 36rpx;
+    line-height: 100%;
+}
+.cart_bottom_left_view .dot_else{
+    border: 2rpx solid rgba(135,135,135,1);
+    height: 36rpx;
+    width: 36rpx;
+}
+.cart_bottom_left_view .dot_s_img{
+    width: 24rpx;
+    height: 18rpx;
+    
+}
+
+.dot_text{
+    float: left;
+    font-size:28rpx;
+    line-height: 28rpx;
+    margin: 37rpx 40rpx 0 15rpx;
+    font-weight:500;
+    color:rgba(135,135,135,1);
+}
+
+
+.cart_bottom_right_view{
+    float: left;
+}
+
+.settlement_left_view{
+    float: left;
+    line-height: 32rpx;
+    margin-top: 32rpx;
+    width: 308rpx;
+}
+
+
+.settlement_left_view_hj{
+    font-size:24rpx;
+    line-height: 24rpx;
+    font-weight:800;
+    color:rgba(0,209,211,1);
+}
+
+
+.settlement_left_view_jg{
+    font-size:32rpx;
+    line-height: 32rpx;
+    font-weight:800;
+    color:rgba(0,209,211,1);
+}
+
+
+.del_btn{
+    margin-top: 14rpx;
+    float: left;
+    line-height: 72rpx;
+    text-align: center;
+    color: #fff;
+    width:222rpx;
+    height:72rpx;
+    background:linear-gradient(90deg,rgba(0,209,211,1),rgba(0,157,187,1));
+    border-radius:36px;
+}
+
+.del_btn_jies{
+    font-size: 30rpx;
+    line-height: 30rpx;
+    font-weight:800;
+}
+
+
+.del_btn_jies_jians{
+    font-size: 24rpx;
+    line-height: 24rpx;
+   
+}
+
+.del_btn_shanc{
+   margin-left: 308rpx;
+}
+
+.goods_view{
+    padding-top: 76rpx;
+    overflow: hidden;
+    padding-bottom: 130rpx;
+}
+
+.no_goods_view{
+    width: 100%;
+    height: 1206rpx;
+    background-color: #fff;
+    text-align: center;
+   
+}
+
+
+.no_goods_view_img{
+    width: 161rpx;
+    height: 171rpx;
+    margin-top: 250rpx;
+    margin-bottom: 45rpx;
+}
+.no_good_view_tis{
+    line-height: 28rpx;
+    font-size:28rpx;
+    font-weight:500;
+    color:rgba(135,135,135,1);
+    margin-bottom: 45rpx;
+    display: block;
+}
+
+.no_good_view_tis_1{
+    line-height: 24rpx;
+    font-size:24rpx;
+    font-weight:500;
+    color:rgba(193,193,193,1);
+    margin-bottom: 64rpx;
+    display: block;
+}
+
+.goshopping_view{
+    display: inline-block;
+    width:136rpx;
+    height:58rpx;
+    line-height: 58rpx;
+    background:rgba(255,255,255,1);
+    border:2rpx solid rgba(0,209,211,1);
+    border-radius:29rpx;
+    text-align: center;
+    font-size:26rpx;
+    color:rgba(0,209,211,1);
+
+}

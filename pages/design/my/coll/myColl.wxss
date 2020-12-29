@@ -1,0 +1,10 @@
+@import '../../people/people.wxss';
+
+.page-content {
+  position: static;
+}
+
+.page-content .content {
+  position: relative;
+  padding-top: 20rpx;
+}

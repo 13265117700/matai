@@ -1,0 +1,7 @@
+{
+
+  "navigationBarTitleText": "课程内容",
+  "usingComponents": {
+    "video-component": "/components/videoComponent/index"
+  }
+}

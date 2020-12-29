@@ -1,0 +1,64 @@
+<searchbar bindsearchInput="onsearchInput" />
+<!--bind 为小程序提供的绑定事件searchInput 为在子组件注册的触发事件-->
+
+<view class='content'>
+	<view class='history-list-group' wx:if="{{lisss == 1}}">
+		<view class='history-title'>
+			<view class='history-title-1'>历史记录</view>
+			<view class='history-clear' bindtap='onclear'>
+				<image src="../../../img/college/ss/shancu.png" />
+			</view>
+		</view>
+		<view class='history-group'>
+			<view wx:for="{{history}}" class="kekuyu">
+				<view data-title="{{item.title}}" bindtap="huanss">
+					{{item.title}}
+				</view>
+			</view>
+		</view>
+	</view>
+	<!-- 设计列表页 -->
+	<view class="main-list">
+		<view class="list-item" wx:for="{{list}}" wx:key="id">
+			<view class="cover" style="background-image: url('{{ item.thumbnail }}');" data-path="/pages/design/info/info?id={{item.id}}" bindtap="goPath">
+			</view>
+			<view class="title">
+				{{ item.name }}
+			</view>
+			<view class="sub-title">
+				{{ item.subName }}
+			</view>
+			<view class="states">
+				<view class="details">
+					<image class="d-i" mode="widthFix" src="{{item.likeStatus ? '/images/icon/dz2.png' : '/images/icon/dianzan2.png'}}" bindtap="doLike" data-id="{{item.id}}" data-status="{{item.likeStatus}}" data-index="2"></image>
+					<text class="d-t">{{ item.likeCounts }}</text>
+					<!-- collectionStatus -->
+					<image class="d-i" mode="widthFix" src="{{item.collectionStatus ? '/images/icon/sc002.png' : '/images/icon/shoucan.png'}}" bindtap="doColl" data-id="{{item.id}}" data-status="{{item.collectionStatus}}" data-index="2"></image>
+					<text class="d-t">{{ item.collectionTimes }}</text>
+					<image class="d-i" mode="widthFix" src="/images/icon/pinglun.png"></image>
+					<text class="d-t">{{ item.commentFrequency }}</text>
+					<image class="d-i" mode="widthFix" src="/images/icon/yulanshu.png"></image>
+					<text class="d-t">{{ item.viewNumber }}</text>
+				</view>
+				<!-- 列表分享 -->
+				<view class="share">
+					<image class="share-icon" src="/images/icon/fenxiang.png" mode="widthFix"></image>
+					<!-- title 分享的标题 cover 分享时候的图片 type根据不同的type设置不同的分享路径 -->
+					<button class="share-btn" data-path="/pages/design/info/info?id={{item.id}}" open-type="share" data-title="{{item.name}}" data-cover="{{item.thumbnail}}"></button>
+				</view>
+			</view>
+			<view class="author">
+				<view class="info" data-path="/pages/design/people/people?id={{item.csUser.id}}" bindtap="goPath">
+					<image class="info-image" src="{{ item.csUser.faceImage }}"></image>
+					<view class="name">
+						{{ item.csUser.nickName }}
+					</view>
+				</view>
+				<view class="time">
+					{{ item.diff }}
+				</view>
+			</view>
+		</view>
+	</view>
+
+</view>

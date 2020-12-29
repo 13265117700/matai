@@ -1,0 +1,280 @@
+page {
+  background-color: #F4F4F4;
+  padding-bottom: 120rpx;
+}
+
+
+.select-address {
+  padding: 0 !important;
+}
+
+.select-address .address {
+  /* padding: 40rpx 120rpx; */
+  width: 100%;
+}
+
+.select-address .address image {
+  width: 100%;
+}
+
+.select-address .dzbk {
+  width: 100%;
+  display: block;
+}
+
+.has-address {
+  position: relative;
+  padding: 20rpx;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left bottom;
+}
+
+.user-info {
+  color: #222222;
+  font-size: 30rpx;
+  margin-bottom: 10rpx;
+  font-weight: bold;
+}
+
+.user-info text {
+  margin-right: 30rpx;
+}
+
+.address-detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.address-detail .address-icon {
+  width: 28rpx;
+  margin-right: 20rpx;
+}
+
+.address-detail text {
+  flex: 1;
+  word-break: break-all;
+  font-size: 24rpx;
+  color: #333333;
+  padding-right: 40rpx;
+}
+
+.has-address .more {
+  position: absolute;
+  right: 20rpx;
+  top: 50%;
+  margin-top: -20rpx;
+}
+
+.has-address .more image {
+  width: 12rpx;
+}
+
+/* pay-info */
+.pay-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 28rpx;
+  color: #191919;
+  padding: 36rpx 28rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+  margin: 20rpx 0;
+}
+
+.pay-info .ri {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pay-info .maru {
+  display: flex;
+  align-items: center;
+}
+
+.pay-info .maru>view {
+  width: 6rpx;
+  height: 6rpx;
+  border-radius: 50%;
+  background-color: #BFBFBF;
+  margin-left: 10rpx;
+}
+
+
+.pay-info .maru>view:nth-of-type(2) {
+  width: 10rpx;
+  height: 10rpx;
+  background-color: #585757;
+}
+
+/* 产品信息 */
+
+.info {
+  padding: 30rpx;
+  background-color: #fff;
+}
+
+.info .t1 {
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+}
+
+.info .t1 .img {
+  width: 200rpx;
+  height: 150rpx;
+  margin-right: 20rpx;
+  border-radius: 10rpx;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+.t1 .price {
+  font-size: 48rpx;
+  font-weight: bold;
+  letter-spacing: 0;
+  color: #00d1d3;
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+}
+
+.info .title {
+  font-size: 28rpx;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.t1 .price text {
+  font-size: 30rpx;
+}
+
+.info .t1 .price .t {
+  font-size: 36rpx;
+}
+
+.info .t1 .text {
+  color: #00d1d3;
+  position: relative;
+}
+
+.info .t1 .text .abs {
+  position: absolute;
+  right: 0;
+  color: #191919;
+  top: 24rpx;
+  font-size: 28rpx;
+}
+
+/* goods-price */
+.goods-price {
+  margin-top: 20rpx;
+  font-size: 28rpx;
+  color: #191919;
+  padding: 20rpx 30rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+}
+
+.goods-price .gp-item {
+  padding: 10rpx 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.goods-price .gp-item .free {
+  color: #00d1d3;
+}
+
+.fx-bottom {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  padding: 10rpx 30rpx;
+  background-color: #fff;
+  font-size: 48rpx;
+  color: #00d1d3;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  justify-content: space-between;
+}
+
+.fx-bottom text {
+  font-size: 30rpx;
+}
+
+.fx-bottom .btn {
+  padding: 22rpx 50rpx;
+  font-size: 28rpx;
+  color: #fff;
+  font-weight: normal;
+  border-radius: 36rpx;
+  line-height: 1;
+  background: linear-gradient(to right, #1BE2DB, #009EBB);
+}
+
+.weui-check[checked]+.weui-icon-checked {
+  color: #00d1d3 !important;
+}
+
+.t-title {
+  padding: 30rpx 30rpx 20rpx;
+  font-size: 26rpx;
+  line-height: 1;
+  background-color: #fff;
+}
+
+
+/* pay-type */
+
+.pay-type .type {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30rpx;
+  background-color: #fff;
+  border-bottom: 1px solid #F5F2F5;
+}
+
+.pay-type .type image {
+  width: 40rpx;
+}
+
+.pay-type .type .left {
+  display: flex;
+  align-items: center;
+}
+
+.pay-type .type .left image {
+  margin-right: 20rpx;
+}
+
+.pay-type .type .right .maru {
+  width: 34rpx;
+  height: 34rpx;
+  background-color: #DDDDDD;
+  border-radius: 50%;
+}
+
+.pay-type .type .right image {
+  width: 34rpx;
+  height: 34rpx;
+  display: none;
+}
+
+.pay-type .type .right.active image {
+  display: block;
+}
+.pay-type .type .right.active .maru {
+  display: none;
+}

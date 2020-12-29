@@ -1,0 +1,44 @@
+	<!-- 设计列表页 -->
+	<view class="default">
+		<view class="main-list" wx:if="{{list.length}}">
+			<view class="list-item" wx:for="{{list}}" wx:key="id">
+				<view class="author">
+					<view class="info" data-path="/pages/design/people/people?id={{item.csUser.id}}" bindtap="goPath">
+						<image class="info-image" src="{{ item.csUser.faceImage }}"></image>
+						<view class="name">
+							{{ item.csUser.nickName }}
+						</view>
+					</view>
+				</view>
+				<view class="cover" style="background-image: url('{{ item.thumbnail }}');" data-path="/pages/design/info/info?id={{item.id}}" bindtap="goPath">
+				</view>
+				<view class="title">
+					{{ item.name }}
+				</view>
+				<view class="sub-title">
+					{{ item.subName }}
+				</view>
+				<view class="states">
+					<view class="details">
+						<!-- likeStatus -->
+						<image class="d-i" mode="widthFix" src="{{item.likeStatus ? '/images/icon/dz2.png' : '/images/icon/dianzan2.png'}}" bindtap="doLike" data-id="{{item.id}}" data-status="{{item.likeStatus}}"></image>
+						<text class="d-t">{{ item.likeCounts }}</text>
+						<!-- collectionStatus -->
+						<image class="d-i" mode="widthFix" src="{{item.collectionStatus ? '/images/icon/sc002.png' : '/images/icon/shoucan.png'}}" bindtap="doColl" data-id="{{item.id}}" data-status="{{item.collectionStatus}}"></image>
+						<text class="d-t">{{ item.collectionTimes }}</text>
+						<image class="d-i" mode="widthFix" src="/images/icon/pinglun.png"></image>
+						<text class="d-t">{{ item.commentFrequency }}</text>
+						<image class="d-i" mode="widthFix" src="/images/icon/yulanshu.png"></image>
+						<text class="d-t">{{ item.viewNumber }}</text>
+					</view>
+					<!-- 列表分享 -->
+					<view class="share">
+						<image class="share-icon" src="/images/icon/fenxiang.png" mode="widthFix"></image>
+						<!-- title 分享的标题 cover 分享时候的图片 type根据不同的type设置不同的分享路径 -->
+						<button class="share-btn" data-path="/pages/design/info/info?id={{item.id}}" open-type="share" data-title="{{item.name}}" data-cover="{{item.thumbnail}}"></button>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view wx:else style="text-align: center; padding: 20rpx 0;">暂无相关搜索内容</view>
+	</view>

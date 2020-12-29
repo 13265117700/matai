@@ -1,0 +1,143 @@
+.bg {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, .4);
+  z-index: 9;
+}
+
+.abs-table {
+  position: fixed;
+  z-index: 99999;
+  border-radius: 36rpx 36rpx 0 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  background-color: #fff;
+  /* transition: height linear .3s; */
+}
+
+.abs-table .total {
+  font-size: 24rpx;
+  color: #191919;
+  padding-left: 30rpx;
+}
+
+.abs-table .top {
+  display: flex;
+  align-items: center;
+  padding: 0 30rpx;
+  height: 50px;
+  line-height: 50px;
+  position: relative;
+}
+
+.abs-table .top .title {
+  flex: 1;
+  text-align: center;
+}
+
+.scroll-view-item {
+  height: 1000px;
+}
+
+
+
+/* 评论的 */
+
+.comment {
+  padding: 30rpx;
+  background-color: #fff;
+}
+
+.comment .top {
+  color: #191919;
+  font-size: 30rpx;
+  margin-bottom: 20rpx;
+}
+
+.comment .comment-list .item {
+  display: flex;
+  margin-bottom: 40rpx;
+}
+
+.comment .item .comment-left {
+  width: 64rpx;
+  margin-right: 20rpx;
+}
+
+.comment .item .comment-left .avatar {
+  width: 100%;
+  height: 64rpx;
+  border-radius: 50%;
+}
+
+.comment .item .comment-right {
+  flex: 1;
+}
+
+.comment .item .comment-right .user-name {
+  font-size: 28rpx;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+}
+
+.comment .item .comment-right .evaluate {
+  font-size: 26rpx;
+  margin-bottom: 10rpx;
+}
+
+.comment .item .comment-right .status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #878787;
+  font-size: 26rpx;
+}
+
+.comment .item .comment-right .status .numbers {
+  display: flex;
+  align-items: center;
+}
+
+
+.comment .item .comment-right .status .numbers .numbers-item {
+  display: flex;
+  align-items: center;
+  margin-left: 40rpx;
+}
+
+.comment .item .comment-right .status .numbers .numbers-item .icon {
+  width: 34rpx;
+  margin-right: 10rpx;
+}
+
+.do-comment {
+  position: absolute;
+  box-shadow: 0 -1px 1px #f3f3f3;
+  background-color: #fff;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+.do-comment .input {
+  padding-right: 100rpx;
+}
+
+.do-comment .btn {
+  position: absolute;
+  right: 20rpx;
+  background-color: #00d1d3;
+  color: #fff;
+  padding: 20rpx 40rpx;
+  top: 6rpx;
+  line-height: 1;
+  border-radius: 36rpx;
+}

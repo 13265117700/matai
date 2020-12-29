@@ -1,0 +1,135 @@
+page {
+  background-color: lightblue;
+}
+
+.page-specail {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.page-specail .top {
+  height: 500rpx;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-specail .top .cover {
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.page-specail .top .info {
+  position: absolute;
+  left: 0;
+  top: 280rpx;
+  text-indent: 30rpx;
+  width: 100%;
+  font-size: 44rpx;
+  color: #fff;
+  line-height: 1;
+}
+
+.page-specail .top .info .title {
+  margin-bottom: 28rpx;
+}
+
+.page-specail .top .info .design-num {
+  font-size: 24rpx;
+}
+
+/* 内容开始 */
+.content {
+  border-radius: 30rpx 30rpx 0 0;
+  position: absolute;
+  width: 100%;
+  top: 410rpx;
+  overflow: hidden;
+}
+
+/* 关键字 */
+
+.keyword {
+  background: #fff;
+  padding: 20rpx 20rpx 100rpx;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20rpx;
+  overflow: hidden;
+  max-height: 310rpx;
+  transition: max-height linear .5s;
+}
+
+.keyword.open {
+  max-height: 1200px;
+}
+
+.keyword .more {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  padding: 20rpx 0;
+  bottom: 0;
+  color: #454545;
+  font-size: 24rpx;
+  text-align: center;
+  background-color: #fff;
+}
+
+.keyword .more .more-c {
+  display: inline-block;
+  padding: 12rpx 32rpx;
+  background-color: #fff;
+  border: 1px solid #E8E8E8;
+  border-radius: 24rpx;
+}
+
+.keyword .more-icon {
+  width: 16rpx;
+  height: 8rpx;
+  margin-left: 4rpx;
+  position: relative;
+  top: -4rpx;
+}
+
+.keyword.open .more-icon {
+  transform: rotate(180deg);
+}
+
+.keyword .l {
+  width: 120rpx;
+  font-size: 30rpx;
+  line-height: 72rpx;
+}
+
+.keyword .r {
+  flex: 1;
+  color: #333;
+  font-size: 24rpx;
+}
+
+.keyword .r .t {
+  display: inline-block;
+  padding: 18rpx 24rpx;
+  background-color: #E6F8F7;
+  margin: 0 28rpx 28rpx 0;
+  border-radius: 30rpx;
+}
+
+/* 列表 */
+.content .list {
+  background-color: #fff;
+  padding: 20rpx;
+}
+
+.content .list .item:not(:last-of-type) {
+  margin-bottom: 20rpx;
+}
+
+.content .list .item .thumbnail {
+  width: 100%;
+}

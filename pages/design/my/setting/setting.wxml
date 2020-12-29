@@ -1,0 +1,7 @@
+<view class="page-setting">
+	<mp-cells title="">
+		<mp-cell link hover url="./userInfo/userInfo" value="编辑个人资料"></mp-cell>
+		<mp-cell link hover url="./safe/safe" value="账号与安全"></mp-cell>
+		<mp-cell link hover url="../auth/auth" value="设计师认证"></mp-cell>
+	</mp-cells>
+</view>

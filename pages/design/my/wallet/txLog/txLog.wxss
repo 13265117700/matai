@@ -1,0 +1,103 @@
+page {
+  background-color: #F3F3F3;
+}
+
+/* tabbar */
+.page-section {
+  background-color: #fff;
+  position: relative;
+}
+ 
+.scroll-view-tabs {
+  white-space: nowrap;
+}
+
+.scroll-view-tab {
+  display: inline-block;
+  padding: 30rpx;
+  margin-right: 14rpx;
+  line-height: 1;
+  color: #454545;
+  font-size: 28rpx;
+  position: relative;
+}
+
+.scroll-view-tab::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  margin-left: -12rpx;
+  bottom: 10rpx;
+  width: 24rpx;
+  height: 6rpx;
+  background: transparent;
+  border-radius: 6rpx;
+}
+
+.scroll-view-tab.main-color {
+  font-size: 34rpx;
+  font-weight: bold;
+}
+
+.scroll-view-tab.main-color::after {
+  background: rgba(0, 209, 211, 1);
+}
+
+/* tabbar end */
+
+.order-list  {
+  min-height: calc(100vh - 120px);
+  margin-top: 20rpx;
+  padding: 0 20rpx;
+  background-color: #fff;
+}
+
+.order-list .list-item {
+  color: #191919;
+  font-size: 28rpx;
+  border-bottom: 1px solid #E5E5E5;
+  padding: 20rpx 0;
+}
+
+.order-list .list-item > view {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.order-list .list-item .t1 {
+  font-size: 28rpx;
+  color: #333333;
+  font-weight: bold;
+}
+
+.order-list .list-item .t1 .price {
+  font-size: 34rpx;
+  color: #191919;
+}
+
+
+.order-list .list-item .t2 {
+  font-size: 24rpx;
+  color: #545454;
+}
+
+.status1 {
+  color: #0095D3;
+}
+
+.status2 {
+  color: #ddd;
+}
+
+.status3 {
+  color: #00d1d3;
+}
+
+.status4 {
+  color: #D33700;
+}
+
+.status5 {
+  color: #D33700;
+}

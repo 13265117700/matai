@@ -1,0 +1,61 @@
+<wxs module="utils">
+	function toFixed2(num) {
+		if (!num) {
+			return num
+		} else {
+			return Number(num).toFixed(2)
+		}
+	}
+	module.exports = {
+		toFixed2: toFixed2
+	}
+</wxs>
+<!-- 自定义导航栏 -->
+<navBar background='transparent' iconTheme="white" color="#ffffff" title="我的钱包" back="{{true}}" bindback="back"></navBar>
+<view class="page-content">
+	<view class="top" style="background-image: url('http://csyimg.oss-cn-shenzhen.aliyuncs.com/images/2020/07/17/15949790562776020.png');">
+		<view class="numbers">
+			<view class="m-content">
+				<view class="t1">
+					<view>
+						全部余额
+					</view>
+					<view class="share-rule">
+					</view>        
+        </view>
+				<view class="t2">
+					<view class="total-price">
+						￥<text>{{userInfo.balance}}</text>
+					</view>
+					<view class="tx" data-path="/pages/design/my/withdrawal/withdrawal" bindtap="goPath">
+						申请提现
+					</view>
+				</view>
+				<view class="t3">
+					<view class="t3-item">
+						<text class="t3-name">可提现</text>
+						<view class="t3-number">￥{{userInfo.balance}}</view>
+					</view>
+					<view class="t3-item">
+						<text class="t3-name">提现中</text>
+						<view class="t3-number">{{price1}}</view>
+					</view>
+					<view class="t3-item">
+						<text class="t3-name">已提现</text>
+						<view class="t3-number">{{price2}}</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<!-- top end -->
+  <view class="tab-list">
+    <view class="tab-container">
+      <view wx:for="{{tabList}}" wx:key="name" class="tab-item" data-path="{{item.path}}" bindtap="goPath">
+        <image src="{{item.icon}}" mode="widthFix"></image>
+        <view>{{item.name}}</view>
+      </view>
+    </view>
+  </view>
+	<!-- content 结束 -->
+</view>

@@ -1,0 +1,11 @@
+@import '../recommend/index.wxss';
+
+.default {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.author {
+  margin-top: 0;
+  margin-bottom: 20rpx;
+}

@@ -1,0 +1,37 @@
+<navBar background='linear-gradient(to right, #00D1D3, #009EBB)' iconTheme="white" color="#ffffff" back="{{true}}" bindback="back">
+	<view slot="center">交易明细</view>
+</navBar>
+
+<view class="order">
+	<!-- tab 标签栏 -->
+	<view class="page-section">
+		<scroll-view class="scroll-view-tabs" scroll-x="true" style="width: 100%">
+			<view wx:for="{{ tabs }}" wx:key="id" class="scroll-view-tab {{ currentTab === item.name ? 'main-color' : '' }}" bindtap="tabChange" data-name="{{ item.name }}" data-order-type="{{item.orderType}}">
+				{{ item.name }}
+			</view>
+		</scroll-view>
+	</view>
+	<!-- 订单列表 -->
+	<view class="order-list">
+		<!-- <text class="price">{{item.increaseDecrease == 1 ? '+' : '-'}}￥{{item.orderPrice}}</text> -->
+		<!-- item -->
+		<view wx:for="{{list}}" wx:key="id" class="list-item2">
+			<view class="t1">
+				<image src="{{iconList[item.orderType]}}"></image>
+			</view>
+			<view class="t2">
+				<view class="left">
+					<view class="title">{{item.name}}</view>
+					<text>{{item.updateTime}}</text>
+				</view>
+				<view class="right {{item.increaseDecrease == 1 ? 'plus' : ''}}">
+					<text wx:if="{{item.increaseDecrease == 1}}" class="price">+￥{{item.orderPrice}}</text>
+					<text wx:if="{{item.increaseDecrease == 2}}" class="price">-￥{{item.orderPrice}}</text>
+					<text wx:if="{{item.increaseDecrease == 0}}" class="price">￥{{item.orderPrice}}</text>
+				</view>
+			</view>
+		</view>
+		<!-- item end -->
+		<noContent wx:if="{{ !list.length && showNoData }}" />
+	</view>
+</view>

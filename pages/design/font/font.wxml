@@ -1,0 +1,17 @@
+<!-- 设计列表页 -->
+<view class="main-list" wx:if="{{list.length}}">
+  <view class="list-item" wx:for="{{list}}" wx:key="id">
+    <view class="cover" style="background-image: url('{{ item.pushHomeThumbnails || item.thumbnail }}');" data-path="/pages/design/font/info/info?id={{item.id}}" bindtap="goPath">
+    </view>
+    <view class="title">
+      {{ item.name }}
+    </view>
+    <view class="sub-title">
+      {{ item.subName }}
+    </view>
+  </view>
+</view>
+
+<view wx:else style="text-align: center;">
+  暂无相关数据
+</view> 

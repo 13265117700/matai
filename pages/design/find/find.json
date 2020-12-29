@@ -1,0 +1,14 @@
+{
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "发现",
+  "backgroundColor": "#ffffff",
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": false,
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "c-recommend": "/components/index/recommend/index",
+    "c-event": "/components/index/event/index",
+    "c-zhishi": "/components/index/zhishi/index",
+    "c-swiper": "/components/public/swiper/index"
+  }
+}

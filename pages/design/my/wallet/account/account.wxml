@@ -1,0 +1,85 @@
+<navBar background='linear-gradient(to right, #00D1D3, #009EBB)' iconTheme="white" color="#ffffff" back="{{true}}" bindback="back">
+	<view slot="center">收款账号</view>
+</navBar>
+<mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+
+<view class="page-account">
+	<view class="wrapper">
+		<view class="t1">账号类型</view>
+		<view class="t2">
+			<view wx:for="{{tabs}}" wx:key="id" class="{{item.name == currentTab ? 'active': ''}}" data-name="{{item.name}}" bindtap="tabChange">{{item.name}}</view>
+		</view>
+	</view>
+  <!-- 支付宝 -->
+	<view wx:if="{{currentTab == '支付宝'}}" class="form">
+		<mp-form id="form" rules="{{rules}}" models="{{formData}}">
+			<mp-cells title="">
+				<mp-cell prop="name" show-error title="收款姓名" ext-class="">
+					<input bindinput="formInputChange" data-field="name" class="weui-input" placeholder="请输入收款姓名" />
+				</mp-cell>
+			</mp-cells>
+			<mp-cells title="">
+				<mp-cell prop="receivingAccount" show-error title="收款账号" ext-class="">
+					<input bindinput="formInputChange" maxlength="24" data-field="receivingAccount" class="weui-input" placeholder="请输入收款账号" />
+				</mp-cell>
+			</mp-cells>
+			<mp-cells>
+				<mp-cell prop="code" show-error title="手机验证码" ext-class="">
+					<input bindinput="formInputChange" type="text" data-field="code" class="weui-input" placeholder="请输入验证码" />
+					<view slot="footer" class="weui-vcode-btn {{cd ? 'cd' : ''}}" bindtap="getSMS">获取验证码<text wx:if="{{cd}}">{{cd}}</text></view>
+				</mp-cell>
+			</mp-cells>
+		</mp-form>
+
+		<view class="">
+			<button class="login-btn" bindtap="submitForm">保存</button>
+		</view>
+	</view>
+  <!-- 支付宝end -->
+  <!-- 银行卡 -->
+	<view wx:else class="form">
+		<view class="weui-cells weui-cells_after-title">
+			<view class="weui-cell weui-cell_select">
+				<view class="weui-cell__hd weui-cell__hd_in-select-after">
+					<view class="weui-label" style="text-indent: 16px;">选择银行</view>
+				</view>
+				<view class="weui-cell__bd">
+					<picker bindchange="bindCountryChange" value="{{countryIndex}}" range="{{countries}}">
+						<view class="weui-select weui-select_in-select-after">{{countries[countryIndex]}}</view>
+					</picker>
+				</view>
+			</view>
+		</view>
+		<mp-form id="form" rules="{{rules}}" models="{{formData}}">
+			<mp-cells title="">
+				<mp-cell prop="name" show-error title="收款姓名" ext-class="">
+					<input bindinput="formInputChange" data-field="name" class="weui-input" placeholder="请输入收款姓名" />
+				</mp-cell>
+			</mp-cells>
+			<mp-cells title="">
+				<mp-cell prop="receivingAccount" show-error title="收款账号" ext-class="">
+					<input bindinput="formInputChange" maxlength="24" data-field="receivingAccount" class="weui-input" placeholder="请输入收款账号" />
+				</mp-cell>
+			</mp-cells>
+			<mp-cells>
+				<mp-cell prop="code" show-error title="手机验证码" ext-class="">
+					<input bindinput="formInputChange" type="text" data-field="code" class="weui-input" placeholder="请输入验证码" />
+					<view slot="footer" class="weui-vcode-btn {{cd ? 'cd' : ''}}" bindtap="getSMS">获取验证码<text wx:if="{{cd}}">{{cd}}</text></view>
+				</mp-cell>
+			</mp-cells>
+		</mp-form>
+
+		<view class="">
+			<button class="login-btn" bindtap="submitForm">保存</button>
+		</view>
+	</view>
+  <!-- 银行卡end -->
+	<view wx:if="{{currentTab == '支付宝' && alipayText}}" class="wrapper">
+    您已设置了淘宝支付宝账号，<text class="main-color">“{{alipayText}}”</text>
+		可以在上方输入相应信息来修改账户资料。
+	</view>
+	<view wx:if="{{currentTab == '银行卡' && bankText}}" class="wrapper">
+		您已设置了银行账号，<text class="main-color">“{{bankText}}”</text>
+		可以在上方输入相应信息来修改账户资料。
+	</view>
+</view>

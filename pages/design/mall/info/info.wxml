@@ -1,0 +1,100 @@
+	<!--轮播图-->
+	<view class="swiper" bindtap="preview">
+		<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{activeColor}}" bindchange="swiperChange" circular="{{true}}" style="height: {{swiperHeight}}px">
+			<block wx:for="{{pics}}" wx:key="index">
+				<swiper-item>
+					<image src="{{item}}" style="width: 100%;" mode="widthFix" class="slide-image" data-id="{{index}}" />
+				</swiper-item>
+			</block>
+		</swiper>
+		<view class="index">{{currentIndex}}/{{pics.length}}</view>
+		<image hidden="{{!info.productVideo || currentIndex !== 1}}" class="play-btn" src="/images/icon/play.png" catchtap="playVideo"></image>
+		<video hidden="{{!isPlaying}}" id="video" src="{{info.productVideo}}" bindended="bindended" bindpause="bindpause" bindplay="bindplay" class="product-video" style="width: 100%; height: {{swiperHeight}}px"></video>
+	</view>
+
+	<!-- 标题 -->
+	<view class="t1 {{ isCx? 'cuxiao' : '' }}">
+		<!-- 促销 -->
+		<view wx:if="{{isCx}}" class="cx" style="background-image: url('http://csyimg.oss-cn-shenzhen.aliyuncs.com/images/2020/08/06/15966797662485654.png')">
+			<view class="text"><text>￥</text>{{ info.salePrice }}<text wx:if="{{ info.saleSharePrice }}"> + {{ info.saleSharePrice }}共享分</text></view>
+			<view class="cd">
+				<view class="nokori">距结束还剩：</view>
+				<view class="time">
+					<text>{{cxTime[0]}}</text>:<text>{{cxTime[1]}}</text>:<text>{{cxTime[2]}}</text>
+				</view>
+			</view>
+		</view>
+		<!-- 促销结束 -->
+		<view class="price">
+			<view class="text"><text>￥</text>{{ info.commodityPrice }}<text wx:if="{{ info.sharePrice }}">+{{ info.sharePrice }}共享分</text></view>
+			<view class="share">
+				<image mode="widthFix" src="/images/icon/fex012@2x.png"></image>
+				<button class="share-btn" open-type="share" data-path="/pages/design/mall/info/info?id={{info.id}}" data-title="{{info.name}}" data-cover="{{info.productThumbnail}}"></button>
+			</view>
+		</view>
+		<view class="title">{{ info.name }}</view>
+		<view class="sub-title">{{ info.productDescription }}</view>
+	</view>
+
+	<!-- 销量 -->
+	<view class="t2">
+		<view class="sales">累计销量 <text>{{info.salesVolume}}</text></view>
+		<view class="promise">
+			<view class="p-item">
+				<image src="/images/icon/fw.png"></image>
+				<text>服务承诺</text>
+			</view>
+			<view class="p-item">
+				<image src="/images/icon/fw.png"></image>
+				<text>正品保证</text>
+			</view>
+			<view class="p-item">
+				<image src="/images/icon/fw.png"></image>
+				<text>极速退款</text>
+			</view>
+			<view class="p-item">
+				<image src="/images/icon/fw.png"></image>
+				<text>7天无理由退换</text>
+			</view>
+		</view>
+	</view>
+
+	<!-- 详情 -->
+	<view class="details">
+		<rich-text nodes="{{info.details}}"></rich-text>
+	</view>
+
+	<!-- 底部导航栏 -->
+	<view class="public-fx-bottom">
+		<view class="fb-left">
+			<view class="fb-item contact">
+				<view class="icon-container">
+					<image class="d-i" mode="widthFix" src="/images/icon/zxkf.png"></image>
+				</view>
+				<button open-type="contact"></button>
+				<text>在线客服</text>
+			</view>
+			<view class="fb-item cart" data-path="../cart/cart" bindtap="goAuthPath">
+				<view class="icon-container">
+					<image class="d-i" mode="widthFix" src="/images/icon/gwc.png"></image>
+				</view>
+				<text wx:if="{{total}}" class="abs">{{total}}</text>
+				<text>购物车</text>
+			</view>
+		</view>
+		<view class="fb-right">
+			<block wx:if="{{info.state == 1}}">
+				<view class="r-left" bindtap="addToCart">
+					加入购物车
+				</view>
+				<view class="r-right" bindtap="doBuy">
+					立即购买
+				</view>
+			</block>
+			<view wx:else class="xiajia">该商品已下架</view>
+		</view>
+	</view>
+
+	<view class="main-width">
+		<c-buy info="{{info}}" bind:confirm="confirm" bind:close="close" isShow="{{buyShow}}" />
+	</view>

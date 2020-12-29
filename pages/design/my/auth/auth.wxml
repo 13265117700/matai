@@ -1,0 +1,124 @@
+  <wxs module="f">
+  	function textFormat(str) {
+  		return str.slice(0, 5) + '*************'
+  	}
+  	module.exports = {
+  		textFormat: textFormat
+  	}
+  </wxs>
+
+  <!-- 自定义导航栏 -->
+  <navBar background='linear-gradient(to right, #00D1D3, #009EBB)' iconTheme="white" color="#ffffff" title="身份认证" back="{{true}}" bindback="back"></navBar>
+  <block wx:if="{{userInfo.id}}">
+  	<block wx:if="{{designer == 1}}">
+  		<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+  			<view class="page__bd">
+  				<mp-form id="form" rules="{{rules}}" models="{{formData}}">
+  					<mp-cells title="" footer="">
+  						<mp-cell prop="realName" title="真实姓名" ext-class="">
+  							<input bindinput="formInputChange" data-field="realName" class="weui-input" placeholder="请输入姓名" />
+  						</mp-cell>
+  						<mp-cell prop="IdCardNo" title="身份证号" ext-class="">
+  							<input bindinput="formInputChange" data-field="IdCardNo" class="weui-input" placeholder="请输入身份证号" />
+  						</mp-cell>
+  					</mp-cells>
+  				</mp-form>
+
+  				<view class="weui-cells weui-cells_after-title">
+  					<view class="weui-cell weui-cell_select">
+  						<view class="weui-cell__hd weui-cell__hd_in-select-after">
+  							<view class="weui-label" style="text-align: center;">设计领域</view>
+  						</view>
+  						<view class="weui-cell__bd">
+  							<picker bindchange="bindCountryChange" range-key="name" value="{{countryIndex}}" range="{{countries}}">
+  								<view class="weui-select weui-select_in-select-after">{{countries[countryIndex].name}}</view>
+  							</picker>
+  						</view>
+  					</view>
+  				</view>
+
+  				<view class="p">证件照片</view>
+
+  				<view class="upload-cert">
+  					<view class="item" bindtap="uploadImg" data-name="IdCardNoJust">
+  						<view class="img">
+  							<image src="{{form.IdCardNoJust || IdCardNoJust}}"></image>
+  						</view>
+  						<view class="p-btn">上传个人信息面</view>
+  					</view>
+  					<view class="item" bindtap="uploadImg" data-name="IdCardNoBack">
+  						<view class="img">
+  							<image src="{{form.IdCardNoBack || IdCardNoBack}}"></image>
+  						</view>
+  						<view class="p-btn">上传证件有效期面</view>
+  					</view>
+  				</view>
+  			</view>
+  		</view>
+
+  		<view class="bottom">
+  			<view class="text">注：提交认证后，以上信息将不可修改</view>
+  			<view class="btn" bindtap="submit">提交审核</view>
+  		</view>
+  	</block>
+  	<block wx:elif="{{designer == 2}}">
+  		<view class="row">
+  			<view class="item">
+  				<view>真实姓名</view>
+  				<view>{{designerInfo.realName}}</view>
+  			</view>
+  			<view class="item">
+  				<view>身份证号</view>
+  				<view>{{f.textFormat(designerInfo.idCardNo)}}</view>
+  			</view>
+  			<view class="item">
+  				<view>设计领域</view>
+  				<view>{{countries[designerInfo.idEntity-1].name}}</view>
+  			</view>
+  			<view class="item">
+  				<view>身份证</view>
+  				<view>已上传</view>
+  			</view>
+  			<view class="status">
+  				身份认证审核中
+  			</view>
+  		</view>
+  	</block>
+  	<block wx:elif="{{designer == 3}}">
+  		<view class="fail">
+  			<view class="img">
+  				<image src='/images/icon/my/cuo.png'></image>
+  			</view>
+  			<view class="text">
+  				亲，您申请的实名认证由于身份证证件照信息与真实姓名不匹配，请重新提交信息申请认证
+  			</view>
+  			<view class="re" bindtap="reAuth">
+  				重新认证
+  			</view>
+  		</view>
+  	</block>
+  	<block wx:else>
+  		<view class="row">
+  			<view class="success">
+  				<image src="/images/icon/my/dui.png"></image>
+  				<text>尊敬的会员，您已通过实名认证！</text>
+  			</view>
+  			<view class="item">
+  				<view>真实姓名</view>
+  				<view>{{designerInfo.realName}}</view>
+  			</view>
+  			<view class="item">
+  				<view>身份证号</view>
+  				<view>{{f.textFormat(designerInfo.idCardNo)}}</view>
+  			</view>
+  			<view class="item">
+  				<view>设计领域</view>
+  				<view>{{countries[designerInfo.idEntity-1].name}}</view>
+  			</view>
+  			<view class="item">
+  				<view>身份证</view>
+  				<view>已上传并审核通过</view>
+  			</view>
+  		</view>
+  	</block>
+  </block>

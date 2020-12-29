@@ -1,0 +1,611 @@
+  <wxs module="f">
+  function timeFormat(str) {
+    return str.slice(5, 16)
+  }
+  module.exports = {
+    timeFormat: timeFormat
+  }
+</wxs>
+
+ 
+  <!-- 课程介绍视频存在时 -->
+  <view   wx:if="{{createCollegeOrder == false}}"   style="display: {{ introductionVideo == '' ? 'none' : 'block' }};">
+  
+  <view class='vv '  wx:if="{{spbpf == 2}}" >
+    <view class='block' >
+      <view id="{{1}}" class="cover" style="display: {{ _index == 1 ? 'none' : 'block' }};" bindtap="videoPlay">
+        <!-- 视频图层 -->
+        <image class="videoVideo2" src="http://csyimg.oss-cn-shenzhen.aliyuncs.com/images/2020/08/18/15977460808141771.jpg" mode="scaleToFill">
+        </image>
+      </view>
+    </view>
+    <!-- 视频 -->
+    <video src="{{collegeViewIdData.introductionVideo}}"     custom-cache="{{false}}"  id="{{1}}" class='video' wx:if="{{_index == 1}}">
+    </video>
+  </view>
+
+
+  <video-component options="{{ options }}" wx:if="{{spbpf == 1}}"   />
+
+
+  <view class="video-jiex" >
+
+      <text class="video-Name">  {{collegeViewIdData.name}}</text>
+
+
+      <view class="video-kesc">
+          <image src="../../../img/college/sjbs.png" class="video-kesc-img"/>
+
+
+          <text class="video-kesc-img-sj">  {{collegeViewIdData.totalDuration}}</text>
+      
+      </view>
+
+ 
+
+      <view class="video-jiagadnrs">
+      
+          <text class="video-jiag">￥{{coursePrice}}</text>
+
+          <text class="video-gmrs">  {{collegeViewIdData.salesVolume}}人报名</text>
+      
+      </view>
+
+
+  </view>
+
+
+</view>
+
+  <!-- 课程介绍视频不存在时 -->
+   <view   class="nosp" style="display: {{ introductionVideo == '' ? 'block' : 'none' }};" wx:if="{{createCollegeOrder == false}}" >
+
+      <image src="../../../img/college/bg01.png" class="nosp-img" />
+
+
+      <view class="nosp-nr-jx">
+
+          <text class="nosp-Name">  {{collegeViewIdData.name}}</text>
+
+
+        <view class="video-kesc">
+            <image src="../../../img/college/sjbsb.png" class="video-kesc-img"/>
+
+
+            <text class="video-kesc-img-sj">  {{collegeViewIdData.totalDuration}}</text>
+        
+        </view>
+
+
+      </view>
+
+
+      <view class="nosp-nr-jgnsr">
+
+          
+          <text class="video-jiag">￥{{coursePrice}}</text>
+
+          <text class="video-gmrs">  {{collegeViewIdData.salesVolume}}人报名</text>
+      
+
+      </view>
+
+
+
+
+    </view>
+
+
+
+<!-- 课程已购买时 -->
+  <view    wx:if="{{createCollegeOrder == true}}" >
+  
+
+
+
+  <video-component options="{{ options }}"  wx:if="{{spbpf == 1}}" />
+
+
+
+  <view class="video-jiex" >
+
+      <text class="video-Name">  {{collegeViewIdData.name}}</text>
+
+
+      <view class="video-kesc">
+          <image src="../../../img/college/sjbs.png" class="video-kesc-img"/>
+
+
+          <text class="video-kesc-img-sj">  {{collegeViewIdData.totalDuration}}</text>
+
+            <text class="video-gmrs">  {{collegeViewIdData.salesVolume}}人报名</text>
+      
+      </view>
+
+
+
+
+  </view>
+
+
+</view>
+
+
+
+
+
+
+
+
+
+<view class="video-tab"  wx:if="{{createCollegeOrder == false}}" >
+
+    <view class="swiper-tab">
+      <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">介绍</view>
+      <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">目录</view>
+      <view class="swiper-tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="clickTab">评价</view>
+
+
+    </view>
+
+    <view class="xiahs {{currentTab==0?'xiahs1':''}} {{currentTab==1?'xiahs2':''}} {{currentTab==2?'xiahs3':''}}" data-current="2" bindtap="clickTab"></view>
+
+
+
+    
+    <view class = "{{currentTab == 0 ? 'show':'hidden'}} biansr" >
+
+      <view class="tab-nr">
+
+     
+         <rich-text nodes="{{collegeViewIdData.courseIntroduction}}"></rich-text>
+      </view>
+
+    </view>
+
+
+    <view class = "{{currentTab == 1 ? 'show':'hidden'}} biansr" >
+
+
+   
+        <view class="tab-lanm">
+
+             <text class="tab-zjxx" >共{{collegeViewIdData.courseChapters}}章 {{collegeViewIdData.courseNumber}}节课</text>
+
+
+          <view wx:for="{{collegeViewIdData.csCurriculumChapters}}" wx:for-index='key'  wx:for-item='curriculumChapters'>
+
+            <view class="maxbox"  >
+
+           <text class="sxun">{{curriculumChapters.name}}</text> 
+            </view>
+
+
+
+             <view wx:for="{{curriculumChapters.csCourseChapters}}" wx:for-index='key1'  wx:for-item='courseChapters'>
+
+              <view class="mul-m {{kebf == courseChapters.id ? 'kebfDlock':'kebfNone'}}" > 
+
+
+                
+                <image src="../../../img/college/bfz.png" class="kebfDlock-img"/>
+
+
+                <view class="mul-zb"> 
+
+                <text class="mul-m-wz"> {{courseChapters.name}}</text>
+                
+                <view class="video-kesc">
+                <image src="../../../img/college/lbsj.png" class="video-kesc-img"/>
+
+
+                <text class="video-kesc-img-sj">  {{courseChapters.sectionChief}}</text>
+                
+                </view>
+
+               </view>
+
+
+                <view class="mul-yb {{courseChapters.state==1?'mianfke':''}}  "  data-id="{{1}}"  data-kebf="{{courseChapters.id}}" bindtap="getVideo"
+                  data-title="{{courseChapters.name}}"
+                  data-current-poster="{{courseChapters.thumbnail}}"
+                  data-state="{{courseChapters.state}}"
+                  data-video-id="{{courseChapters.courseVideoAddress}}"
+                > 
+
+                      
+                      免费试学
+
+                  </view>
+
+
+                  <text class="mul-zzbfz"> 正在播放中</text>
+
+
+
+
+
+              </view>
+                
+
+
+
+
+           </view>
+
+          </view>
+
+
+        
+      </view>
+
+
+
+
+
+    </view>
+
+
+
+
+    <view class = "{{currentTab == 2 ? 'show':'hidden'}} biansr biansr-1">
+
+       <view class="evaluation">
+     
+        <view class="evaluation-top">
+          <view class="evaluation-top-z"></view>
+          <text class="evaluation-top-shul" >评价<text class="evaluation-top-shuz">{{collegeEvaluationDataTotal}}</text></text>
+          <text class="evaluation-top-fens" >满分5.0</text>
+
+
+        </view>
+     
+        
+     
+
+      <view class="evaluation-lieb" wx:for="{{collegeEvaluationData}}">
+
+            <view class="evaluation-lieb-shang">
+              <image src="{{item.csUser.faceImage}}" class="evaluation-lieb-tx"/>
+              <text class="evaluation-lieb-xingm" >{{item.csUser.nickName}}</text>
+            
+              <view class="evaluation-lieb-dianzann" >
+                <image src="../../../img/college/content/dzpj2.png"   bindtap="cancellikes" data-id="{{item.id}}" data-index="{{index}}"  wx:if="{{item.likeStatus}}"/>
+                <image src="../../../img/college/content/dzpi1.png" bindtap="pointpraise" data-id="{{item.id}}" data-index="{{index}}"  wx:else/>
+          
+                  
+              </view>
+              <text  class="evaluation-lieb-dianzcs" >{{item.numberLikes}} </text>
+            </view>
+
+
+            <view class="evaluation-lieb-zhong">
+                <view class="evaluation-lieb-zhong-pf">
+                  <view class="evaluation-lieb-zhong-pf-xx"><image src="../../../img/college/content/pjzl1.png" class=""/></view>
+                  <view class="evaluation-lieb-zhong-pf-xx">
+                    <image src="../../../img/college/content/pjzl1.png" wx:if="{{item.score >= 2}}"/>
+                    <image src="../../../img/college/content/pjzl2.png" wx:if="{{item.score < 2}}" />
+                  </view>
+                  <view class="evaluation-lieb-zhong-pf-xx">
+                    <image src="../../../img/college/content/pjzl1.png" wx:if="{{item.score >= 3}}"/>
+                    <image src="../../../img/college/content/pjzl2.png" wx:if="{{item.score < 3}}" />
+                  </view>
+                  <view class="evaluation-lieb-zhong-pf-xx">
+                    <image src="../../../img/college/content/pjzl1.png" wx:if="{{item.score >= 4}}"/>
+                    <image src="../../../img/college/content/pjzl2.png" wx:if="{{item.score < 4}}" />
+                  </view>
+                  <view class="evaluation-lieb-zhong-pf-xx">
+                    <image src="../../../img/college/content/pjzl1.png" wx:if="{{item.score >= 5}}"/>
+                    <image src="../../../img/college/content/pjzl2.png" wx:if="{{item.score < 5}}" />
+                  </view>
+                
+                </view>
+            
+
+                <view class="evaluation-lieb-zhong-sj">{{f.timeFormat(item.createTime)}}</view>
+
+              
+
+
+
+            
+            </view>
+
+              <view class="evaluation-nr">{{item.evaluationContent}}</view>
+
+
+
+        </view>
+     
+
+
+
+    
+     
+     </view>
+    
+    </view>
+
+
+
+
+
+</view>
+
+
+
+<view  wx:if="{{createCollegeOrder == false}}" >
+
+
+<view class="dibu-daoh">
+
+  <view class="dibu-daoh-an">
+
+      
+    <view class="dibu-daoh-fxsc" bindtap="zuop_shouc_y"   wx:if="{{userCollegeAreYouConcerned}}" data-id="{{collegeViewIdData.id}}" >
+      <view class="dibu-daoh-img-v"  >
+          <image src="../../../img/college/content/pjzl1.png"  class="dibu-daoh-img" />
+      </view>
+          <text class="dibu-daoh-wz">已收藏</text>
+      </view>
+
+
+
+      <view class="dibu-daoh-fxsc" bindtap="zuop_shouc"   wx:else data-id="{{collegeViewIdData.id}}" >
+      <view class="dibu-daoh-img-v"  >
+          <image src="../../../img/college/content/pjzl2.png" class="dibu-daoh-img" />
+      </view>
+          <text class="dibu-daoh-wz">收藏</text>
+      </view>
+
+
+
+
+     <view class="dibu-daoh-fxsc">
+      <view class="dibu-daoh-img-v">
+          <image src="../../../img/college/fxsp.png" class="dibu-daoh-img" />
+      </view>
+          <text class="dibu-daoh-wz">分享</text>
+      <button open-type="share" class="share" ></button>
+      </view>
+
+
+       <view class="dibu-daoh-fxsc" bindtap="gwc_tz">
+          <view class="dibu-daoh-img-v">
+              <image src="../../../img/college/gwc.png" class="dibu-daoh-img" />
+          </view>
+          <text class="dibu-daoh-wz">购物车</text>
+      </view>
+
+
+</view>
+
+
+
+  <view class="dibu-gm-sc">
+    <view class="dibu-gwc"  bindtap="selectPicker" data-id="{{collegeViewIdData.id}}">加入购物车 </view>
+    <view class="dibu-ljgm" bindtap="buy_now" data-id="{{collegeViewIdData.id}}" >立即购买 </view>
+  </view>
+
+</view>
+
+
+</view>
+
+
+
+
+
+
+
+
+
+<!-- 课程已购买时 -->
+
+<view class="video-tab"  wx:if="{{createCollegeOrder == true}}" >
+
+    <view class="swiper-tab">
+      <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">目录</view>
+      <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">介绍</view>
+      <view class="swiper-tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="clickTab">评价</view>
+
+
+    </view>
+
+    <view class="xiahs {{currentTab==0?'xiahs1':''}} {{currentTab==1?'xiahs2':''}} {{currentTab==2?'xiahs3':''}}" data-current="2" bindtap="clickTab"></view>
+
+
+
+    
+    <view class = "{{currentTab == 0 ? 'show':'hidden'}} biansr" >
+
+
+       <view class="tab-lanm">
+
+             <text class="tab-zjxx" >共{{collegeViewIdData.courseChapters}}章 {{collegeViewIdData.courseNumber}}节课</text>
+
+
+          <view wx:for="{{collegeViewIdData.csCurriculumChapters}}" wx:for-index='key'  wx:for-item='curriculumChapters'>
+
+            <view class="maxbox"  >
+
+           <text class="sxun">{{curriculumChapters.name}}</text> 
+            </view>
+
+
+
+             <view wx:for="{{curriculumChapters.csCourseChapters}}" wx:for-index='key1'  wx:for-item='courseChapters'>
+ 
+              <view class="mul-m {{kebf == courseChapters.id ? 'kebfDlock':'kebfNone'}}"
+                  bindtap="getVideo"
+                  data-title="{{courseChapters.name}}"
+                  data-current-poster="{{courseChapters.thumbnail}}"
+                  data-state="{{courseChapters.state}}"
+                  data-video-id="{{courseChapters.courseVideoAddress}}"
+                  data-id="{{1}}" 
+                  data-kebf="{{courseChapters.id}}" 
+                  > 
+
+
+                
+                <image src="../../../img/college/bfz.png" class="kebfDlock-img"/>
+
+
+                <view class="mul-zb"> 
+
+                <text class="mul-m-wz"> {{courseChapters.name}}</text>
+                
+                <view class="video-kesc">
+                <image src="../../../img/college/lbsj.png" class="video-kesc-img"/>
+
+
+                <text class="video-kesc-img-sj">  {{courseChapters.sectionChief}}</text>
+                
+                </view>
+
+               </view>
+
+
+
+
+                  <text class="mul-zzbfz"> 正在播放中</text>
+
+
+
+
+
+              </view>
+                
+
+
+
+
+           </view>
+
+          </view>
+
+
+        
+      </view>
+
+
+
+
+    </view>
+
+
+    <view class = "{{currentTab == 1 ? 'show':'hidden'}} biansr" >
+
+
+      <view class="tab-nr">
+      
+     
+         <rich-text nodes="{{purchaseDisplayView.purchaseDisplay}}"></rich-text>
+      </view>
+   
+       
+
+
+
+
+
+    </view>
+
+
+
+
+    <view class = "{{currentTab == 2 ? 'show':'hidden'}} biansr biansr-1">
+
+       <view class="evaluation">
+     
+        <view class="evaluation-top">
+          <view class="evaluation-top-z"></view>
+          <text class="evaluation-top-shul" >评价<text class="evaluation-top-shuz">{{collegeEvaluationDataTotal}}</text></text>
+          <text class="evaluation-top-fens" >满分5.0</text>
+
+
+        </view>
+     
+        
+     
+
+      <view class="evaluation-lieb" wx:for="{{collegeEvaluationData}}">
+
+            <view class="evaluation-lieb-shang">
+              <image src="{{item.csUser.faceImage}}" class="evaluation-lieb-tx"/>
+              <text class="evaluation-lieb-xingm" >{{item.csUser.nickName}}</text>
+            
+              <view class="evaluation-lieb-dianzann" >
+                <image src="../../../img/college/content/dzpj2.png"   bindtap="cancellikes" data-id="{{item.id}}" data-index="{{index}}"  wx:if="{{item.likeStatus}}"/>
+                <image src="../../../img/college/content/dzpi1.png" bindtap="pointpraise" data-id="{{item.id}}" data-index="{{index}}"  wx:else/>
+          
+                  
+              </view>
+              <text  class="evaluation-lieb-dianzcs" >{{item.numberLikes}} </text>
+            </view>
+
+
+            <view class="evaluation-lieb-zhong">
+                <view class="evaluation-lieb-zhong-pf">
+                  <view class="evaluation-lieb-zhong-pf-xx"><image src="../../../img/college/content/pjzl1.png" class=""/></view>
+                  <view class="evaluation-lieb-zhong-pf-xx">
+                    <image src="../../../img/college/content/pjzl1.png" wx:if="{{item.score >= 2}}"/>
+                    <image src="../../../img/college/content/pjzl2.png" wx:if="{{item.score < 2}}" />
+                  </view>
+                  <view class="evaluation-lieb-zhong-pf-xx">
+                    <image src="../../../img/college/content/pjzl1.png" wx:if="{{item.score >= 3}}"/>
+                    <image src="../../../img/college/content/pjzl2.png" wx:if="{{item.score < 3}}" />
+                  </view>
+                  <view class="evaluation-lieb-zhong-pf-xx">
+                    <image src="../../../img/college/content/pjzl1.png" wx:if="{{item.score >= 4}}"/>
+                    <image src="../../../img/college/content/pjzl2.png" wx:if="{{item.score < 4}}" />
+                  </view>
+                  <view class="evaluation-lieb-zhong-pf-xx">
+                    <image src="../../../img/college/content/pjzl1.png" wx:if="{{item.score >= 5}}"/>
+                    <image src="../../../img/college/content/pjzl2.png" wx:if="{{item.score < 5}}" />
+                  </view>
+                
+                </view>
+            
+
+                <view class="evaluation-lieb-zhong-sj">{{f.timeFormat(item.createTime)}}</view>
+
+              
+
+
+
+            
+            </view>
+
+              <view class="evaluation-nr">{{item.evaluationContent}}</view>
+
+
+
+        </view>
+     
+
+
+
+    
+     
+     </view>
+    
+    </view>
+
+
+
+
+
+</view>
+
+
+
+
+
+
+
+
+
+
+
+

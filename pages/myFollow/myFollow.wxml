@@ -1,8 +1,0 @@
-<view class="container">
-    <vtu-navbar title="我的关注" homeStyle="cachet" bgColor="#F0222FFF" fontColor="#ffffff" icon="iconfont icon-shangchuan"></vtu-navbar>
-    <van-tabs active="a" bind:change="onChange">
-        <van-tab title="关注车辆" name="a"><vehicle-list></vehicle-list></van-tab>
-        <van-tab title="关注船源" name="b"><ship-list></ship-list></van-tab>
-        <van-tab title="关注货源" name="c"><resources-list></resources-list></van-tab>
-    </van-tabs>
-</view>

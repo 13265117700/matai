@@ -1,7 +1,0 @@
-{
-  "component": true,
-  "usingComponents": {
-    "i-card": "/miniprogram_npm/iview-weapp/card/index",
-    "vtu-btn": "/miniprogram_npm/vtuweapp/button/vtu-btn"
-  }
-}

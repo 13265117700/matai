@@ -1,0 +1,115 @@
+@import '../my.wxss';
+
+.top {
+  height: auto;
+  display: flex;
+  padding: 40rpx 52rpx;
+  font-size: 34rpx;
+  color: #fff;
+}
+
+.top .left {
+  margin-right: 40rpx;
+}
+
+.top .right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.top .right .info {
+  flex: 1;
+}
+
+.top .right .info>view {
+  font-weight: bold;
+}
+
+.top .right .info>text {
+  font-size: 24rpx;
+  color: #92E5E8;
+}
+
+.top .right .arrow {
+  width: 60rpx;
+  text-align: right;
+}
+
+/* content */
+.content {
+  border-radius: 20rpx 20rpx 0 0;
+  background-color: #fff;
+  padding: 50rpx;
+  color: #191919;
+}
+
+.content .t1 {
+  font-size: 28rpx;
+}
+
+.content .t2 {
+  display: flex;
+  align-items: center;
+  font-size: 50rpx;
+}
+
+.content .t2 .input {
+  flex: 1;
+  height: 98rpx;
+  line-height: 50rpx;
+  font-size: 50rpx;
+  padding-left: 10rpx;
+}
+
+.content .t3 {
+  font-size: 24rpx;
+  margin-bottom: 20rpx;
+}
+
+/* rule */
+.rule {
+  padding: 30rpx 52rpx;
+  color: #666666;
+  font-size: 24rpx;
+  line-height: 24px;
+}
+
+.rule .t1 {
+  color: #71767A;
+  font-size: 28rpx;
+  margin-bottom: 20rpx;
+}
+
+/* f-bottom */
+
+.f-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 16rpx 50rpx;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.f-bottom .price {
+  font-size: 30rpx;
+}
+
+.f-bottom .price text {
+  margin-left: 10rpx;
+  font-size: 38rpx;
+  color: #00d1d3;
+}
+
+.f-bottom .btn {
+  padding: 22rpx 70rpx;
+  background: linear-gradient(to right, #00D1D3, #009EBB);
+  color: #fff;
+  font-size: 38rpx;
+  line-height: 1;
+  border-radius: 40rpx;
+}

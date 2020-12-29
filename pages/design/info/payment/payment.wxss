@@ -1,0 +1,134 @@
+page {
+  background-color: #F5F2F5;
+  color: #1E1E1E;
+  padding-bottom: 58rpx;
+}
+
+.t-title {
+  padding: 30rpx 30rpx 20rpx;
+  font-size: 26rpx;
+  line-height: 1;
+  background-color: #fff;
+}
+
+.content {
+  padding: 0 30rpx 20rpx;
+  background-color: #fff;
+}
+
+.content .info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.content .info .left {
+  width: 240rpx;
+  height: 136rpx;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-color: #fff;
+  border-radius: 10rpx;
+  margin-right: 20rpx;
+}
+
+.content .info .right {
+  flex: 1;
+}
+
+.content .info .right .info-title {
+  font-size: 30rpx;
+}
+
+.content .info .right .price {
+  font-size: 30rpx;
+  color: #00d1d3;
+}
+
+.content .text {
+  margin-top: 20rpx;
+  line-height: 1;
+}
+
+.content .text text {
+  margin-left: 48rpx;
+}
+
+/* pay-type */
+
+.pay-type .type {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30rpx;
+  background-color: #fff;
+  border-bottom: 1px solid #F5F2F5;
+}
+
+.pay-type .type image {
+  width: 40rpx;
+}
+
+.pay-type .type .left {
+  display: flex;
+  align-items: center;
+}
+
+.pay-type .type .left image {
+  margin-right: 20rpx;
+}
+
+.pay-type .type .right .maru {
+  width: 34rpx;
+  height: 34rpx;
+  background-color: #DDDDDD;
+  border-radius: 50%;
+}
+
+.pay-type .type .right image {
+  width: 34rpx;
+  height: 34rpx;
+  display: none;
+}
+
+.pay-type .type .right.active image {
+  display: block;
+}
+.pay-type .type .right.active .maru {
+  display: none;
+}
+
+/* f-bottom */
+
+.f-bottom {
+  position: fixed;
+  border-top: 1px solid #E5E5E5;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 16rpx 50rpx;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.f-bottom .price {
+  font-size: 30rpx;
+}
+
+.f-bottom .price text {
+  margin-left: 10rpx;
+  font-size: 38rpx;
+  color: #00d1d3;
+}
+
+.f-bottom .btn {
+  padding: 22rpx 70rpx;
+  background: linear-gradient(to right, #00D1D3, #009EBB);
+  color: #fff;
+  font-size: 38rpx;
+  line-height: 1;
+  border-radius: 40rpx;
+}

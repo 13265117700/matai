@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "c-link-list": "/components/design/swiperFont/index"
+  },
+  "navigationBarTitleText": "字体详情"
+}

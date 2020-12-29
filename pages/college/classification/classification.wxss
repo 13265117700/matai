@@ -1,0 +1,188 @@
+
+page{
+  height: 100%;
+  background-color: #fff;
+}
+
+page view,
+page text,
+page scroll-view,
+page input,
+page button,
+page image,
+page cover-view {
+  box-sizing: content-box;
+}
+
+/*总体主盒子*/  
+.container {  
+    position: relative;  
+    width: 100%;  
+    height: 100%;  
+    background-color: #fff;  
+    color: #939393;  
+  }
+   /*左侧栏主盒子*/  
+  .nav_left{  
+    /*设置行内块级元素（没使用定位）*/  
+    display: inline-block;  
+    width: 170rpx;  
+    height: 100%;  
+    /*主盒子设置背景色为灰色*/  
+    background: #F3F5F6;  
+    text-align: center;  
+  }  
+  /*左侧栏list的item*/  
+  .nav_left .nav_left_items{  
+    height: 112rpx;  
+    font-size: 30rpx; 
+    font-weight:bold;
+    color:rgba(0,0,0,1);
+
+  }  
+  /*左侧栏list的item被选中时*/  
+  .nav_left .nav_left_items.active{  
+    /*背景色变成白色*/  
+    background: #fff;  
+    color:rgba(0,0,0,1);
+  }  
+
+  .nav_left_text {
+    float: left;
+    margin-left:  21rpx;
+    margin-top: 40rpx;
+    width:8rpx;
+    height:34rpx;
+    background: #F3F5F6;  
+  } 
+
+  .active .nav_left_text {
+    background:rgba(0,209,211,1);
+    
+  }
+
+
+  .nav_left_text_name {
+    float: left;
+    margin-left:  28rpx;
+    margin-top: 43rpx;
+    line-height:  30rpx;
+    height: 30rpx;
+  } 
+
+
+
+  /*右侧栏主盒子*/  
+  .nav_right{  
+    /*右侧盒子使用了绝对定位*/  
+    position: absolute;  
+    top: 0;  
+    right: 0;  
+    flex: 1;  
+    /*宽度75%，高度占满，并使用百分比布局*/  
+    width: 580rpx;  
+    height: 100%;  
+    padding: 20rpx 31rpx 0 23rpx;  
+    box-sizing: border-box;  
+    background: #fff;  
+  }  
+
+.sectionThumbnails{
+  width: 100%;
+  height: 160rpx;
+  display: block;
+  margin-bottom: 37rpx;
+}
+
+
+.biaoyu{
+  font-size:32rpx;
+  line-height: 32rpx;
+  display: block;
+  font-weight:500;
+  color:rgba(25,25,25,1);
+  
+}
+
+
+  /*右侧栏list的item*/  
+
+  .nav_right_liebiao{
+    margin-right  : -14rpx;
+    margin-left  : -14rpx;
+    padding-top: 19rpx;
+    padding-left: 14rpx;
+    padding-bottom: 29rpx;
+    overflow: hidden;
+  }
+
+  .nav_right .nav_right_items{  
+    /*浮动向左*/  
+    float: left;  
+    /*每个item设置宽度是33.33%*/  
+    width:256rpx;
+    height:124rpx;
+    margin-right  : 14rpx;
+    margin-bottom: 12rpx;
+    box-shadow:0rpx 0rpx 10rpx -5rpx #333333;
+    border-radius:10rpx;
+  }  
+
+  
+  .nav_right .nav_right_items image{  
+    /*被图片设置宽高*/  
+    display: block;
+    float: left;
+    width: 50rpx;  
+    height: 50rpx;  
+    margin-top: 37rpx;  
+    margin-left: 25rpx;
+  }  
+  .nav_right .nav_right_items text{  
+    /*给text设成块级元素*/  
+    display: block;  
+    float: left;
+    margin-top: 48rpx;  
+    margin-left: 24rpx;
+    font-size: 28rpx;  
+    line-height: 28rpx;
+    font-weight:bold;
+    color:rgba(25,25,25,1);
+    /*设置文字溢出部分为...*/  
+    overflow: hidden;  
+    white-space: nowrap;  
+    text-overflow: ellipsis;  
+  } 
+  .nodata_text
+  {
+    color: black;
+    font-size: 14rpx;  
+    text-align: center;  
+  } 
+
+
+/*软件类别*/
+
+.rjleib{
+    padding-top: 30rpx;
+    overflow: hidden;
+    margin-right: -20rpx;
+}
+
+.rjleib-lieb{
+  float: left;
+  margin-bottom: 20rpx;
+  width: 240rpx;
+  height: 54rpx;
+  background-color: #F3F5F6;
+  margin-right: 20rpx;
+  line-height: 54rpx;
+  font-size:32rpx;
+  text-align: center;
+  font-weight:500;
+  border-radius:100rpx;
+}
+
+.rjleib-active{
+  color:#00D1D3;
+}

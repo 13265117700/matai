@@ -1,0 +1,62 @@
+
+
+<searchbar bindsearchInput="onsearchInput"/><!--bind 为小程序提供的绑定事件searchInput 为在子组件注册的触发事件-->
+
+
+<navigator url="../college" open-type="switchTab"   class="fanhqu" >
+    <view ><image src="../../../img/college/order/fk.png" /></view>
+</navigator>
+
+<view class='content'>
+
+<view class='history-list-group' wx:if="{{lisss == 1}}">
+  <view class='history-title'>
+    <view class='history-title-1'>历史记录</view>
+    <view class='history-clear' bindtap='onclear'><image src="../../../img/college/ss/shancu.png" /></view>
+  </view>
+  <view class='history-group'>
+  <view   wx:for="{{history}}"  class="kekuyu">
+      
+        <view data-title="{{item.title}}"  bindtap="huanss">
+
+      {{item.title}}
+       </view>
+      
+      </view>
+  </view>
+</view>
+
+
+
+
+
+  <view class="college-qbkc-lb" >
+
+				<view class="college-qbkc-lb-nr" wx:for="{{ items }}">
+
+		
+					<navigator url="../collegeContent/collegeContent?viewId={{ item.id }}">
+						<image class="college-qbkc-lb-img" src="{{ item.thumbnail }}" />
+
+
+						<view class="college-qbkc-lb-wznr">
+								<text class="college-qbkc-lb-bt">{{ item.name }}</text>
+
+								<view class="college-qbkc-lb-cs">
+									<text class="college-qbkc-lb-bmrs">{{ item.salesVolume }}人报名</text>
+									<text class="college-qbkc-lb-jg">￥{{ item.coursePrice }}</text>
+								</view>
+						</view>
+
+							</navigator>
+
+				</view>
+
+
+
+
+			</view>
+
+
+
+</view>

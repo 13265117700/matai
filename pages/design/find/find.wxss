@@ -1,0 +1,261 @@
+@import '../../index/index.wxss';
+
+page {
+  background-color: #f3f3f3;
+}
+
+.design-tag {
+  background-color: #fff;
+  padding: 30rpx;
+}
+
+.design-tag .title {
+  color: #191919;
+  font-size: 36rpx;
+  margin-bottom: 20rpx;
+  line-height: 1;
+  font-weight: 600;
+}
+
+.design-tag .tag-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.design-tag .tag-list .tag-item {
+  width: 336rpx;
+  height: 262rpx;
+  position: relative;
+  border-radius: 20rpx;
+  overflow: hidden;
+  margin-bottom: 20rpx;
+  /* 2020-07-30 10:56:24 */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.design-tag .tag-list .tag-item .t {
+  position: absolute;
+  top: 38rpx;
+  left: 30rpx;
+  color: #fff;
+  font-size: 40rpx;
+  line-height: 1;
+}
+
+.design-tag .tag-list .tag-item .t-sub {
+  position: absolute;
+  top: 94rpx;
+  left: 30rpx;
+  color: #fff;
+  font-size: 24rpx;
+  line-height: 1;
+}
+
+.design-tag .tag-list .tag-item .img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* 知识课程 */
+.college:not(:last-of-type) {
+  background-color: #F3F3F3;
+  padding: 30rpx 0;
+}
+
+.college .title {
+  line-height: 1;
+  font-size: 34rpx;
+  color: #2F2F2F;
+  font-weight: bold;
+  text-indent: 10rpx;
+  padding: 20rpx;
+  background-color: #fff;
+  position: relative;
+}
+
+.college .title .more {
+  position: absolute;
+  right: 20rpx;
+  top: 10rpx;
+  font-size: 24rpx;
+  color: #878787;
+  display: flex;
+  align-items: center;
+}
+
+.scroll-view-tabs.zs {
+  white-space: nowrap;
+  padding: 0 20rpx;
+  background-color: #fff;
+}
+
+.scroll-view-contaner .content {
+  margin-top: 12rpx;
+}
+
+.scroll-view-contaner .content .item {
+  width: 344rpx;
+  display: inline-block;
+  /* height: 352rpx; */
+  background-color: #fff;
+  margin-right: 14rpx;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+
+.scroll-view-contaner .content .item .cover {
+  width: 100%;
+  height: 194rpx;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.scroll-view-contaner .content .item .name {
+  font-size: 28rpx;
+  padding: 18rpx;
+  color: #2F2F2F;
+  /* text-overflow: ellipsis; */
+  /* overflow: hidden; */
+}
+
+.scroll-view-contaner .content .item .sub-name {
+  color: #999999;
+  font-size: 24rpx;
+  padding: 0 20rpx 20rpx;
+}
+
+/* 活动 */
+
+.event-list {
+  padding: 20rpx;
+  background-color: #fff;
+}
+
+.event-list .item {
+  display: flex;
+  height: 168rpx;
+  margin-bottom: 20rpx;
+}
+
+.event-list .item .l {
+  width: 300rpx;
+  height: 100%;
+  margin-right: 30rpx;
+  position: relative;
+}
+
+.event-list .item .l .cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8rpx;
+}
+
+.event-list .item .l .t {
+  position: absolute;
+  top: 6rpx;
+  left: 6rpx;
+  color: #fff;
+  background-color: #00d1d3;
+  padding: 6rpx 10rpx;
+  line-height: 1;
+  border-radius: 4rpx;
+  font-size: 18rpx;
+}
+
+.event-list .item .r {
+  flex: 1;
+  color: #3C3C3C;
+  font-size: 32rpx;
+  font-weight: bold;
+  position: relative;
+}
+
+.event-list .item .r .date {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  font-weight: normal;
+  font-size: 24rpx;
+  color: #999999;
+}
+
+.event-list .item .r .date .price {
+  position: absolute;
+  color: #00d1d3;
+  right: 0;
+  font-size: 36rpx;
+  line-height: 1;
+}
+
+/* 商城 */
+.goods {
+  background-color: #E9F5F5;
+}
+
+.goods .title {
+  background-color: #E9F5F5;
+}
+
+.goods-list {
+  background-color: #E9F5F5;
+  padding: 20rpx;
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  flex-wrap: wrap;
+}
+
+.goods-list .item {
+  width: 222rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+  overflow: hidden;
+  margin-bottom: 10rpx;
+  margin-right: 20rpx;
+}
+
+.goods-list .item:nth-of-type(3n) {
+  margin-right: 0;
+}
+
+.goods-list .l {
+  width: 220rpx;
+  height: 220rpx;
+  overflow: hidden;
+}
+
+.goods-list .l .cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.goods-list .title1 {
+  font-size: 26rpx;
+  color: #2F2F2F;
+  padding: 12rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1;
+  background-color: inherit;
+  white-space: nowrap;
+}
+
+.goods-list .price {
+  font-size: 26rpx;
+  color: #00D1D3;
+  padding: 0 12rpx 12rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background-color: inherit;
+  line-height: 1;
+}
