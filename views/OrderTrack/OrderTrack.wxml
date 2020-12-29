@@ -1,0 +1,39 @@
+<!--views/OrderTrack/OrderTrack.wxml-->
+<!-- 上传装好货 -->
+<!-- 上传订单跟踪 -->
+<vtu-navbar title="上传订单跟踪" homeStyle="cachet" bgColor="#F0222F" fontColor="#FFFFFF" icon=" arrow-left">"></vtu-navbar>
+
+<view class="box">
+
+  <view class="imgBox">
+    <van-uploader>
+    <image src="/images/order/sc.png" style="width:40px; height:40px; margin-left:9px;"></image>
+     
+ 
+  </van-uploader>
+
+  
+  </view>
+    
+  <view class="textBox">
+
+ 
+    <view>上传装好货以下照片 </view>
+    <view>1. 《水路货物运单》</view>
+    <view>2. 《盖好帆布照片》</view>
+
+    <text >注：上传卸货完成以下照片 1. 上传签字运单  2. 空船照片  注：如货主不在现场无法上传签字运单可以先上传和货主发起聊 天记录 </text>
+    
+  </view>
+  
+ 
+
+</view>
+
+<view class="box box_a">
+ <text>补充说明</text>
+</view>
+
+<view class="btnBox">
+  <van-button custom-style=" width:225px;height: 50px;background: #CD1F38;border-radius: 10px;"	>确认装好货</van-button>
+</view>

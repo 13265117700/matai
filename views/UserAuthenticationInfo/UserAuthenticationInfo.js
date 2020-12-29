@@ -26,7 +26,6 @@ Page({
                 this.setData({
                     trialList:user.mtCargoOwner
                 })
-                console.log(this.data.trialList)
             }else if(user.mtOwner.idNumber != null){
                 user.idenID = user.mtOwner.id;
                 user.status = user.mtOwner.status;

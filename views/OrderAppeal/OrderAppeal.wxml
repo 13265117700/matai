@@ -1,0 +1,25 @@
+<!--views/OrderAppeal/OrderAppeal.wxml-->
+<!-- 发起申述 -->
+
+<vtu-navbar title="发起申述" homeStyle="cachet" bgColor="#F0222F" fontColor="#FFFFFF" icon=" arrow-left">"></vtu-navbar>
+
+<view class="box">
+
+  <view class='input'>
+  <input name='' value='' placeholder='请输入您要申诉的问题' bindinput='length'></input>
+</view>
+
+
+  <view class="imgBox">
+    <van-uploader>
+    <image src="/images/order/sc.png" style="width:30px; height:30px; margin:26px;"></image>
+  </van-uploader>
+
+  </view> 
+  <text>上传照片</text>
+</view>
+
+<view class="btn">
+  <van-button custom-style="width: 225px;height: 50px;background: #CD1F38;border-radius: 10px;font-family: PingFang SC;font-weight: 500;color: #FFFFFF;font-size: 17px;">提交申诉</van-button>
+</view>
+

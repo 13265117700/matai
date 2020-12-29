@@ -1,0 +1,33 @@
+/* views/OrderTracking/OrderTracking.wxss */
+.box {
+
+  background: #FFFFFF;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 24px 0 20px 15px;
+
+}
+
+.box_a {
+  display: flex;
+  line-height: 36px;
+}
+.text-left {
+  color: #666666;
+  font-size: 14px;
+  margin-right: 48px;
+  width: 122px;
+}
+
+.text-right {
+  position: absolute;
+  left: 89px;
+font-family: PingFang SC;
+font-weight: 400;
+
+}
+
+.img{
+  width:128px;
+   height:128px;
+}

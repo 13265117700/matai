@@ -1,0 +1,38 @@
+<!--views/OrderTracking/OrderTracking.wxml-->
+<!-- 承运轨迹 -->
+<!-- 订单跟踪 -->
+
+<vtu-navbar title="订单跟踪" homeStyle="cachet" bgColor="#F0222F" fontColor="#FFFFFF" icon=" arrow-left">"></vtu-navbar>
+
+<view class="box">
+
+  <view>
+    <view wx:for="{{informations}}" wx:key="index" class="box_a">
+      <view class="text-left">{{item.contents}}</view>
+      <view class="text-right" style="color:{{item.ecolor}}">{{item.title}}</view>
+    </view>
+  </view>
+</view>
+
+<view class="box">
+  <!-- ui 组件 -->
+  <!-- <van-steps
+  steps="{{ steps }}"
+  active="{{ active }}"
+  direction="vertical"
+  active-color="#ee0a24"
+/> -->
+
+  <view>
+    <view wx:for="{{step}}" wx:key="index">
+      <view  >{{ item.text }}</view>
+      <view>{{ item.desc }}</view>
+      <view>{{ item.time }}</view>
+      <view>{{ item.supplement}}</view>
+      <image src="{{ item.url }}" class="img"></image>
+    </view>
+  </view>
+
+
+
+</view>

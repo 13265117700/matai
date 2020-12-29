@@ -1,0 +1,43 @@
+/* views/OrderTrack/OrderTrack.wxss */
+
+.box {
+
+  background: #FFFFFF;
+  border-radius: 10px;
+  margin: 10px 0;
+  padding-top: 17px;
+
+}
+
+.box_a {
+  padding-left: 20px;
+  height: 144px;
+}
+
+.imgBox{
+
+
+border: 1px solid #DCDCDC;
+margin:4px 0 10px 15px;
+padding:40px 0 27px 25px ;
+width: 86px;
+}
+
+.textBox{
+line-height: 24px;
+color: #333333;
+font-weight: 500;
+font-size: 12px;
+padding: 0 0 12px 20px;
+}
+
+.textBox > text{
+  padding: 0 0 0 0;
+  color: #E11923;
+}
+
+.btnBox{
+font-size: 17px;
+color: #FFFFFF;
+margin: 60px 75px 108px;
+}

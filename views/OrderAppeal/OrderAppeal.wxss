@@ -1,0 +1,40 @@
+/* views/OrderAppeal/OrderAppeal.wxss */
+
+.box {
+
+  background: #FFFFFF;
+  border-radius: 10px;
+  padding: 20px;
+
+}
+
+.imgBox{
+width: 83px;
+height: 83px;
+border: 1px solid #DCDCDC;
+margin-bottom:6px ;
+
+
+}
+
+.box > text{
+padding:0 16px ;
+line-height: 22px;
+font-size: 12px;
+font-family: PingFang SC;
+font-weight: 500;
+color: #333333;
+} 
+
+.btn{
+font-family: PingFang SC;
+font-weight: 500;
+color: #FFFFFF;
+font-size: 17px;
+margin: 99px 75px;
+}
+
+.input{
+  width: 450px;
+  height: 132px;
+}
