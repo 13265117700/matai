@@ -1,0 +1,67 @@
+<view class="page-container">
+    <vtu-navbar 
+        title="{{navbarTitle}}" 
+        homeStyle="cachet" 
+        bgColor="#F0222FFF" 
+        fontColor="#ffffff" 
+        icon="iconfont icon-shangchuan"></vtu-navbar>
+    <view class="audit-container">
+        <view class="audit-header">
+            <view class="audit-img">
+                <image src="/images/my/process.png"></image>
+            </view>
+            <view class="audit-describe">
+                <text>您的车主认证信息审核不通过</text>
+            </view>
+            <view class="audit-status">
+                <text>认证失败</text>
+            </view>
+        </view>
+        <view class="audit-main">
+            <view class="audit-list">
+                <view class="audit-item">
+                    <view class="audit-item-title">姓名：</view>
+                    <view class="audit-item-text">{{auditList.name}}</view>
+                </view>
+                <view class="audit-item">
+                    <view class="audit-item-title">联系方式：</view>
+                    <view class="audit-item-text">{{auditList.phone}}</view>
+                </view>
+                <view class="audit-item">
+                    <view class="audit-item-title">身份证号：</view>
+                    <view class="audit-item-text">{{auditList.iden}}</view>
+                </view>
+                <view class="audit-item">
+                    <view class="audit-item-title">社会统一信用代码：</view>
+                    <view class="audit-item-text">{{auditList.succ}}</view>
+                </view>
+                <view class="audit-item">
+                    <view class="audit-item-title">企业名称：</view>
+                    <view class="audit-item-text">{{auditList.enterp}}</view>
+                </view>
+                <view class="audit-item">
+                    <view class="audit-item-title">身份证照片：</view>
+                    <van-tag plain type="primary" size="large">已上传</van-tag>
+                    <!-- <view class="audit-item-text">{{auditList.IDphoto}}</view> -->
+                </view>
+                <view class="audit-item">
+                    <view class="audit-item-title">营业执照：</view>
+                    <van-tag plain type="primary" size="large">已上传</van-tag>
+                    <!-- <view class="audit-item-text">{{auditList.BsLs}}</view> -->
+                </view>
+                <view class="audit-item">
+                    <view class="audit-item-title">道路运输许可证：</view>
+                    <van-tag plain type="primary" size="large">已上传</van-tag>
+                    <!-- <view class="audit-item-text">{{auditList.RTP}}</view> -->
+                </view>
+                <view class="audit-item">
+                    <view class="audit-item-title">不通过原因：</view>
+                    <view class="audit-item-text">{{auditList.describe}}</view>
+                </view>
+            </view>
+            <view class="audit-button">
+                <text>重新申请认证</text>
+            </view>
+        </view>
+    </view>
+</view>

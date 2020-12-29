@@ -1,135 +1,113 @@
-import {
-  Product
-} from '../../api/design/product'
-const ProductApi = new Product()
+//index.js
+//获取应用实例
 const app = getApp()
 
 Page({
-  data: {
-    tabs: [{
-        id: 1,
-        name: '关注'
-      },
-      {
-        id: 2,
-        name: '推荐',
-        hide: true
-      },
-      {
-        id: 3,
-        name: '课堂',
-        hide: true
-      },
-      {
-        id: 4,
-        name: '商城',
-        hide: true
-      },
-      {
-        id: 5,
-        name: '活动'
-      }
-    ],
-    currentTab: '推荐',
-    Shinjitunopage: false
+  data:{
+    current: 1,
+    imageList: [{
+      url: 'https://activity.vtuzx.com/doc/vtuUI/weapp/swiper/1.png',
+      mode: "widthFix"
+    },{
+      url: 'https://activity.vtuzx.com/doc/vtuUI/weapp/swiper/2.png',
+      mode: "widthFix"
+    },{
+      url: 'https://activity.vtuzx.com/doc/vtuUI/weapp/swiper/3.png',
+      mode: "widthFix"
+    },{
+      url: 'https://activity.vtuzx.com/doc/vtuUI/weapp/swiper/4.png',
+      mode: "widthFix"
+    },{
+      url: 'https://activity.vtuzx.com/doc/vtuUI/weapp/swiper/5.png',
+      mode: "widthFix"
+    }],
+    cardList:[{
+      url: '/images/index/chuanyuan@3x.png',
+      text: '船源信息'
+    },{
+      url: '/images/index/huoyuan@3x.png',
+      text: '船运货源'
+    },{
+      url: '/images/index/cy@3x.png',
+      text: '车运货源'
+    },{
+      url: '/images/index/daolu@3x.png',
+      text: '车辆信息'
+    }],
+    orderList:[{
+      image: '/images/index/order_img3.png',
+      name: '粤清远货3888',
+      amount: '煤炭  2000吨',
+      begin: '广州黄埔装货港',
+      end: '珠海大湾区目的港',
+      time: '2020-03-26',
+      lowerImages: '/images/index/order-lower_info3.png',
+      lowerInfo: '船已到装货港',
+      lowerSeat: '/images/index/order-lower_seat3.png'
+    },{
+      image: '/images/index/ly@3x.png',
+      name: '粤B.88888',
+      amount: '煤炭  2000吨',
+      begin: '成都武侯区',
+      end: '德阳中江县',
+      time: '2020-08-11',
+      lowerImages: '/images/index/lowerImages.png',
+      lowerInfo: '车已到装货站点',
+      lowerSeat: '/images/index/order-lower_seat3.png'
+    },{
+      image: '/images/index/order_img3.png',
+      name: '粤清远货3888',
+      amount: '煤炭  2000吨',
+      begin: '广州黄埔装货港',
+      end: '珠海大湾区目的港',
+      time: '2020-03-26',
+      lowerImages: '/images/index/order-lower_info3.png',
+      lowerInfo: '船已到装货港',
+      lowerSeat: '/images/index/order-lower_seat3.png'
+    },{
+      image: '/images/index/ly@3x.png',
+      name: '粤B.88888',
+      amount: '煤炭  2000吨',
+      begin: '成都武侯区',
+      end: '德阳中江县',
+      time: '2020-08-11',
+      lowerImages: '/images/index/lowerImages.png',
+      lowerInfo: '车已到装货站点',
+      lowerSeat: '/images/index/order-lower_seat3.png'
+    }],
+    serviceList:[{
+      title:'马太保险',
+      image:'/images/index/bx@3x.png'
+    },{
+      title:'港口码头',
+      image:'/images/index/gk@3x.png'
+    },{
+      title:'港口里程',
+      image:'/images/index/mt@3x.png'
+    },{
+      title:'法律咨询',
+      image:'/images/index/ls@3x.png'
+    },{
+      title:'企业查询',
+      image:'/images/index/cx@3x.png'
+    },{
+      title:'台风路径',
+      image:'/images/index/tflj.png'
+    },{
+      title:'台风路径',
+      image:'/images/index/tq@3x.png'
+    },{
+      title:'更多',
+      image:'/images/index/gd@3x.png'
+    }],
+    loading: false
   },
-  // 标签切换
-  tabChange(e) {
-    const {
-      name
-    } = e.target.dataset || e.currentTarget.dataset
+  bindChange: function(e) {
     this.setData({
-      currentTab: name
+      current: e.detail.current
     })
   },
-
-  onShow() {
-    this.getGlobalSettings()
-  },
-  /**
-   * 临时数据
-   */
-  getGlobalSettings() {
-    ProductApi.getGlobalSettings()
-      .then(res => {
-        let { appletPaymentSwitch } = res.data
-        console.log(appletPaymentSwitch)
-
-        if(appletPaymentSwitch === 0){
-          this.setData({
-            currentTab:'活动',
-          })
-        }
-        if(appletPaymentSwitch === 0){
-          this.setData({
-            [tabs[1].hide]:false
-          })
-        }
-
-        wx.setStorageSync('app', appletPaymentSwitch)
-        this.setData({
-          isShow: Boolean(appletPaymentSwitch),
-          Shinjitunopage: Boolean(appletPaymentSwitch)
-        })
-        if (!appletPaymentSwitch) {
-          wx.setTabBarItem({
-            index: 2,
-            text: '官网'
-          })
-          wx.setTabBarItem({
-            index: 3,
-            text: '案例中心'
-          })
-        } else {
-          wx.setTabBarItem({
-            index: 2,
-            text: '课堂'
-          })
-          wx.setTabBarItem({
-            index: 3,
-            text: '商城'
-          })
-        }
-      })
-  },
-  scroll(e) {
-    console.log(e)
-  },
-
-  // 列表分享 
-  onShareAppMessage(e) {
-    return app.utils.doShare(e, null, app)
-  },
-  goPath(e) {
-    const { path } = e.currentTarget.dataset
-    if (path) {
-      wx.navigateTo({
-        url: path
-      })
-    }
-  },
-
-  onReachBottom() {
-    // 上拉 根据当前标签不同加载不同的数据
-    let { currentTab } = this.data
-
-    console.log('currentTab', currentTab)
-    switch(currentTab) {
-      case '关注': 
-        this.selectComponent("#follow").onRe()
-        break
-      case '推荐': 
-        this.selectComponent("#recommend").onRe()
-        break
-      case '课堂': 
-        this.selectComponent("#zhishi").onRe()
-        break
-      case '商城': 
-        this.selectComponent("#shop").onRe()
-        break
-      case '活动': 
-        this.selectComponent("#event").onRe()
-        break
-    }
+  bindLoad: function() {
+    this.loading = true
   }
 })

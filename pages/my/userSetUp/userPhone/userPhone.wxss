@@ -1,0 +1,2 @@
+/* pages/my/userPhone/userPhone.wxss */
+@import '/pages/my/form.wxss'

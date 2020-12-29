@@ -1,0 +1,50 @@
+<!--pages/tabBar/tabBar.wxml-->
+<view class="page-tabBar">
+    <vtu-tabbar 
+        active-icon-color="orange" 
+        current="{{current}}" 
+        bind:change="change" 
+        custom-class="tabbar-content" 
+        mode="page" 
+        navbar-height="{{navBarHeight}}">
+        <vtu-tabbar-item
+            label="首页"
+            src="/images/index/index1-3.png"
+            active-src="/images/index/index2-3.png"
+            name="home"
+            data-d="1"></vtu-tabbar-item>
+        <vtu-tabbar-item 
+            label="我的关注" 
+            src="/images/myFollow/myFollow1-3.png"
+            active-src="/images/myFollow/myFollow2-3.png"
+            icon="vtu-icon vtu-icon-jiahao" 
+            name="myFollow" 
+            data-d="2"></vtu-tabbar-item>
+        <vtu-tabbar-item 
+            label="发布" 
+            src="/images/deliver/deliver.png"
+            icon="vtu-icon vtu-icon-wode" 
+            large 
+            name="deliver" 
+            data-d="3"></vtu-tabbar-item>
+        <vtu-tabbar-item 
+            label="订单" 
+            src="/images/order/order1-3.png"
+            active-src="/images/order/order2-3.png"
+            icon="vtu-icon vtu-icon-wode" 
+            name="order" 
+            data-d="4"></vtu-tabbar-item>
+        <vtu-tabbar-item 
+            label="我的" 
+            src="/images/my/my1-3.png"
+            active-src="/images/my/my2-3.png"
+            icon="vtu-icon vtu-icon-wode" 
+            name="my" 
+            data-d="5"></vtu-tabbar-item>
+        <page-idx class="idx" slot="home"></page-idx>
+        <page-mf class="mf" slot="myFollow"></page-mf>
+        <page-dl class="dl" slot="deliver"></page-dl>
+        <page-od class="od" slot="order"></page-od>
+        <page-my class="my" slot="my"></page-my>
+    </vtu-tabbar>
+</view>

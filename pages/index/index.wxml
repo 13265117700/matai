@@ -1,67 +1,91 @@
-<!-- <block wx:if="{{Shinjitunopage}}"> -->
-<view class="page-card">
-	<!-- 顶部导航栏 -->
-	<navBar background='linear-gradient(to right, #00D1D3, #009EBB)' back="{{false}}" bindback="back">
-		<view class='location' slot="left" style="margin-left: 30rpx; width: 90px; overflow: hidden;">
-			<image src="/images/logo2.png" mode="heightFix" style="height: 32rpx; display: block;"></image>
-		</view>
-		<view class='lxy-nav-bar-search' slot="center" style="background:rgba(1,137,161, .2); border-radius: 23px; width: 302rpx;" data-path="/pages/design/search/search" bindtap="goPath">
-			<view class='lxy-nav-bar-search__input' style="display: flex; width: 100%; align-items: center; justify-content: center; padding: 10rpx;">
-				<image src="/images/icon/so01@2x.png" style="width: 30rpx; height: 30rpx;"></image>
-				<view style="text-align: center; margin-left: 10rpx; font-size: 24rpx; color: #01F0F3;">
-					搜索
-				</view>
-			</view>
-		</view>
-	</navBar>
-	<!-- tab 标签栏 -->
-	<view class="page-section">
-		<scroll-view class="scroll-view-tabs" 
-			scroll-x="true" 
-			bindscroll="scroll" 
-			style="width: 100%">
-			<view 
-				wx:for="{{ tabs }}" 
-				wx:key="id" 
-				class="scroll-view-tab {{ currentTab === item.name ? 'main-color' : '' }} {{ !isShow === item.hide ? 'hide' : '' }}" 
-				bindtap="tabChange" 
-				data-name="{{ item.name }}">
-				{{ item.name }}
-			</view>
-		</scroll-view>
-		<view wx:if="{{false}}" class="show-more">
-			<image src="/images/icon/gd@2x.png"></image>
-		</view>
-	</view>
-
-	<!-- 关注 -->
-	<view hidden="{{currentTab !== '关注'}}">
-		<c-follow id="follow" show="{{currentTab == '关注'}}" />
-	</view>
-
-	<!-- 推荐 -->
-	<view hidden="{{currentTab !== '推荐'}}">
-		<c-recommend id="recommend" show="{{currentTab == '推荐'}}" />
-	</view>
-
-	<!-- 知识 -->
-	<view hidden="{{currentTab !== '课堂'}}">
-		<c-zhishi id="zhishi" toShow="{{currentTab == '课堂'}}" />
-	</view>
-
-	<!-- 商城 -->
-	<view hidden="{{currentTab !== '商城'}}">
-		<c-shop id="shop" toShow="{{currentTab == '商城'}}" />
-	</view>
-
-	<!-- 活动 -->
-	<view hidden="{{currentTab !== '活动'}}">
-		<c-event id="event" show="{{currentTab == '活动'}}" />
-	</view>
+<!--index.wxml-->
+<view class="home-container">
+    <view class="banner-section">
+        <vtu-swiper 
+            list="{{imageList}}" 
+            height="{{(windowWidth-40)/2}}px" 
+            dot-type="round" 
+            indicator-active-color="#3fe816" 
+            swiper-class="swiperClass" 
+            indicator-dots="{{true}}" 
+            current="{{current}}" 
+            bind:change="bindChange"></vtu-swiper>
+        <!-- <vtu-swiper 
+            type="card" 
+            height="{{(windowWidth-40)/2}}px" 
+            list="{{imageList}}" 
+            swiper-class="swiperClass" 
+            indicator-dots="{{true}}" 
+            current="{{current}}" 
+            bind:change="bindChange"></vtu-swiper> -->
+    </view>
+    <view class="card-section">
+        <view class="card-list">
+            <view
+                class="card-item"
+                wx:for="{{cardList}}"
+                wx:key="index">
+                <image src="{{item.url}}"></image>
+                <view class="card-item-tag">{{item.text}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="service-section">
+        <vtu-grids col="4" img-width="37px">
+            <vtu-grid 
+                wx:for="{{serviceList}}"
+                wx:key="index"
+                label="{{item.title}}" 
+                img-src="{{item.image}}"></vtu-grid>
+            <!-- <vtu-grid label="图片" img-src="https://activity.vtuzx.com/doc/vtuUI/weapp/avatar/2.png"></vtu-grid>
+            <vtu-grid label="图片" img-src="https://activity.vtuzx.com/doc/vtuUI/weapp/avatar/3.png"></vtu-grid>
+            <vtu-grid label="图片" img-src="https://activity.vtuzx.com/doc/vtuUI/weapp/avatar/4.png"></vtu-grid>
+            <vtu-grid label="图片" img-src="https://activity.vtuzx.com/doc/vtuUI/weapp/avatar/1.png"></vtu-grid>
+            <vtu-grid label="图片" img-src="https://activity.vtuzx.com/doc/vtuUI/weapp/avatar/2.png"></vtu-grid>
+            <vtu-grid label="图片" img-src="https://activity.vtuzx.com/doc/vtuUI/weapp/avatar/3.png"></vtu-grid>
+            <vtu-grid label="图片" img-src="https://activity.vtuzx.com/doc/vtuUI/weapp/avatar/4.png"></vtu-grid> -->
+        </vtu-grids>
+    </view>
+    <view class="order-section">
+        <view class="order-crumbs">
+            <view class="order-title">订单跟踪</view>
+            <view class="order-tag">查看更多订单<image src="/images/index/order-tag3.png"></image></view>
+        </view>
+        <view class="order-list">
+            <view
+                class="order-item"
+                wx:for="{{orderList}}"
+                wx:key="index">
+                <view class="order-item-top">
+                    <view class="order-item-img">
+                        <image src="{{item.image}}"></image>
+                    </view>
+                    <view class="order-item-info">
+                        <view class="order-item-info item-summary">
+                            <view class="order-item-info item-summary_name">{{item.name}}</view>
+                            <view class="order-item-info item-summary_amount">{{item.amount}}</view>
+                        </view>
+                        <view class="order-item-info item-msg">
+                            <view class="order-item-info item-msg_process">
+                                <view class="order-item-info item-msg_process begin">{{item.begin}}</view>
+                                <view class="order-item-info item-msg_process img"><image src="/images/index/order-item_direction3.png"></image></view>
+                                <view class="order-item-info item-msg_process end">{{item.end}}</view>
+                            </view>
+                            <view class="order-item-info item-msg_time">{{item.time}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="order-item-lower">
+                    <view class="order-item-lower_info"><image src="{{item.lowerImages}}"></image>{{item.lowerInfo}}</view>
+                    <view class="order-item-lower_seat">
+                        <image src="{{item.lowerSeat}}"></image>
+                    </view>
+                </view>
+            </view>
+            <i-load-more tip="没有更多了" loading="{{ loading }}" />
+        </view>
+    </view>
+    <view class="guild-section">
+        <image src="/images/index/kef@3x.png"></image>
+    </view>
 </view>
-<!-- </block> -->
-
-<!-- <block wx:else> -->
-<!-- <image src="http://csyimg.oss-cn-shenzhen.aliyuncs.com/images/2020/07/24/15955850910633299.jpg" style="width: 100%;" mode="widthFix"></image> -->
-<!-- <web-view src="https://www.c-soo.com"></web-view> -->
-<!-- </block> -->

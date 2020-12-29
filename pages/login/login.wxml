@@ -1,0 +1,72 @@
+<view class="login-container">
+    <vtu-navbar title="登录" homeStyle="cachet" bgColor="#FFFFFF" icon="iconfont icon-shangchuan"></vtu-navbar>
+    <view class="company-info-container">
+        <image class="company-info-logo" src="/images/login/logo@3x.png" />
+        <view class="company-info-name">登录马太货运</view>
+        <view class="company-info-desc">货源 船源 车源</view>
+    </view>
+    <view class="login-form-container">
+        <view class="login-from-phone" hidden="{{!passwordMode}}">
+            <view class="form-item">
+                <vtu-input-group>
+                    <vtu-input
+                        title="+86"
+                        border
+                        placeholder="请输入手机号码"
+                        type="input"
+                        text-align="left"
+                        input-type="number"
+                        bind:input="phoneInput"></vtu-input>
+                </vtu-input-group>
+                <view class="from-button">
+                    <vtu-btn
+                        type="danger"
+                        round="true"
+                        disabled="{{phone === '' ? true : false}}"
+                        bind:click="handleSendCode">获取验证码</vtu-btn>
+                    <vtu-btn type="danger" plain="true" round="true" bind:click="bindSwitch">用账号密码登录</vtu-btn>
+                </view>
+            </view>
+        </view>
+        <view class="login-from-password" hidden="{{passwordMode}}">
+            <view class="form-item">
+                <vtu-input-group>
+                    <vtu-input
+                        placeholder="请输入手机号码"
+                        border
+                        type="input"
+                        text-align="left"
+                        input-type="number"
+                        bind:input="phoneInput"></vtu-input>
+                    <vtu-input
+                        placeholder="请输入密码"
+                        border
+                        type="input"
+                        text-align="left"
+                        input-type="password"
+                        bind:input="passwordInput"></vtu-input>
+                </vtu-input-group>
+                <navigator class="form-item-text" url="/">忘记密码</navigator>
+                <view class="from-button">
+                    <vtu-btn 
+                        type="danger" 
+                        round="true" 
+                        disabled="{{phone === '' || password === '' ? true : false}}"
+                        bind:click="submitForm">登录</vtu-btn>
+                    <vtu-btn type="danger" plain="true" round="true" bind:click="bindSwitch">短信验证登录</vtu-btn>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="weChat-login-container">
+        <vtu-divider font-color="#999999">推荐使用微信登录</vtu-divider>
+        <!-- <view class="footer-guide">推荐使用微信登录</view> -->
+        <view class="weChat-login-button">
+            <vtu-btn type="success" round="true" open-type="getUserInfo" bind:getuserinfo="weChatLogin" >微信一键登录</vtu-btn>
+        </view>
+        <view class="weChat-login-explain">
+            登录注册即表示同意
+            <navigator url="/pages/login/agree/agree">用户协议、隐私协议</navigator>
+        </view>
+    </view>
+</view>

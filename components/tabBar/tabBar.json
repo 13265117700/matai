@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "vtu-tabbar": "/miniprogram_npm/vtuweapp/tabbar/tabbar/vtu-tabbar",
+    "vtu-tabbar-item": "/miniprogram_npm/vtuweapp/tabbar/item/vtu-tabbar-item",
+    "page-idx": "/pages/index/index",
+    "page-mf": "/pages/myFollow/myFollow",
+    "page-dl": "/pages/deliver/deliver",
+    "page-od": "/pages/order/order",
+    "page-my": "/pages/my/my"
+  }
+}

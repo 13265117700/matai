@@ -1,0 +1,40 @@
+<view class="page-container">
+  <vtu-navbar 
+    title="绑定手机号" 
+    homeStyle="cachet" 
+    bgColor="#F0222FFF" 
+    fontColor="#ffffff" 
+    icon="iconfont icon-shangchuan"></vtu-navbar>
+  <view class="page-tips">设置密码后可通过手机号+秘密或短信验证登录</view>
+  <view class="form-list">
+    <vtu-input-group>
+      <view class="form-item">
+        <vtu-input 
+          placeholder="请输入手机号" 
+          type="input" 
+          text-align="left"
+          bind:input="handphone"></vtu-input>
+      </view>
+      <view class="form-item">
+        <vtu-input 
+          text-align="left"  
+          placeholder="输入验证码" 
+          type="input" 
+          input-type="number"
+          bind:input="codeInput">
+          <vtu-btn 
+            slot="after" 
+            my-class="phoneNumberBtn" 
+            size="small"
+            bind:click="handCode">{{buttonName}}</vtu-btn>
+        </vtu-input>
+      </view>
+    </vtu-input-group>
+    <view class="form-tips">
+      密码必须8个字符，而且同时包含字母和数字，不允许特殊字符，如%￥#*@
+    </view>
+    <view class="form-button">
+      <vtu-btn type="danger" bind:click="handAdd">完成</vtu-btn>
+    </view>
+  </view>
+</view>

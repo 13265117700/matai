@@ -1,0 +1,42 @@
+<view class="deliver-container">
+    <vtu-navbar title="发布信息资源" homeStyle="cachet" bgColor="#F0222FFF" fontColor="#ffffff" icon="iconfont icon-shangchuan"></vtu-navbar>
+    <view class="current-time">
+        <view class="number">12</view>
+        <view class="time-list">
+            <view class="time-item">星期二</view>
+            <view class="time-item">2020-08-12</view>
+        </view>
+    </view>
+    <view class="deliver-list">
+        <view
+            class="deliver-item" 
+            wx:for="{{deliverList}}" 
+            wx:key="index"
+            data-id="{{item.id}}"
+            bindtap="showDialog">
+            <image src="{{item.image}}"></image>
+            <text class="deliver-item-CHNname">{{item.CHNname}}</text>
+            <text class="deliver-item-ENGname">{{item.ENGname}}</text>
+        </view>
+        <van-dialog
+            use-slot
+            title="请选择货运方式"
+            show="{{ show }}"
+            show-cancel-button
+            confirm-button-open-type="getUserInfo"
+            bind:close="onClose"
+            bind:confirm="handDialog"
+            >
+            <view class="mode-status">
+                <view 
+                    class="ship-button {{shipStatus === true ? 'active' : ''}}" 
+                    data-index="1"
+                    bindtap="handMode" >船运货物</view>
+                <view 
+                    class="vehicle-button {{vehicleStatus === true ? 'active' : ''}}" 
+                    data-index="2"
+                    bindtap="handMode">车运货物</view>
+            </view>
+        </van-dialog>
+    </view>
+</view>

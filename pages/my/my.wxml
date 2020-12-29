@@ -1,0 +1,101 @@
+<view class="container">
+    <view class="page-header">
+        <view class="user-info">
+            <view class="user-avatar">
+                <image src="/images/my/logo@3x.png"></image>
+            </view>
+            <!-- <view class="user-name">12321</view> -->
+            <view class="user-login">
+                <view class="user-login_text">请登录 /注册您的账号</view>
+                <view class="user-login_button">
+                    <!-- <vtu-btn plain="true" round="true">普通按钮</vtu-btn> -->
+                    <button plain="true" bindtap="bindLogin">点击登录</button>
+                </view>
+            </view>
+        </view>
+        <view class="user-see">
+            <view class="user-see_tag">
+                <vtu-grids col="4" img-width="36px">
+                    <vtu-grid
+                        wx:for="{{seeList}}"
+                        wx:key="index"
+                        label="{{item.text}}"
+                        img-src="{{item.image}}"
+                        data-id="{{item.id}}"
+                        bind:click="seeItem"></vtu-grid>
+                    <!-- <vtu-grid label="我的分销" img-src="/images/my/dis@3x.png"></vtu-grid>
+                    <vtu-grid label="银行卡" img-src="/images/my/yhk@3x.png"></vtu-grid>
+                    <vtu-grid label="资金流水" img-src="/images/my/zjls@3x.png"></vtu-grid> -->
+                </vtu-grids>
+            </view>
+        </view>
+        <view class="user-setUp" bindtap="userSetUp">
+            <image src="/images/my/sz@3x.png"></image>
+        </view>
+        <view class="user-ai" bindtap="userAi">
+            <image src="/images/my/wt@3x.png"></image>
+        </view>
+    </view>
+    <view class="page-main">
+        <view class="page-item" 
+            wx:for="{{ceilList}}" 
+            wx:for-item="ceilList" 
+            wx:key="index">
+            <view class="cell-item" 
+                wx:for="{{ceilList.ceilItem}}" 
+                wx:for-item="ceilItem" 
+                wx:key="index"
+                data-id="{{ceilItem.id}}"
+                bindtap="ceilItem">
+                <view class="cell-icon">
+                    <image src="{{ceilItem.icon}}"></image>
+                </view>
+                <view class="cell-text">{{ceilItem.text}}</view>
+                <view class="cell-arrow">
+                    <image src="/images/my/ck@3x.png"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <van-dialog
+        use-slot
+        title="请选择认证身份"
+        show="{{ visible }}"
+        show-cancel-button
+        confirm-button-open-type="getUserInfo"
+        bind:close="handleClose"
+        bind:confirm="handIdentitOkay"
+        >
+        <view class="identit-list">
+            <view class="identit-item {{item.status === true ? 'active' : ''}}"
+                wx:for="{{identitList}}" 
+                wx:key="index"
+                data-id="{{item.id}}"
+                data-index="{{index}}"
+                bindtap="handIdentit">
+                {{item.name}}
+            </view>
+        </view>
+    </van-dialog>
+    <van-dialog
+        use-slot
+        title="{{ahtcTitle}}"
+        show="{{ ahtcShow }}"
+        show-cancel-button
+        confirm-button-open-type="getUserInfo"
+        bind:close="handleClose"
+        bind:confirm="handAhctOkay"
+        >
+        <view class="identit-list">
+            <view class="identit-item {{item.active === true ? 'active' : ''}}"
+                wx:for="{{ahtcList}}" 
+                wx:key="index"
+                data-id="{{item.id}}"
+                data-index="{{index}}"
+                bindtap="handAhct">
+                {{item.name}}
+            </view>
+        </view>
+    </van-dialog>
+    <i-toast id="toast" />
+</view>

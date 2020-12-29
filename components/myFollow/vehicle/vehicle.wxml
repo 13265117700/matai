@@ -1,0 +1,45 @@
+<!--components/vehicle/vehicle.wxml-->
+<view class="page-list">
+    <view class="page-item">
+        <i-card title="粤A 888888" thumb="/images/myFollow/c03@3x.png">
+            <view slot="content">
+                <view class="info-item">
+                    <view class="info-name">空车地</view>
+                    <view class="info-tag">成都武侯区</view>
+                </view>
+                <view class="info-item">
+                    <view class="info-name">载重吨数</view>
+                    <view class="info-tag">5800吨</view>
+                </view>
+                <view class="info-item">
+                    <view class="info-name">空车期</view>
+                    <view class="info-tag">2020-03-25  ±1天</view>
+                </view>
+            </view>
+        </i-card>
+        <view class="item-status">
+            <vtu-btn plain="true" round="true" size="mini">普通按钮</vtu-btn>
+        </view>
+    </view>
+    <view class="page-item">
+        <i-card title="浙G 9865Y3" thumb="/images/myFollow/c03@3x.png">
+            <view slot="content">
+                <view class="info-item">
+                    <view class="info-name">空车地</view>
+                    <view class="info-tag">云南昆明市五华区</view>
+                </view>
+                <view class="info-item">
+                    <view class="info-name">载重吨数</view>
+                    <view class="info-tag">3600吨</view>
+                </view>
+                <view class="info-item">
+                    <view class="info-name">空车期</view>
+                    <view class="info-tag">2020-03-25  ±1天</view>
+                </view>
+            </view>
+        </i-card>
+        <view class="item-status">
+            <vtu-btn plain="true" round="true" size="mini">普通按钮</vtu-btn>
+        </view>
+    </view>
+</view>
