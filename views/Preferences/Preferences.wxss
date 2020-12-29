@@ -1,0 +1,32 @@
+.page-container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.page-main{
+    flex: 1;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+}
+.info-group{
+    flex: 1;
+}
+.info-item{
+    display: flex;
+    align-items: center;
+    height: 60px;
+    margin: 0 15px;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.item-subTitle{
+    font-family: PingFang-SC-Medium;
+    font-weight: Medium;
+    color: #333333;
+    font-size: 17px;
+}
+.item-input{
+    flex: 1;
+    
+}

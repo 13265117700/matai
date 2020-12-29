@@ -1,7 +1,0 @@
-{
-    "component": true,
-    "usingComponents": {
-        "van-search": "/miniprogram_npm/@vant/weapp/search/index",
-        "vtu-avatar": "/miniprogram_npm/vtuweapp/avatar/vtu-avatar"
-    }
-}

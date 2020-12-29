@@ -57,14 +57,16 @@
                 </view>
               </view>
             </view>
-            <view class="release-item" wx:if="{{ id === '855' }}">
+
+            <!-- 船源列表 -->
+            <view class="release-item" wx:for="{{ cargoList }}" wx:key="index" wx:for-item="cargoItem" wx:if="{{ id === '855' }}">
               <view class="release-image">
                 <image src="/images/my/logo@3x.png"></image>
               </view>
               <view class="release-container">
                 <view class="release-cell">
                   <view class="release-cell_title">
-                    <text>名称</text><text class="number">31890.90吨</text>
+                    <text>{{cargoItem.mtNameGoods.name}}</text><text class="number">{{cargoItem.number}}吨</text>
                   </view>
                   <view class="release-cell_btu">
                     <view class="shelf" wx:if="{{ upAndDownState === 2 }}">
@@ -91,14 +93,14 @@
                     <view class="release-cell_item">
                       <view class="start">
                         <view class="start-icon">始</view>
-                        <view class="start-subtitle">广州黄埔装货港</view>
+                        <view class="start-subtitle">{{cargoItem.portArrivalAddress}}</view>
                       </view>
                       <view class="arrow">
                         <image class="arrow-img" src="/images/myFollow/item-info_img2.png"></image>
                       </view>
                       <view class="end">
                         <view class="end-icon">终</view>
-                        <view class="end-subtitle">珠海大湾区目的港</view>
+                        <view class="end-subtitle">{{cargoItem.portDepartureAddress}}</view>
                       </view>
                     </view>
                   </view>

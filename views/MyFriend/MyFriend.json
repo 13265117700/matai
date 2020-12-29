@@ -1,8 +1,10 @@
 {
   "usingComponents": {
-    "vtu-tabbar": "/miniprogram_npm/vtuweapp/tabbar/tabbar/vtu-tabbar",
-    "vtu-tabbar-item": "/miniprogram_npm/vtuweapp/tabbar/item/vtu-tabbar-item",
-    "chat-block":"/components/MyFriend/chatBlock/chatBlock",
-    "friend-block":"/components/MyFriend/friendBlock/friendBlock"
+    "van-search": "/miniprogram_npm/@vant/weapp/search/index",
+    "van-image": "/miniprogram_npm/@vant/weapp/image/index",
+    "vtu-avatar": "/miniprogram_npm/vtuweapp/avatar/vtu-avatar",
+    "van-divider": "/miniprogram_npm/@vant/weapp/divider/index",
+    "van-tabbar": "/miniprogram_npm/@vant/weapp/tabbar/index",
+    "van-tabbar-item": "/miniprogram_npm/@vant/weapp/tabbar-item/index"
   }
 }
