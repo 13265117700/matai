@@ -1,1 +1,91 @@
 /* pages/order/order.wxss */
+
+.order-main{
+
+  padding-bottom: 69px;
+}
+
+.tabs-box {
+  margin:10px 0 10px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  padding: 24px 15px;
+
+}
+
+/* 货主 开始 */
+.tabs-time {
+  font-size: 12px;
+  color: #666666;
+  margin-bottom: 14px;
+}
+
+.tabs-place {
+  font-size: 14px;
+  color: #191919;
+  margin-bottom: 15px;
+}
+
+.tabs-goods {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.tabs-type {
+  width: 45px;
+  height: 20px;
+  background: #F06622;
+  border-radius: 10px;
+  color: #FFFFFF;
+  font-size: 12px;
+  text-align: center;
+  line-height: 18px;
+}
+
+.tabs-tonnage {
+  font-size: 14px;
+  color: #1F84E3;
+  margin-left:20px;
+}
+
+.tabs-ship-name{
+font-size: 12px;
+color: #1F84E3;
+margin-bottom: 12px;
+}
+
+.tabs-btnBox{
+  padding:15px 0 0 88px;
+  /* float: right; */
+}
+
+/* 货主结束 */
+
+.quang{
+position: absolute;
+width: 80px;
+height: 80px;
+background: #FFFFFF;
+border: 2px dashed #E5E5E5;
+border-radius: 50%;
+font-size: 16px;
+font-family: PingFang SC;
+font-weight: 500;
+color: #BBBBBB;
+right: 21px;
+margin-top: -49px;
+
+}
+
+.quang_a{
+width: 60px;
+height: 60px;
+background: #FFFFFF;
+border: 2px dashed #E5E5E5;
+line-height: 57px;
+text-align: center;
+margin:7px 8px;
+border-radius: 50%;
+transform: rotate(-45deg);
+
+}

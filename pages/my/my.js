@@ -58,6 +58,10 @@ Page({
         //船管理
         state:true,
         ceilItem:[{
+          icon:'/images/my/zjls@3x.png',
+          text:'传动偏好设置',
+          id:'114'
+        },{
           icon:'/images/my/yhk@3x.png',
           text:'船舶管理',
           id:'115'
@@ -82,6 +86,10 @@ Page({
         //货管理
         state:true,
         ceilItem:[{
+          icon:'/images/my/fx@3x.png',
+          text:'货主偏好设置',
+          id:'776'
+        },{
           icon:'/images/my/hzdd@3x.png',
           text:'货主待确认订单信息',
           id:'998'
@@ -125,15 +133,8 @@ Page({
       },{
         state:true,
         ceilItem:[{
-          icon:'/images/my/zjls@3x.png',
-          text:'偏好设置',
-          id:'114'
-        }]
-      },{
-        state:true,
-        ceilItem:[{
           icon:'/images/my/wz@3x.png',
-          text:'发票管理',
+          text:'我的地址',
           id:'820'
         }]
       },{
@@ -197,6 +198,7 @@ Page({
       }
       User.userInfo(params).then(res => {
         let user = res.data.data;
+        console.log(user)
         
         if(user.mtCargoOwner.idNumber != null && user.mtCargoOwner.idNumber != ' '){
           //货
@@ -225,14 +227,10 @@ Page({
             ["ceilList[4].state"]:false,
             ["ceilList[5].state"]:false,
           })
-        }else{
-          this.setData({
-            userInfo:user
-          })
         }
-        console.log(this.data.userInfo)
 
-        // 如果已申请认证显示对应模块
+
+        如果已申请认证显示对应模块
         if(user.idenID){
           console.log('有idenID')
           this.setData({
@@ -247,7 +245,6 @@ Page({
         }
       })
     }else{
-      console.log(12312)
       this.setData({
         ["ceilList[1].state"]:false
       })
@@ -295,18 +292,14 @@ Page({
             url: '/views/MyFriend/MyFriend',
           })
           break
-        case '114':
-          wx.navigateTo({
-            url: '/views/Preferences/Preferences',
-          })
-        case '115':
-          wx.navigateTo({
-            url: '/views/ResourcesAdmin/ResourcesAdmin?id='+id,
-          })
-          break
         case '169':
           wx.navigateTo({
             url: '/views/UserAuthenticationInfo/UserAuthenticationInfo?idenID=' + userInfo.idenID,
+          })
+          break
+        case '115':
+          wx.navigateTo({
+            url: '/views/ResourcesAdmin/ResourcesAdmin?id='+id,
           })
           break
         case '192':
@@ -331,11 +324,10 @@ Page({
             url: '/views/ReleaseAdmin/ReleaseAdmin?id=' + id,
           })
           break
-        case '820':
-          wx.navigateTo({
-            url: '/views/InvoiceAdmin/InvoiceAdmin',
-          })
-          break
+          case '820':
+            wx.navigateTo({
+              url: '/views/MyAddress/MyAddress',
+            })
       }
     }else{
       wx.navigateTo({

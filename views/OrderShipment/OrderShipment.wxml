@@ -1,0 +1,25 @@
+<!--views/OrderShipment/OrderShipment.wxml-->
+
+<!-- 订单货运状态-上传货运跟踪 -->
+
+<view>
+<vtu-navbar title="船抵达装货港" homeStyle="cachet" bgColor="#F0222F" fontColor="#FFFFFF" icon="iconfont icon-shangchuan"></vtu-navbar>
+
+<view class="upload" >
+  <van-uploader file-list="{{ fileList }}" bind:after-read="afterRead" />
+
+   <view style="font-size: 12px; color: #333333;">船抵达装货港，请上传船舱内干净照片</view>
+</view>
+
+<view class="supplement">
+ <view>补充说明</view>
+ <text>12123</text>
+</view>
+
+<view>
+  <view class="btn">
+    确认船到装货港
+  </view>
+</view>
+
+</view>

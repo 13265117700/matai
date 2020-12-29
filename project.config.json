@@ -1,71 +1,150 @@
 {
-    "description": "项目配置文件",
-    "packOptions": {
-        "ignore": []
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": false,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": false,
+    "coverView": true,
+    "nodeModules": true,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "useMultiFrameRuntime": false,
+    "useApiHook": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
     },
-    "setting": {
-        "urlCheck": false,
-        "es6": true,
-        "enhance": false,
-        "postcss": true,
-        "preloadBackgroundData": false,
-        "minified": true,
-        "newFeature": false,
-        "coverView": true,
-        "nodeModules": true,
-        "autoAudits": false,
-        "showShadowRootInWxmlPanel": true,
-        "scopeDataCheck": false,
-        "uglifyFileName": false,
-        "checkInvalidKey": true,
-        "checkSiteMap": true,
-        "uploadWithSourceMap": true,
-        "compileHotReLoad": false,
-        "useMultiFrameRuntime": false,
-        "useApiHook": true,
-        "babelSetting": {
-            "ignore": [],
-            "disablePlugins": [],
-            "outputPath": ""
-        },
-        "bundle": false,
-        "useIsolateContext": true,
-        "useCompilerModule": false,
-        "userConfirmedUseCompilerModuleSwitch": false,
-        "userConfirmedBundleSwitch": false,
-        "packNpmManually": false,
-        "packNpmRelationList": [],
-        "minifyWXSS": true
+    "bundle": false,
+    "useIsolateContext": true,
+    "useCompilerModule": false,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "userConfirmedBundleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.14.1",
+  "appid": "wx60bc29cac67fc360",
+  "projectname": "matthew",
+  "debugOptions": {
+    "hidedInDevtools": []
+  },
+  "scripts": {},
+  "isGameTourist": false,
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "plugin": {
+      "list": []
     },
-    "compileType": "miniprogram",
-    "libVersion": "2.14.1",
-    "appid": "wx60bc29cac67fc360",
-    "projectname": "matthew",
-    "debugOptions": {
-        "hidedInDevtools": []
+    "game": {
+      "list": []
     },
-    "scripts": {},
-    "isGameTourist": false,
-    "simulatorType": "wechat",
-    "simulatorPluginLibVersion": {},
-    "condition": {
-        "search": {
-            "list": []
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/order/order",
+          "pathName": "pages/order/order",
+          "query": "",
+          "scene": null
         },
-        "conversation": {
-            "list": []
+        {
+          "name": "views/OrderDetails/OrderDetails",
+          "pathName": "views/OrderDetails/OrderDetails",
+          "query": "",
+          "scene": null
         },
-        "game": {
-            "list": []
+        {
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
         },
-        "plugin": {
-            "list": []
+        {
+          "name": "views/OrderShipment/OrderShipment",
+          "pathName": "views/OrderShipment/OrderShipment",
+          "query": "",
+          "scene": null
         },
-        "gamePlugin": {
-            "list": []
+        {
+          "name": "views/OrderContract/contract",
+          "pathName": "views/OrderContract/contract",
+          "query": "",
+          "scene": null
         },
-        "miniprogram": {
-            "list": []
+        {
+          "name": "views/OrderAgreement/OrderAgreement",
+          "pathName": "views/OrderAgreement/OrderAgreement",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "views/OrderInformation/OrderInformation",
+          "pathName": "views/OrderInformation/OrderInformation",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/order/order",
+          "pathName": "pages/order/order",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "views/OrderEvaluate/OrderEvaluate",
+          "pathName": "views/OrderEvaluate/OrderEvaluate",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "views/OrderTrack/OrderTrack",
+          "pathName": "views/OrderTrack/OrderTrack",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "views/OrderTracking/OrderTracking",
+          "pathName": "views/OrderTracking/OrderTracking",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "views/ResourcesAdmin/ResourcesAdmin",
+          "pathName": "views/ResourcesAdmin/ResourcesAdmin",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "views/OrderAppeal/OrderAppeal",
+          "pathName": "views/OrderAppeal/OrderAppeal",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "views/InvoiceAgreement/InvoiceAgreement",
+          "pathName": "views/InvoiceAgreement/InvoiceAgreement",
+          "query": "",
+          "scene": null
         }
+      ]
     }
+  }
 }

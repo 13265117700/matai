@@ -1,6 +1,15 @@
 // custom-tab-bar/index.js
-import User from "../models/user/user"
 Component({
+    /**
+     * 组件的属性列表
+     */
+    properties: {
+
+    },
+
+    /**
+     * 组件的初始数据
+     */
     data: {
         activeIndex:0,
         tabBar:[
@@ -25,7 +34,7 @@ Component({
                 }
             },
             {
-                pagePath:`/pages/deliver/deliver`,
+                pagePath:'/pages/deliver/deliver',
                 name:'发布',
                 tips:'',
                 large:true,
@@ -54,57 +63,25 @@ Component({
                     active:'/images/my/my2-3.png'
                 }
             }
-        ],
-        IdentityID:null
+        ]
     },
-    lifetimes:{
-        attached:function(){
-            this.getUserInfo()
-        }
-    },
+
+    /**
+     * 组件的方法列表
+     */
     methods: {
         onChange(e){
             let index = e.detail.current;
-            let IdentityID = this.data.IdentityID;
-            if(index === 2){
-                wx.navigateTo({
-                  url: '/views/ResourceAdd/ResourceAdd?id='+IdentityID,
-                })
-            }else{
-                wx.switchTab({
-                    url: this.data.tabBar[index].pagePath,
-                })
-            }
-        },
-        getUserInfo(){
-            let Authorization = wx.getStorageSync('Authorization');
-            let uid = ''
-            User.userInfo({Authorization,uid}).then(res => {
-                let mtCargoOwner = res.data.data.mtCargoOwner;//货主身份
-                let mtOwner = res.data.data.mtOwner;//车主身份
-                let mtShipowner = res.data.data.mtShipowner;//船东身份
-                if(mtCargoOwner.idNumber){
-                    console.log('货主')
-                    this.setData({
-                        IdentityID:'855'
-                    })
-                    return
-                }
-                if(mtOwner.idNumber){
-                    console.log('车主')
-                    this.setData({
-                        IdentityID:'609'
-                    })
-                    return
-                }
-                if(mtShipowner.idNumber){
-                    console.log('船东')
-                    this.setData({
-                        IdentityID:'567'
-                    })
-                    return
-                }
+            wx.switchTab({
+              url: this.data.tabBar[index].pagePath,
             })
-        }
+        },
+        // init() {
+        //     const page = getCurrentPages().pop();
+        //     console.log(page.route)
+        //     this.setData({
+        //         activeIndex:this.data.tabBar.findIndex(item => item.pagePath === `/${page.route}`)
+        //     })
+        // }
     }
 })
